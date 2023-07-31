@@ -6,15 +6,20 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "formik": "^2.4.2",
-    "next": "13.4.9",
+    "json-server": "^0.17.3",
+    "next": "^13.4.9",
+    "ra-data-json-server": "^4.12.2",
+    "ra-data-simple-rest": "^4.12.2",
     "react": "18.2.0",
+    "react-admin": "^4.12.3",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-redux": "^8.1.1",
