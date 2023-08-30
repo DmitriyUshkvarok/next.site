@@ -1,6 +1,7 @@
 import { items } from './data';
 import Image from 'next/image';
 import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
 export function generateMetadata({ params: { id } }) {
   const item = items.find((item) => item.id === Number(id));
@@ -16,18 +17,20 @@ const CollectionSite = ({ params: { id } }) => {
 
   return (
     <>
-      <ButtonBack />
-      <h2>{item.title}</h2>
-      <Image src={item.image} alt={item.title} width={600} height={500} />
-      <p>{item.description}</p>
-      <a href={item.website} target="_blank">
-        website
-      </a>
-      <p>
-        <a href={item.pageCode} target="_blank">
-          {item.pageCode}
+      <PageTransition>
+        <ButtonBack />
+        <h2>{item.title}</h2>
+        <Image src={item.image} alt={item.title} width={600} height={500} />
+        <p>{item.description}</p>
+        <a href={item.website} target="_blank">
+          website
         </a>
-      </p>
+        <p>
+          <a href={item.pageCode} target="_blank">
+            {item.pageCode}
+          </a>
+        </p>
+      </PageTransition>
     </>
   );
 };

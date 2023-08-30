@@ -1,11 +1,13 @@
-import styles from './page.module.css';
 import LogInForm from '../components/AuthForm/FormLogin/FormLogin';
+import PageTransition from '../components/PageTransition/PageTransition';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h2>Welcome to my next js project</h2>
-      <LogInForm />
-    </main>
+    <>
+      <PageTransition>
+        <h2>Welcome to my next js project</h2>
+        <LogInForm />
+      </PageTransition>
+    </>
   );
 }

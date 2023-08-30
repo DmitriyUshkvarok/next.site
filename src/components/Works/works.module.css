@@ -10,6 +10,41 @@
     display: flex;
     width: 100%;
     gap: 10px;
+    padding: 20px;
+    border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    animation: gradientAnimation 5s linear infinite, shadowAnimation 0.3s ease;
+    background-size: 200% 200%;
+    background-image: linear-gradient(45deg, #ff3366, #ff9900);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shadowAnimation {
+    0% {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .workListItem:nth-child(even) {
@@ -20,6 +55,23 @@
     width: 400px;
     height: auto;
     object-fit: cover;
+    filter: blur(8px);
+    opacity: 0;
+    transition: filter 0.9s ease, opacity 0.9s ease;
+    -webkit-transition: filter 0.5s ease, opacity 0.5s ease;
+    -moz-transition: filter 0.9s ease, opacity 0.9s ease;
+    -ms-transition: filter 0.9s ease, opacity 0.9s ease;
+    -o-transition: filter 0.9s ease, opacity 0.9s ease;
+    -webkit-transition: filter 0.9s ease, opacity 0.9s ease;
+}
+
+
+
+.workListImage.loaded {
+    filter: blur(0);
+    /* При добавлении класса "loaded" снимем размытие */
+    opacity: 1;
+    /* Установим полную прозрачность */
 }
 
 .workListInfoWrapper {

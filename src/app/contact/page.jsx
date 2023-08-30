@@ -1,10 +1,13 @@
 import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
 const Contacts = () => {
   return (
     <>
-      <div>Contacts</div>
-      <ButtonBack />
+      <PageTransition>
+        <div>Contacts</div>
+        <ButtonBack />
+      </PageTransition>
     </>
   );
 };
