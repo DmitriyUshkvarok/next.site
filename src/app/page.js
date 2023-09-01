@@ -1,12 +1,13 @@
 import LogInForm from '../components/AuthForm/FormLogin/FormLogin';
 import PageTransition from '../components/PageTransition/PageTransition';
+import HomeContent from '../components/HomeContent/HomeContent';
 
 export default function Home() {
   return (
     <>
       <PageTransition>
-        <h2>Welcome to my next js project</h2>
-        <LogInForm />
+        <HomeContent />
+        {/* <LogInForm /> */}
       </PageTransition>
     </>
   );

@@ -49,7 +49,7 @@ const Navigation = () => {
     <div className={styles.container}>
       <nav className={styles.navigation}>
         <Link href="/" className={styles.logo}>
-          MyApp
+          WebDeveloper
         </Link>
         <ul className={styles.navigationList}>
           {links.map((link) => (
