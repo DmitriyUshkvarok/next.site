@@ -2,6 +2,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -14,6 +15,10 @@
     background-clip: text;
 }
 
+.burgerWrapper {
+    margin-left: auto;
+}
+
 .navigationList {
     display: flex;
     align-items: center;
@@ -24,6 +29,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+@media (max-width: 660px) {
+    .navigationList {
+        display: none;
+    }
 }
 
 .navigationItem {

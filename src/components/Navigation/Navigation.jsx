@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
 import { useLogoutMutation } from '@/src/redux/authApi/authApi';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { useMediaQuery } from 'react-responsive';
 
 const links = [
   {
@@ -41,6 +43,8 @@ const Navigation = () => {
   const pathname = usePathname();
   const [logout] = useLogoutMutation();
 
+  const isPhone = useMediaQuery({ minWidth: 660 });
+
   const handleLogOut = async () => {
     await logout();
   };
@@ -51,6 +55,7 @@ const Navigation = () => {
         <Link href="/" className={styles.logo}>
           WebDeveloper
         </Link>
+        <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
         <ul className={styles.navigationList}>
           {links.map((link) => (
             <li key={link.id} className={styles.navigationItem}>

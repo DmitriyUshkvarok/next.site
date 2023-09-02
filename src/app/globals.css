@@ -41,3 +41,17 @@ p {
   min-height: 100vh;
   margin: 0 auto;
 }
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  background: #000000;
+  background: -webkit-linear-gradient(to bottom, #434343, #000000);
+  background: linear-gradient(to bottom, #434343, #000000);
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  color: #fff;
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
