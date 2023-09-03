@@ -1,0 +1,82 @@
+.contactsWrapper {
+    margin-top: 100px;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 30px;
+    background: #000000;
+    background: linear-gradient(to bottom, #434343, #000000);
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+}
+
+.contactsWrapper:before,
+.contactsWrapper:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background: -webkit-linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 500%;
+    z-index: -1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    animation: amimate 50s ease infinite;
+}
+
+
+.contactsWrapper:after {
+    filter: blur(25px);
+}
+
+@keyframes amimate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* Начальный размер */
+    }
+
+    25% {
+        transform: scale(1.05);
+        /* Увеличение размера на 25% */
+    }
+
+    50% {
+        transform: scale(1);
+        /* Возвращение к начальному размеру */
+    }
+
+    75% {
+        transform: scale(1.05);
+        /* Увеличение размера на 25% */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Возвращение к начальному размеру */
+    }
+}

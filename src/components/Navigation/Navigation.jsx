@@ -43,7 +43,7 @@ const Navigation = () => {
   const pathname = usePathname();
   const [logout] = useLogoutMutation();
 
-  const isPhone = useMediaQuery({ minWidth: 660 });
+  const isPhone = useMediaQuery({ minWidth: 690 });
 
   const handleLogOut = async () => {
     await logout();

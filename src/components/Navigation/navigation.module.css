@@ -23,15 +23,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: gold;
-    margin-left: auto;
-    background: linear-gradient(to right, #f12711, #f5af19);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 690px) {
     .navigationList {
         display: none;
     }
@@ -39,9 +33,68 @@
 
 .navigationItem {
     font-size: 16px;
+    position: relative;
 }
 
-.activeLink {
+.navigationItem a {
+    margin-left: auto;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: .4s ease;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigationItem a:hover {
+    color: aqua;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navigationItem a:before {
+    left: 0;
+    bottom: 66.66%;
+}
+
+.navigationItem:before {
+    right: 0;
+    top: 33.33%;
+}
+
+.navigationItem:after {
+    left: 0;
+    bottom: 1;
+}
+
+
+.navigationItem:hover a:before {
+    width: 100%;
+}
+
+.navigationItem:hover:before,
+.navigationItem:hover:after {
+    width: 100%;
+}
+
+.navigationItem a:before,
+.navigationItem:before,
+.navigationItem:after {
+    content: '';
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.navigationItem .activeLink {
     color: aqua;
     background: linear-gradient(to right, #b2fefa, #0ed2f7);
     -webkit-background-clip: text;

@@ -25,7 +25,6 @@ const Portfolio = () => {
                     height={200}
                     className={styles.portfolioImg}
                   />
-                  <span className={styles.portfolioLinkSpan}>Choose </span>
                 </Link>
               </li>
             ))}
