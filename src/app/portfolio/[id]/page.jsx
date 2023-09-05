@@ -1,7 +1,15 @@
 import { items } from './data';
 import Image from 'next/image';
-import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
-import PageTransition from '@/src/components/PageTransition/PageTransition';
+// import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
+// import PageTransition from '@/src/components/PageTransition/PageTransition';
+import dynamic from 'next/dynamic';
+
+const PageTransition = dynamic(() =>
+  import('../../../components/PageTransition/PageTransition')
+);
+const ButtonBack = dynamic(() =>
+  import('../../../components/ButtonBack/ButtonBack')
+);
 
 export function generateMetadata({ params: { id } }) {
   const item = items.find((item) => item.id === Number(id));

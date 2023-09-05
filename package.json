@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
     "@reduxjs/toolkit": "^1.9.5",
+    "@vercel/otel": "^0.3.0",
     "axios": "^1.4.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
