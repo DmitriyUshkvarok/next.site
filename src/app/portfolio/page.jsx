@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { items } from './[id]/data';
+import { items } from '../../components/DynamicPagePortfolioContent/data';
 import styles from './portfolio.module.css';
 // import PrivatRoute from '@/src/components/PrivateRoute/PrivatRoute';
 import dynamic from 'next/dynamic';
