@@ -49,9 +49,6 @@ const BurgerMenu = () => {
           <Link href="/blog">Blog</Link>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
-          <Link href="/dashboard">Dashboard</Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
           <Link href="/portfolio">Portfolio</Link>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>

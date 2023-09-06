@@ -163,20 +163,6 @@
     }
 }
 
-@media screen and (max-width:470px) {
-    .buttonWrapper {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        flex-direction: column;
-        margin-bottom: 30px;
-        -webkit-transform: translate(-50%);
-        -moz-transform: translate(-50%);
-        -ms-transform: translate(-50%);
-        -o-transform: translate(-50%);
-    }
-}
 
 @keyframes changeColor {
     0% {

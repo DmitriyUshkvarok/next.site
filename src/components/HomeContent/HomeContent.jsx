@@ -4,29 +4,39 @@ import style from './homeContent.module.css';
 import Image from 'next/image';
 import Container from '../Container/Container';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const HomeContent = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start({ x: '100%' });
     const handleScroll = () => {
-      if (window.scrollY > 600) {
-        controls.start({ opacity: 1, x: '0%' });
-      } else {
-        controls.start({ opacity: 0, x: '100%' });
-      }
+      setScrollY(window.scrollY);
+    };
+
+    const handleResize = () => {
+      setViewportHeight(window.innerHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    handleScroll();
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [controls]);
+  }, []);
+
+  useEffect(() => {
+    const animationStartPoint = viewportHeight / 2;
+    if (scrollY > animationStartPoint) {
+      controls.start({ opacity: 1, x: '0%' });
+    } else {
+      controls.start({ opacity: 0, x: '100%' });
+    }
+  }, [scrollY, viewportHeight, controls]);
 
   return (
     <section>
@@ -34,7 +44,7 @@ const HomeContent = () => {
         <div className={style.promoWrapper}>
           <div className={style.promoWrapperBlockInfo}>
             <h1 className={style.promoWrapperBlockTitle}>
-              I`am Dmitriy Ushkvarok
+              I`m Dmitriy Ushkvarok
             </h1>
             <p className={style.promoWrapperBlockSubTitle}>Web Developer</p>
             <div className={style.buttonWrapper}>
@@ -76,7 +86,7 @@ const HomeContent = () => {
         <motion.div
           className={style.shadow}
           initial={{ opacity: 1, x: '100%' }}
-          transition={{ opacity: { duration: 1 }, x: { duration: 1.5 } }}
+          transition={{ opacity: { duration: 1 }, x: { duration: 1 } }}
           animate={controls}
         >
           <div className={style.about}>

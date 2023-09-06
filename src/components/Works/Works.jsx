@@ -33,14 +33,17 @@ const Works = () => {
 
   return (
     <>
-      <h2>Work Experience</h2>
-      <Image
-        src="/other.PNG"
-        alt="page photo"
-        width={400}
-        height={500}
-        onLoad={() => setImageLoaded(true)}
-      />
+      <h2 className={styles.aboutTitle}>Work Experience</h2>
+      <div className={styles.aboutHeroImg}>
+        <Image
+          className={styles.aboutWorkImg}
+          src="/other.PNG"
+          alt="page photo"
+          width={400}
+          height={500}
+          onLoad={() => setImageLoaded(true)}
+        />
+      </div>
       <ul className={styles.workList}>
         {works.map((work, index) => (
           <motion.li
@@ -65,13 +68,16 @@ const Works = () => {
               className={`${styles.workListImage} ${
                 imageLoaded ? styles.loaded : ''
               }`}
-              style={{ borderRadius: '50% 10% 50% 10% / 10% 50% 10% 50%' }}
             />
             <div className={styles.workListInfoWrapper}>
-              <h3>{work.enterprise}</h3>
-              <p>{work.data}</p>
-              <h3>{work.region}</h3>
-              <ul>
+              <h3 className={styles.workListInfoWrapperTitle}>
+                {work.enterprise}
+              </h3>
+              <p className={styles.workListInfoWrapperData}>{work.data}</p>
+              <h3 className={styles.workListInfoWrapperRegion}>
+                {work.region}
+              </h3>
+              <ul className={styles.workListInfoWrapperList}>
                 {work.position.map((position, index) => (
                   <li key={index}>{position}</li>
                 ))}

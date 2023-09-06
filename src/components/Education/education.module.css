@@ -1,17 +1,86 @@
+.educationBlock {
+    margin-bottom: 50px;
+}
+
+.educationTitle {
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    color: #c1bdbd;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: -3px;
+    text-align: center;
+}
+
 .educationList {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-top: 40px;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .educationListItem {
     display: flex;
-    width: 100%;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(to right, #1e130c, #9a8478);
+    box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
 }
 
 .educationListItem:nth-child(even) {
     flex-direction: row-reverse;
+    margin-top: 30px;
+}
+
+.educationListImage {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+.flexContainerBottom {
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trainingsTitle {
+    text-align: center;
+    color: #c1bdbd;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trainingsData,
+.trainingsRegion,
+.trainingsFaculty {
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }

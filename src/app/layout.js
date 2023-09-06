@@ -1,9 +1,7 @@
 import ReduxProvider from '../redux/ReduxProvider/Provider';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import dynamic from 'next/dynamic';
-
-const Header = dynamic(() => import('../components/Header/Header.jsx'));
+import Header from '../components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
