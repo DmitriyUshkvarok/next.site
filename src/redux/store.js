@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import persisteAuthReducer from './authApi/authSlice';
+import persistedLanguageReducer from './language/languageSlice';
 import { authApi } from './authApi/authApi';
 import {
   persistStore,
@@ -14,6 +15,7 @@ import {
 const store = configureStore({
   reducer: {
     auth: persisteAuthReducer,
+    language: persistedLanguageReducer,
     [authApi.reducerPath]: authApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

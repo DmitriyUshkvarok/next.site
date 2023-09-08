@@ -5,11 +5,13 @@ import Image from 'next/image';
 import Container from '../Container/Container';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HomeContent = () => {
   const [scrollY, setScrollY] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const controls = useAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,10 +45,10 @@ const HomeContent = () => {
       <Container>
         <div className={style.promoWrapper}>
           <div className={style.promoWrapperBlockInfo}>
-            <h1 className={style.promoWrapperBlockTitle}>
-              I`m Dmitriy Ushkvarok
-            </h1>
-            <p className={style.promoWrapperBlockSubTitle}>Web Developer</p>
+            <h1 className={style.promoWrapperBlockTitle}>{t('home.title')}</h1>
+            <p className={style.promoWrapperBlockSubTitle}>
+              {t('home.subTitle')}
+            </p>
             <div className={style.buttonWrapper}>
               <Link
                 className={style.downloadLink}
@@ -54,7 +56,7 @@ const HomeContent = () => {
                 passHref
                 target="_blank"
               >
-                Download CV
+                {t('home.download_cv')}
               </Link>
               <Link
                 className={style.downloadLink}
@@ -62,11 +64,11 @@ const HomeContent = () => {
                 passHref
                 target="_blank"
               >
-                Download Certificate
+                {t('home.download_certificate')}
               </Link>
             </div>
             <Link href="/about" className={style.promoWrapperAboutLink}>
-              About me
+              {t('home.aboutLink')}
             </Link>
           </div>
           <div className={style.promoWrapperBlockPhoto}>
@@ -89,30 +91,7 @@ const HomeContent = () => {
           transition={{ opacity: { duration: 1 }, x: { duration: 1 } }}
           animate={controls}
         >
-          <div className={style.about}>
-            During my time in web development, I have built a portfolio of Ten
-            projects using React, Redux, Next.js, Node.js, JavaScript, HTML,
-            CSS, SCSS, Handlebars, Parcel, Webpack. These projects demonstrate
-            my technical skills and ability to build responsive and interactive
-            web applications. Also, I have experience working on various
-            projects and understand the principles of good architecture and
-            design. In addition, my friends and I have successfully implemented
-            a commercial online store, which included all stages of development,
-            from SEO optimization to the deployment of the project on hosting
-            with a domain name. I also completed a month-long internship at
-            Beetroot, where I learned basic WordPress and PHP skills. This
-            experience taught me the importance of paying attention to detail
-            and meeting project deadlines. In my GoIT courses, I collaborated
-            with other developers on team projects, including two web
-            applications. As a team leader, I assigned roles and tasks to team
-            members, ensuring that their skills were utilized effectively. We
-            used GitHub to work on these projects, where I gained experience
-            managing patch requests, conducting code reviews, and merging code.
-            This experience with GitHub taught me the importance of
-            collaboration and communication within a team. Overall, my work in
-            web development has helped me develop a variety of skills including
-            technical knowledge, project management, and collaboration.
-          </div>
+          <div className={style.about}>{t('home.about_me')}</div>
         </motion.div>
       </Container>
     </section>

@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useLogoutMutation } from '@/src/redux/authApi/authApi';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 const links = [
   {
@@ -40,6 +42,8 @@ const Navigation = () => {
 
   const isPhone = useMediaQuery({ minWidth: 690 });
 
+  const { t } = useTranslation();
+
   const handleLogOut = async () => {
     await logout();
   };
@@ -58,13 +62,14 @@ const Navigation = () => {
                 href={link.url}
                 className={pathname === link.url ? styles.activeLink : ''}
               >
-                {link.title}
+                {t('nav.' + link.title.toLowerCase())}
               </Link>
             </li>
           ))}
         </ul>
+        <LanguageSelector />
         <button className={styles.logout} type="button" onClick={handleLogOut}>
-          Logout
+          {t('nav.exit')}
         </button>
       </nav>
     </div>
