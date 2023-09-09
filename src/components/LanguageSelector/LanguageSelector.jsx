@@ -7,6 +7,7 @@ import {
 } from '@/src/redux/language/languageSlice';
 import { useCookies } from 'react-cookie';
 import { FiGlobe } from 'react-icons/fi';
+import style from './LanguageSelector.module.css';
 
 function LanguageSelector() {
   const { i18n } = useTranslation();
@@ -28,22 +29,38 @@ function LanguageSelector() {
     dispatch(setLanguage(language));
     i18n.changeLanguage(language);
     setCookie('selectedLanguage', language); // Сохраняем язык в куки
+    setIsOpen(false);
   };
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeBackdrop = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className="language-selector">
-      <button onClick={toggleDropdown} className="language-button">
+    <div className={style.languageSelector}>
+      <button onClick={toggleDropdown} className={style.languageButton}>
         <FiGlobe />
         {selectedLanguage === 'en' ? 'English' : 'Русский'}
       </button>
+      {isOpen && <div className={style.backdrop} onClick={closeBackdrop}></div>}
       {isOpen && (
-        <div className="language-dropdown">
-          <button onClick={() => changeLanguage('en')}>English</button>
-          <button onClick={() => changeLanguage('ru')}>Русский</button>
+        <div className={style.languageDropdown}>
+          <button
+            onClick={() => changeLanguage('en')}
+            className={style.languageDropdownBtn}
+          >
+            English
+          </button>
+          <button
+            onClick={() => changeLanguage('ru')}
+            className={style.languageDropdownBtn}
+          >
+            Русский
+          </button>
         </div>
       )}
     </div>

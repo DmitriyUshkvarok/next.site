@@ -4,8 +4,10 @@ import Image from 'next/image';
 import styles from './works.module.css';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Works = () => {
+  const { t } = useTranslation();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [itemVisibility, setItemVisibility] = useState(
     works.map(() => false) // Изначально все элементы скрыты
@@ -33,7 +35,7 @@ const Works = () => {
 
   return (
     <>
-      <h2 className={styles.aboutTitle}>Work Experience</h2>
+      <h2 className={styles.aboutTitle}>{t('about.work_experience')}</h2>
       <div className={styles.aboutHeroImg}>
         <Image
           className={styles.aboutWorkImg}
@@ -71,15 +73,21 @@ const Works = () => {
             />
             <div className={styles.workListInfoWrapper}>
               <h3 className={styles.workListInfoWrapperTitle}>
-                {work.enterprise}
+                {t(`about.enterpriseJob${work.id}`)}
               </h3>
-              <p className={styles.workListInfoWrapperData}>{work.data}</p>
+              <p className={styles.workListInfoWrapperData}>
+                {t(`about.enterpriseJob${work.id}Dates`)}
+              </p>
               <h3 className={styles.workListInfoWrapperRegion}>
-                {work.region}
+                {t(`about.region${work.id}`)}
               </h3>
               <ul className={styles.workListInfoWrapperList}>
-                {work.position.map((position, index) => (
-                  <li key={index}>{position}</li>
+                {work.position.map((_, index) => (
+                  <li key={index}>
+                    {t(
+                      `about.position${work.id}.position${work.id}_${index + 1}`
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>

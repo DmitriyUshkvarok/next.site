@@ -4,8 +4,10 @@ import styled from './education.module.css';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Educations = () => {
+  const { t } = useTranslation();
   const [scrollY, setScrollY] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const controls = useAnimation();
@@ -44,7 +46,7 @@ const Educations = () => {
       transition={{ opacity: { duration: 0.7 }, x: { duration: 0.7 } }}
       animate={controls}
     >
-      <h2 className={styled.educationTitle}>Education</h2>
+      <h2 className={styled.educationTitle}>{t('education.title')}</h2>
       <ul className={styled.educationList}>
         {education.map((educ) => (
           <li className={styled.educationListItem} key={educ.id}>
@@ -63,10 +65,18 @@ const Educations = () => {
               transition={{ opacity: { duration: 1.5 }, x: { duration: 1.5 } }}
               animate={controls}
             >
-              <h3 className={styled.trainingsTitle}>{educ.trainings}</h3>
-              <p className={styled.trainingsData}>{educ.data}</p>
-              <p className={styled.trainingsRegion}>{educ.region}</p>
-              <p className={styled.trainingsFaculty}>{educ.faculty}</p>
+              <h3 className={styled.trainingsTitle}>
+                {t(`education.item${educ.id}.trainings`)}
+              </h3>
+              <p className={styled.trainingsData}>
+                {t(`education.item${educ.id}.data`)}
+              </p>
+              <p className={styled.trainingsRegion}>
+                {t(`education.item${educ.id}.region`)}
+              </p>
+              <p className={styled.trainingsFaculty}>
+                {t(`education.item${educ.id}.faculty`)}
+              </p>
             </motion.div>
           </li>
         ))}

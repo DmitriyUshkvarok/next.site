@@ -1,0 +1,100 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -5;
+    display: block;
+    cursor: pointer;
+}
+
+.languageSelector {
+    position: relative;
+}
+
+.languageDropdown {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: none;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    color: darkorange;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(253, 252, 252, 0.5);
+    cursor: pointer;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+}
+
+.languageDropdownBtn {
+    border: none;
+    background-color: transparent;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+}
+
+.languageDropdownBtn:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
+.languageButton {
+    padding: 5px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    color: darkorange;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(253, 252, 252, 0.5);
+    cursor: pointer;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+}
+
+.languageButton:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
