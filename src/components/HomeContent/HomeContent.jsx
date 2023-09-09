@@ -53,7 +53,6 @@ const HomeContent = () => {
               <Link
                 className={style.downloadLink}
                 href="/CV_Dmitriy_Ushkvarok_Frontend_Developer.pdf"
-                passHref
                 target="_blank"
               >
                 {t('home.download_cv')}
@@ -61,7 +60,6 @@ const HomeContent = () => {
               <Link
                 className={style.downloadLink}
                 href="/Dmytro_Ushkvarok.pdf"
-                passHref
                 target="_blank"
               >
                 {t('home.download_certificate')}
