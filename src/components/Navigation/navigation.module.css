@@ -45,7 +45,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: .4s ease;
-    padding: 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +74,7 @@
 
 .navigationItem:after {
     left: 0;
-    bottom: 1;
+    bottom: 0;
 }
 
 

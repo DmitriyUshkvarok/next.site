@@ -1,11 +1,7 @@
-import dynamic from 'next/dynamic';
 import Educations from '@/src/components/Education/Education';
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
-const Works = dynamic(() => import('../../components/Works/Works'));
-
-const PageTransition = dynamic(() =>
-  import('../../components/PageTransition/PageTransition')
-);
+import Works from '@/src/components/Works/Works';
 
 const About = () => {
   return (

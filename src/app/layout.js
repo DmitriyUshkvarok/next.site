@@ -3,6 +3,7 @@ import LocalesProvider from '../locales/LocalesProvider/LocalesProvider';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Header from '../components/Header/Header';
+import NextAuthProvider from '../context/provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,17 +14,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <LocalesProvider>
-      <ReduxProvider>
-        <html lang="en">
-          <body className={inter.className}>
-            <Header />
-            <div className="container">
-              <main> {children}</main>
-            </div>
-          </body>
-        </html>
-      </ReduxProvider>
-    </LocalesProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <NextAuthProvider>
+          <LocalesProvider>
+            <ReduxProvider>
+              <Header />
+              <div className="container">
+                <main> {children}</main>
+              </div>
+            </ReduxProvider>
+          </LocalesProvider>
+        </NextAuthProvider>
+      </body>
+    </html>
   );
 }

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
-import { useLogoutMutation } from '@/src/redux/authApi/authApi';
+// import { useLogoutMutation } from '@/src/redux/authApi/authApi';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
@@ -38,15 +38,15 @@ const links = [
 
 const Navigation = () => {
   const pathname = usePathname();
-  const [logout] = useLogoutMutation();
+  // const [logout] = useLogoutMutation();
 
   const isPhone = useMediaQuery({ minWidth: 690 });
 
   const { t } = useTranslation();
 
-  const handleLogOut = async () => {
-    await logout();
-  };
+  // const handleLogOut = async () => {
+  //   await logout();
+  // };
 
   return (
     <div className={styles.container}>
@@ -68,9 +68,9 @@ const Navigation = () => {
           ))}
         </ul>
         <LanguageSelector />
-        <button className={styles.logout} type="button" onClick={handleLogOut}>
+        {/* <button className={styles.logout} type="button" onClick={handleLogOut}>
           {t('nav.exit')}
-        </button>
+        </button> */}
       </nav>
     </div>
   );

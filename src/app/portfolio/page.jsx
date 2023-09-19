@@ -3,11 +3,7 @@ import Image from 'next/image';
 import { items } from '../../components/DynamicPagePortfolioContent/data';
 import styles from './portfolio.module.css';
 // import PrivatRoute from '@/src/components/PrivateRoute/PrivatRoute';
-import dynamic from 'next/dynamic';
-
-const PageTransition = dynamic(() =>
-  import('../../components/PageTransition/PageTransition')
-);
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
 const Portfolio = () => {
   return (

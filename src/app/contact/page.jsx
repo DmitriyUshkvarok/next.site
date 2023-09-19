@@ -1,12 +1,6 @@
-import dynamic from 'next/dynamic';
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
-const PageTransition = dynamic(() =>
-  import('@/src/components/PageTransition/PageTransition')
-);
-
-const ContactsContent = dynamic(() =>
-  import('@/src/components/ContactsContent/ContactsContent')
-);
+import ContactsContent from '@/src/components/ContactsContent/ContactsContent';
 
 const Contacts = () => {
   return (

@@ -3,7 +3,8 @@ import * as yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useLoginMutation } from '@/src/redux/authApi/authApi';
+import { signIn } from 'next-auth/react';
+import Link from 'next/link';
 
 const initialValues = {
   email: '',
@@ -27,22 +28,15 @@ const schema = yup.object().shape({
     .required(),
 });
 
-function LogInForm() {
-  const [loginMutation] = useLoginMutation();
+function LogInForm({ callbackUrl }) {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (values, { resetForm }) => {
     setIsLoading(true);
     try {
-      const response = await loginMutation(values);
-      if (response.error) {
-        if (response.error.status === 401) {
-          toast.error(response.error.data.message);
-        } else {
-          toast.error('An error occurred. Please try again.');
-        }
-      }
+      values.callbackUrl = '/';
+      await signIn('credentials', values);
     } catch (error) {
       console.log(error);
     } finally {
@@ -62,7 +56,7 @@ function LogInForm() {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        <Form>
+        <Form style={{ marginTop: '90px' }}>
           <div>
             <Field type="email" name="email" placeholder="Enter your email" />
             <ErrorMessage name="email">
@@ -98,6 +92,13 @@ function LogInForm() {
           </div>
         </Form>
       </Formik>
+      <button
+        type="submit"
+        onClick={() => signIn('google', { callbackUrl: '/' })}
+      >
+        Google
+      </button>
+      <Link href="/signup">Registration</Link>
     </>
   );
 }
