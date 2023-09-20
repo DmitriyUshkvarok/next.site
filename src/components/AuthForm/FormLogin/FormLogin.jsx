@@ -28,7 +28,7 @@ const schema = yup.object().shape({
     .required(),
 });
 
-function LogInForm({ callbackUrl }) {
+function LogInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 

@@ -1,46 +1,41 @@
-'use client';
 import * as yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { signUpWithCredential } from '@/src/actions/authActions';
-import { signIn } from 'next-auth/react';
+import { changePasswordWithCredentials } from '@/src/actions/authActions';
 
 const initialValues = {
-  name: '',
-  email: '',
-  password: '',
+  old_pass: '',
+  new_pass: '',
 };
-
 const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup
+  old_pass: yup
     .string()
-    .email('Invalid email')
-    .test('email-format', 'Invalid email format', (value) => {
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      return emailRegex.test(value);
-    })
+    .min(8)
+    .max(64)
+    .matches(/^[^\s]+$/, 'Password should not contain spaces')
     .required(),
-  password: yup
+  new_pass: yup
     .string()
-    // .min(8)
-    // .max(64)
+    .min(8)
+    .max(64)
     .matches(/^[^\s]+$/, 'Password should not contain spaces')
     .required(),
 });
 
-function FormRegistration() {
+const ChangePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (values, { resetForm }) => {
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const handleChangePassword = async (values, { resetForm }) => {
     setIsLoading(true);
     try {
-      values.callbackUrl = '/';
-      const res = await signUpWithCredential(values);
-      await signIn('credentials', values);
-      console.log(res);
+      const res = await changePasswordWithCredentials(values);
+      if (res.msg) alert(res.msg);
     } catch (error) {
       console.log(error);
     } finally {
@@ -48,26 +43,22 @@ function FormRegistration() {
     }
     resetForm();
   };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
   return (
     <>
+      <h2>Change Password</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={handleSubmit}
+        onSubmit={handleChangePassword}
       >
         <Form style={{ marginTop: '90px' }}>
           <div>
-            <Field type="text" name="name" placeholder="Enter your name" />
-            <ErrorMessage name="name">{(msg) => <div>{msg}</div>}</ErrorMessage>
-          </div>
-          <div>
-            <Field type="email" name="email" placeholder="Enter your email" />
-            <ErrorMessage name="email">
+            <Field
+              type={showPassword ? 'text' : 'password'}
+              name="old_pass"
+              placeholder="Old password"
+            />
+            <ErrorMessage name="old_pass">
               {(msg) => <div>{msg}</div>}
             </ErrorMessage>
           </div>
@@ -75,8 +66,8 @@ function FormRegistration() {
             <div>
               <Field
                 type={showPassword ? 'text' : 'password'}
-                name="password"
-                placeholder="Confirm a password"
+                name="new_pass"
+                placeholder="New password"
               />
               <div onClick={togglePasswordVisibility}>
                 {showPassword ? (
@@ -89,18 +80,17 @@ function FormRegistration() {
                 )}
               </div>
             </div>
-            <ErrorMessage name="password">
+            <ErrorMessage name="new_pass">
               {(msg) => <div>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <button type="submit">
-              {isLoading ? <p>Loading...</p> : 'Registration'}
-            </button>
+            <button>{isLoading ? <p>Loading...</p> : 'Change Password'}</button>
           </div>
         </Form>
       </Formik>
     </>
   );
-}
-export default FormRegistration;
+};
+
+export default ChangePassword;
