@@ -11,7 +11,7 @@ const UserPanel = () => {
       <Image
         src={
           session?.user?.image ||
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QuvoG_In8XSNVXwiTYqRA0FCthdUqo4GvA&usqp=CAU'
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDX326p2qgkC1VI2N1jm1u_Ihb2PAM8MecsWOJfIBSESk_GmadQUf4INIVkBpzvut48&usqp=CAU'
         }
         alt={session?.user?.name || 'user name'}
         width={50}

@@ -56,7 +56,7 @@ function LogInForm() {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        <Form style={{ marginTop: '90px' }}>
+        <Form style={{ marginTop: '120px' }}>
           <div>
             <Field type="email" name="email" placeholder="Enter your email" />
             <ErrorMessage name="email">

@@ -6,7 +6,7 @@ const Admin = () => {
     <>
       <Link
         href="/admin/profile"
-        style={{ marginTop: '90px', display: 'flex' }}
+        style={{ marginTop: '160px', display: 'flex' }}
       >
         User Profile
       </Link>

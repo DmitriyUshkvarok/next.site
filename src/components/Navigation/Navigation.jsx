@@ -2,11 +2,12 @@
 import Link from 'next/link';
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
-// import { useLogoutMutation } from '@/src/redux/authApi/authApi';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 
 const links = [
   {
@@ -38,21 +39,18 @@ const links = [
 
 const Navigation = () => {
   const pathname = usePathname();
-  // const [logout] = useLogoutMutation();
 
   const isPhone = useMediaQuery({ minWidth: 690 });
 
   const { t } = useTranslation();
 
-  // const handleLogOut = async () => {
-  //   await logout();
-  // };
-
+  const { data: session } = useSession();
   return (
     <div className={styles.container}>
       <nav className={styles.navigation}>
         <Link href="/" className={styles.logo}>
-          WebDeveloper
+          <p>Dmitriy Ushkvarok</p>
+          <p className={styles.subTitleLogo}> WebDeveloper</p>
         </Link>
         <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
         <ul className={styles.navigationList}>
@@ -68,9 +66,6 @@ const Navigation = () => {
           ))}
         </ul>
         <LanguageSelector />
-        {/* <button className={styles.logout} type="button" onClick={handleLogOut}>
-          {t('nav.exit')}
-        </button> */}
       </nav>
     </div>
   );

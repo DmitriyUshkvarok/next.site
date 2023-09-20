@@ -1,16 +1,12 @@
 'use client';
-
+import styles from './logout.module.css';
 import { signOut } from 'next-auth/react';
 
 const LogOut = () => {
   return (
     <>
       <button
-        style={{
-          color: 'aqua',
-          backgroundColor: 'transparent',
-          border: 'none',
-        }}
+        className={styles.btnLogout}
         type="button"
         onClick={() => signOut({ callbackUrl: '/' })}
       >

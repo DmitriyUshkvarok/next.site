@@ -7,7 +7,7 @@ import ChangePassword from '@/src/components/AuthForm/ChangePassword/ChangePassw
 const UserProfile = () => {
   const { data: session, update } = useSession();
   return (
-    <div style={{ marginTop: '90px' }}>
+    <div style={{ marginTop: '150px' }}>
       <UserPanel />
       <UpdateUserForm update={update} />
       {session?.user?.provider === 'credentials' && <ChangePassword />}

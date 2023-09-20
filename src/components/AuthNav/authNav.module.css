@@ -1,0 +1,58 @@
+.authNavWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.authNavLinkBox {
+    font-size: 16px;
+    font-weight: bold;
+    filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
+    -webkit-filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
+}
+
+.authNavLink {
+    color: gold;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: 0.9s;
+    -webkit-transition: 0.9s;
+    -moz-transition: 0.9s;
+    -ms-transition: 0.9s;
+    -o-transition: 0.9s;
+}
+
+.authNavLink:hover {
+    color: aqua;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.avatar {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
