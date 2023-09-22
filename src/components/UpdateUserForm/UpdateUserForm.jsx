@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { updateUser } from '@/src/actions/authActions';
-import ButtonSubmit from '../../Buttons/ButtonSubmit';
+import ButtonSubmit from '../Buttons/ButtonSubmit';
+import styles from './updateUserForm.module.css';
 
 const UpdateUserForm = ({ update }) => {
   const [name, setName] = useState('');
@@ -25,10 +26,14 @@ const UpdateUserForm = ({ update }) => {
 
   return (
     <>
-      <form onSubmit={handleUpdateProfile} style={{ marginTop: '90px' }}>
-        <div>
-          <label htmlFor="name">Редактировать Имя:</label>
+      <h2 className={styles.updateUserTitle}>edit profile</h2>
+      <form className={styles.updateUserForm} onSubmit={handleUpdateProfile}>
+        <div className={styles.updateFormGroup}>
+          <label className={styles.updateUserLabel} htmlFor="name">
+            edit name:
+          </label>
           <input
+            className={styles.updateUserInput}
             type="text"
             id="name"
             name="name"
@@ -37,10 +42,13 @@ const UpdateUserForm = ({ update }) => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="image">Изображение:</label>
+        <div className={styles.updateFormGroup}>
+          <label className={styles.updateUserLabel} htmlFor="image">
+            edit avatar:
+          </label>
           <input
             // type="file"
+            className={styles.updateUserInput}
             type="text"
             id="image"
             name="image"
@@ -52,7 +60,7 @@ const UpdateUserForm = ({ update }) => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          <ButtonSubmit value="Редактировать профиль" />
+          <ButtonSubmit value="edit profile" />
         )}
       </form>
     </>

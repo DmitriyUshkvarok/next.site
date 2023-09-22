@@ -15,6 +15,7 @@ const nextConfig = {
       'res.cloudinary.com',
       'lh3.googleusercontent.com',
       'encrypted-tbn0.gstatic.com',
+      'news.liga.net',
     ],
   },
 };

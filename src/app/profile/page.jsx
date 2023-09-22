@@ -5,17 +5,17 @@ import UpdateUserForm from '@/src/components/UpdateUserForm/UpdateUserForm';
 import ChangePassword from '@/src/components/AuthForm/ChangePassword/ChangePassword';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 
-const UserAdmimProfile = () => {
+const UserProfile = () => {
   const { data: session, update } = useSession();
   return (
-    <div style={{ marginTop: '150px' }}>
+    <>
       <PageTransition>
         <UserPanel />
         <UpdateUserForm update={update} />
         {session?.user?.provider === 'credentials' && <ChangePassword />}
       </PageTransition>
-    </div>
+    </>
   );
 };
 
-export default UserAdmimProfile;
+export default UserProfile;

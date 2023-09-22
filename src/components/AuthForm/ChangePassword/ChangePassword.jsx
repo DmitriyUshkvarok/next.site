@@ -1,8 +1,10 @@
+'use client';
 import * as yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { changePasswordWithCredentials } from '@/src/actions/authActions';
+import styles from './changePassword.module.css';
 
 const initialValues = {
   old_pass: '',
@@ -45,31 +47,36 @@ const ChangePassword = () => {
   };
   return (
     <>
-      <h2>Change Password</h2>
+      <h3 className={styles.changePasswordTitle}>Change Password</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleChangePassword}
       >
-        <Form style={{ marginTop: '90px' }}>
-          <div>
+        <Form className={styles.changePasswordForm}>
+          <div className={styles.changePasswordFormGroup}>
             <Field
+              className={styles.changePasswordFormInput}
               type={showPassword ? 'text' : 'password'}
               name="old_pass"
               placeholder="Old password"
             />
             <ErrorMessage name="old_pass">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => <div className={styles.validationError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <div>
+            <div className={styles.changePasswordFormGroup}>
               <Field
+                className={styles.changePasswordFormInput}
                 type={showPassword ? 'text' : 'password'}
                 name="new_pass"
                 placeholder="New password"
               />
-              <div onClick={togglePasswordVisibility}>
+              <div
+                className={styles.changePasswordShow}
+                onClick={togglePasswordVisibility}
+              >
                 {showPassword ? (
                   <BsEyeSlash
                     color="#ffffff4d"
@@ -81,11 +88,13 @@ const ChangePassword = () => {
               </div>
             </div>
             <ErrorMessage name="new_pass">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => <div className={styles.validationError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <button>{isLoading ? <p>Loading...</p> : 'Change Password'}</button>
+            <button className={styles.btnChange}>
+              {isLoading ? <p>Loading...</p> : 'Change Password'}
+            </button>
           </div>
         </Form>
       </Formik>

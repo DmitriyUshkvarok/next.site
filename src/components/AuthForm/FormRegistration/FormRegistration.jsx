@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { signUpWithCredential } from '@/src/actions/authActions';
 import { signIn } from 'next-auth/react';
+import styles from './gormRegistration.module.css';
+import Link from 'next/link';
+import { FcGoogle } from 'react-icons/fc';
 
 const initialValues = {
   name: '',
@@ -55,30 +58,50 @@ function FormRegistration() {
 
   return (
     <>
+      <h1 className={styles.authTitle}>
+        Signup or continue logging in with your google account.
+      </h1>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        <Form style={{ marginTop: '90px' }}>
-          <div>
-            <Field type="text" name="name" placeholder="Enter your name" />
-            <ErrorMessage name="name">{(msg) => <div>{msg}</div>}</ErrorMessage>
+        <Form className={styles.formLogin}>
+          <h2 className={styles.authTitleForm}>signup</h2>
+          <div className={styles.loginFormGroup}>
+            <Field
+              className={styles.formLoginInput}
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+            />
+            <ErrorMessage name="name">
+              {(msg) => <div className={styles.validationError}>{msg}</div>}
+            </ErrorMessage>
           </div>
-          <div>
-            <Field type="email" name="email" placeholder="Enter your email" />
+          <div className={styles.loginFormGroup}>
+            <Field
+              className={styles.formLoginInput}
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+            />
             <ErrorMessage name="email">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => <div className={styles.validationError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <div>
+            <div className={styles.loginFormGroup}>
               <Field
+                className={styles.formLoginInput}
                 type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Confirm a password"
               />
-              <div onClick={togglePasswordVisibility}>
+              <div
+                className={styles.formLoginInputBtnShowPassword}
+                onClick={togglePasswordVisibility}
+              >
                 {showPassword ? (
                   <BsEyeSlash
                     color="#ffffff4d"
@@ -90,16 +113,27 @@ function FormRegistration() {
               </div>
             </div>
             <ErrorMessage name="password">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => <div className={styles.validationError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <button type="submit">
+            <button className={styles.loginFormButton} type="submit">
               {isLoading ? <p>Loading...</p> : 'Registration'}
             </button>
           </div>
+          <Link className={styles.linkRegistr} href="/signin">
+            login
+          </Link>
         </Form>
       </Formik>
+      <button
+        className={styles.loginFormButtonGoogle}
+        type="submit"
+        onClick={() => signIn('google', { callbackUrl: '/' })}
+      >
+        <FcGoogle size={20} />
+        to continue with google
+      </button>
     </>
   );
 }

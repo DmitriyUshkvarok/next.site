@@ -6,8 +6,6 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useTranslation } from 'react-i18next';
-import Image from 'next/image';
-import { useSession } from 'next-auth/react';
 
 const links = [
   {
@@ -44,7 +42,6 @@ const Navigation = () => {
 
   const { t } = useTranslation();
 
-  const { data: session } = useSession();
   return (
     <div className={styles.container}>
       <nav className={styles.navigation}>

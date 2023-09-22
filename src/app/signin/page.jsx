@@ -1,10 +1,13 @@
 import LogInForm from '@/src/components/AuthForm/FormLogin/FormLogin';
+import PageTransition from '@/src/components/PageTransition/PageTransition';
 
 const SignIn = () => {
   return (
-    <div>
-      <LogInForm />
-    </div>
+    <>
+      <PageTransition>
+        <LogInForm />
+      </PageTransition>
+    </>
   );
 };
 

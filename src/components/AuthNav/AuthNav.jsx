@@ -1,25 +1,35 @@
-'use server';
-import { getServerSession } from 'next-auth/next';
-import { authOption } from '@/src/app/api/auth/[...nextauth]/route';
+'use client';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import LogOut from '../AuthForm/LogOut/LogOut';
 import styles from './authNav.module.css';
 import Image from 'next/image';
 
-const AuthNav = async () => {
-  const session = await getServerSession(authOption);
+const AuthNav = () => {
+  const { data: session } = useSession();
+
   return (
     <div>
       {session ? (
         <div className={styles.authNavWrapper}>
           <div className={styles.authNavLinkBox}>
-            <Link
-              className={styles.authNavLink}
-              href="/admin"
-              style={{ color: 'aqua' }}
-            >
-              Admin
-            </Link>
+            {session?.user?.role === 'admin' ? (
+              <Link
+                className={styles.authNavLink}
+                href="/admin"
+                style={{ color: 'aqua' }}
+              >
+                Admin
+              </Link>
+            ) : (
+              <Link
+                className={styles.authNavLink}
+                href="/profile"
+                style={{ color: 'aqua' }}
+              >
+                Profile
+              </Link>
+            )}
           </div>
           <div className={styles.avatarWrapper}>
             <Image
