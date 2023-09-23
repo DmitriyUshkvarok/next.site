@@ -3,15 +3,18 @@ import { html } from './htmlEmail';
 
 const sendEmail = async ({ to, url, text }) => {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    // service: 'smtp.ukr.net',
+    host: 'smtp.ukr.net',
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
+      user: process.env.UKR_NET_EMAIL_USER,
+      pass: process.env.UKR_NET_EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: process.env.UKR_NET_EMAIL_USER,
     to,
     subject: 'Dmitriy' | 'NextAuth',
     html: html({ url, text }),

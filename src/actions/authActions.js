@@ -5,9 +5,9 @@ import User from '@/src/models/users';
 import { redirect } from 'next/navigation';
 import bcrypt, { compare } from 'bcrypt';
 import { generateToken, veryfyToken } from '../utils/token';
-// import sendEmail from '../utils/sendEmail';
+import sendEmail from '../utils/sendEmail';
 
-// const BASE_URL = process.env.NEXTAUTH_URL;
+const BASE_URL = process.env.NEXTAUTH_URL;
 
 export const updateUser = async ({ name, image }) => {
   try {
@@ -37,14 +37,15 @@ export const signUpWithCredential = async (data) => {
     if (data.password) {
       data.password = await bcrypt.hash(data.password, 12);
     }
-    const token = generateToken({ user: data });
-    verifyWithCredentials(token);
 
-    // await sendEmail({
-    //   to: data.email,
-    //   url: `${BASE_URL}/verify?token=${token}`,
-    //   text: 'VERIFY EMAIL',
-    // });
+    const token = generateToken({ user: data });
+    // verifyWithCredentials(token);
+
+    await sendEmail({
+      to: data.email,
+      url: `${BASE_URL}/verify?token=${token}`,
+      text: 'VERIFY EMAIL',
+    });
 
     return { msg: 'Registration Seccesfully!' };
   } catch (error) {
@@ -60,7 +61,9 @@ export async function verifyWithCredentials(token) {
 
     const newUser = new User(user);
     await newUser.save();
-  } catch (error) {}
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
 }
 
 export async function changePasswordWithCredentials({ old_pass, new_pass }) {

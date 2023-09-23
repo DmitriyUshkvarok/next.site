@@ -27,8 +27,8 @@ const schema = yup.object().shape({
     .required(),
   password: yup
     .string()
-    // .min(8)
-    // .max(64)
+    .min(8)
+    .max(64)
     .matches(/^[^\s]+$/, 'Password should not contain spaces')
     .required(),
 });
@@ -42,7 +42,7 @@ function FormRegistration() {
     try {
       values.callbackUrl = '/';
       const res = await signUpWithCredential(values);
-      await signIn('credentials', values);
+      // await signIn('credentials', values);
       console.log(res);
     } catch (error) {
       console.log(error);
