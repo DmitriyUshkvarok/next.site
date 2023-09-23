@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { updateUser } from '@/src/actions/authActions';
-import ButtonSubmit from '../Buttons/ButtonSubmit';
+import ButtonSubmit from '../../Buttons/ButtonSubmit';
 import styles from './updateUserForm.module.css';
 
 const UpdateUserForm = ({ update }) => {

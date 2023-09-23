@@ -6,6 +6,7 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useTranslation } from 'react-i18next';
+import AuthNav from '../AuthForm/AuthNav/AuthNav';
 
 const links = [
   {
@@ -50,6 +51,9 @@ const Navigation = () => {
           <p className={styles.subTitleLogo}> WebDeveloper</p>
         </Link>
         <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
+        <div className={styles.authNavWrapper}>
+          <AuthNav />
+        </div>
         <ul className={styles.navigationList}>
           {links.map((link) => (
             <li key={link.id} className={styles.navigationItem}>

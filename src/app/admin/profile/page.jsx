@@ -1,7 +1,7 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import UserPanel from '@/src/components/UserPanel/UserPanel';
-import UpdateUserForm from '@/src/components/UpdateUserForm/UpdateUserForm';
+import UpdateUserForm from '@/src/components/AuthForm/UpdateUserForm/UpdateUserForm';
 import ChangePassword from '@/src/components/AuthForm/ChangePassword/ChangePassword';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 

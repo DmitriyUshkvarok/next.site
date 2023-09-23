@@ -1,7 +1,7 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import LogOut from '../AuthForm/LogOut/LogOut';
+import LogOut from '../LogOut/LogOut';
 import styles from './authNav.module.css';
 import Image from 'next/image';
 
