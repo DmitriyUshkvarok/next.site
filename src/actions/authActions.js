@@ -90,3 +90,38 @@ export async function changePasswordWithCredentials({ old_pass, new_pass }) {
     return { msg: 'Change password seccesfully!' };
   } catch (error) {}
 }
+
+export async function forgotPasswordWithCredentials({ email }) {
+  try {
+    const user = await User.findOne({ email });
+    if (!user) throw new Error('Email does not exists!');
+
+    if (user?.provider !== 'credentials') {
+      throw new Error(
+        `This account is signet in with ${user?.provider} You cant use this function`
+      );
+    }
+    const token = generateToken({ userId: user._id });
+
+    await sendEmail({
+      to: email,
+      url: `${BASE_URL}/reset_password?token=${token}`,
+      text: 'RESET PASSWORD',
+    });
+    return { msg: 'success !Check your email to reset your password' };
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
+}
+
+export async function resetPasswordWithCredentials({ token, password }) {
+  try {
+    const { userId } = veryfyToken(token);
+    const newPass = await bcrypt.hash(password, 12);
+    await User.findByIdAndUpdate(userId, { password: newPass });
+
+    return { msg: 'success !Your password has been reset' };
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
+}

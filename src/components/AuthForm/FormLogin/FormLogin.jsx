@@ -7,6 +7,7 @@ import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import styles from './formLogin.module.css';
 import { FcGoogle } from 'react-icons/fc';
+import { GiClick } from 'react-icons/gi';
 
 const initialValues = {
   email: '',
@@ -118,6 +119,12 @@ function LogInForm() {
         <FcGoogle size={20} />
         to continue with google
       </button>
+      <div className={styles.forgotLinkWrapper}>
+        <Link className={styles.forgotLink} href="signin/forgot-password/">
+          Forgot your password?
+        </Link>
+        <GiClick className={styles.forgotLinkIcon} size={25} />
+      </div>
     </>
   );
 }

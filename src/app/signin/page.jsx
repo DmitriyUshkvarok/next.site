@@ -1,14 +1,8 @@
-import LogInForm from '@/src/components/AuthForm/FormLogin/FormLogin';
-import PageTransition from '@/src/components/PageTransition/PageTransition';
+// import LogInForm from '@/src/components/AuthForm/FormLogin/FormLogin';
+// import PageTransition from '@/src/components/PageTransition/PageTransition';
 
-const SignIn = () => {
-  return (
-    <>
-      <PageTransition>
-        <LogInForm />
-      </PageTransition>
-    </>
-  );
+const ForgotPassword = () => {
+  return <></>;
 };
 
-export default SignIn;
+export default ForgotPassword;
