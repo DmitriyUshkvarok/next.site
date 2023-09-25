@@ -35,7 +35,11 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: linear-gradient(to right, #1e130c, #9a8478);
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: -moz-linear-gradient(to right, #434343, #000000);
+    background: -o-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);
     box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
     border-radius: 7px;
     -webkit-border-radius: 7px;

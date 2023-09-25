@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { changePasswordWithCredentials } from '@/src/actions/authActions';
 import styles from './changePassword.module.css';
+import { fredericka } from '@/src/app/fonts';
 
 const initialValues = {
   old_pass: '',
@@ -93,7 +94,9 @@ const ChangePassword = () => {
           </div>
           <div>
             <button className={styles.btnChange}>
-              {isLoading ? <p>Loading...</p> : 'Change Password'}
+              <span className={fredericka.className}>
+                {isLoading ? <p>Loading...</p> : 'Change Password'}
+              </span>
             </button>
           </div>
         </Form>

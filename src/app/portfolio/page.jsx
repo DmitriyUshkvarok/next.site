@@ -3,11 +3,12 @@ import Image from 'next/image';
 import styles from './portfolio.module.css';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import { getAllPortfolio } from '@/src/actions/portfolioActions';
+import { fredericka } from '@/src/app/fonts';
 
 const Portfolio = async () => {
   const { portfolios } = await getAllPortfolio();
   return (
-    <>
+    <div className={fredericka.className}>
       <PageTransition>
         <h1 className={styles.selectTitle}>Choose a gallery</h1>
         <ul className={styles.portfolioList}>
@@ -29,7 +30,7 @@ const Portfolio = async () => {
           ))}
         </ul>
       </PageTransition>
-    </>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@
 import styles from './logout.module.css';
 import { signOut } from 'next-auth/react';
 import Notiflix from 'notiflix';
+import { fredericka } from '@/src/app/fonts';
 
 const LogOut = () => {
   const handleClickLogOut = () => {
@@ -39,7 +40,7 @@ const LogOut = () => {
         type="button"
         onClick={handleClickLogOut}
       >
-        Logout
+        <span className={fredericka.className}>Logout</span>
       </button>
     </>
   );

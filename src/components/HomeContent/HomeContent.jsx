@@ -6,6 +6,7 @@ import Container from '../Container/Container';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { fredericka } from '@/src/app/fonts';
 
 const HomeContent = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -41,7 +42,7 @@ const HomeContent = () => {
   }, [scrollY, viewportHeight, controls]);
 
   return (
-    <section>
+    <section className={fredericka.className}>
       <Container>
         <div className={style.promoWrapper}>
           <div className={style.promoWrapperBlockInfo}>

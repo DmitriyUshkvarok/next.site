@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useTranslation } from 'react-i18next';
 import AuthNav from '../AuthForm/AuthNav/AuthNav';
+import { permanentMarker, fredericka } from '@/src/app/fonts';
 
 const links = [
   {
@@ -44,11 +45,13 @@ const Navigation = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.container}>
+    <div className={(styles.container, fredericka.className)}>
       <nav className={styles.navigation}>
         <Link href="/" className={styles.logo}>
-          <p>Dmitriy Ushkvarok</p>
-          <p className={styles.subTitleLogo}> WebDeveloper</p>
+          <p className={fredericka.className}>Dmitriy Ushkvarok</p>
+          <p className={(styles.subTitleLogo, permanentMarker.className)}>
+            WebDeveloper
+          </p>
         </Link>
         <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
         <div className={styles.authNavWrapper}>

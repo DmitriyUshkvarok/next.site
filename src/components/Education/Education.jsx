@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { fredericka } from '@/src/app/fonts';
 
 const Educations = () => {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ const Educations = () => {
 
   return (
     <motion.div
-      className={styled.educationBlock}
+      className={(styled.educationBlock, fredericka.className)}
       initial={{ opacity: 1, x: '100%' }}
       transition={{ opacity: { duration: 0.7 }, x: { duration: 0.7 } }}
       animate={controls}

@@ -5,6 +5,7 @@ import styles from './works.module.css';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { fredericka } from '@/src/app/fonts';
 
 const Works = () => {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ const Works = () => {
   }, [itemVisibility]);
 
   return (
-    <>
+    <div className={fredericka.className}>
       <h2 className={styles.aboutTitle}>{t('about.work_experience')}</h2>
       <div className={styles.aboutHeroImg}>
         <Image
@@ -94,7 +95,7 @@ const Works = () => {
           </motion.li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

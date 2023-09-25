@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import styles from './adminPanel.module.css';
 import { MdAdminPanelSettings } from 'react-icons/md';
+import { fredericka } from '@/src/app/fonts';
 
 const AdminPanel = () => {
   return (
-    <div>
+    <div className={fredericka.className}>
       <h1 className={styles.adminPanelTitle}>Admin panel</h1>
       <ul className={styles.adminPanelList}>
         <li className={styles.adminPanelItem}>
