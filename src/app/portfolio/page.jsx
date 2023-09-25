@@ -1,21 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { items } from '../../components/DynamicPagePortfolioContent/data';
 import styles from './portfolio.module.css';
-// import PrivatRoute from '@/src/components/PrivateRoute/PrivatRoute';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
+import { getAllPortfolio } from '@/src/actions/portfolioActions';
 
-const Portfolio = () => {
+const Portfolio = async () => {
+  const { portfolios } = await getAllPortfolio();
   return (
     <>
-      {/* <PrivatRoute> */}
       <PageTransition>
         <h1 className={styles.selectTitle}>Choose a gallery</h1>
         <ul className={styles.portfolioList}>
-          {items.map((item) => (
-            <li key={item.id} className={styles.portfolioListItem}>
+          {portfolios?.map((item) => (
+            <li key={item._id} className={styles.portfolioListItem}>
               <Link
-                href={`/portfolio/${item.id}`}
+                href={`/portfolio/${item._id}`}
                 className={styles.portfolioListLink}
               >
                 <Image
@@ -30,7 +29,6 @@ const Portfolio = () => {
           ))}
         </ul>
       </PageTransition>
-      {/* </PrivatRoute> */}
     </>
   );
 };

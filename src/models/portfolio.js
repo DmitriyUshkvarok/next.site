@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { model, models } from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -6,10 +6,6 @@ const portfolioSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
-    },
-    image: {
-      type: String, // Это может быть URL изображения портфолио
       required: true,
     },
     description: {
@@ -22,10 +18,16 @@ const portfolioSchema = new Schema(
     },
     pageCode: {
       type: String, // URL кода страницы
+      required: true,
+    },
+    image: {
+      type: String, // Это может быть URL изображения портфолио
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.models.Portfolio ||
-  mongoose.model('Portfolio', portfolioSchema);
+const Portfolio = models.Portfolio || model('Portfolio', portfolioSchema);
+
+export default Portfolio;

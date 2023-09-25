@@ -1,107 +1,90 @@
 'use client';
-import { useCreatePortfolioMutation } from '@/src/redux/createPortfolioApi/createPortfolioApi';
+import * as yup from 'yup';
+import { createPortfolio } from '@/src/actions/portfolioActions';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from 'react';
 
+const initialValues = {
+  title: '',
+  description: '',
+  website: '',
+  pageCode: '',
+  image: '',
+};
+
+const schema = yup.object().shape({
+  title: yup.string().required(),
+  description: yup.string().required(),
+  website: yup.string().required(),
+  pageCode: yup.string().required(),
+  image: yup.string().required(),
+});
+
 function PortfolioForm() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [website, setWebsite] = useState('');
-  const [pageCode, setPageCode] = useState('');
-  const [image, setImage] = useState(''); // Состояние для выбранного изображения
-  const [createPortfolio] = useCreatePortfolioMutation();
+  const [isLoading, setIsLoading] = useState(false);
 
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   setImage(file);
-  // };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (values, { resetForm }) => {
     try {
-      const createPortfolioObject = {
-        title: title,
-        description: description,
-        website: website,
-        pageCode: pageCode,
-        image: image,
-      };
+      setIsLoading(true);
 
-      // Отправка запроса на создание портфолио
-      const response = await createPortfolio(createPortfolioObject);
-
-      if (response.error) {
-        // Обработка ошибок
-        console.error('Произошла ошибка:', response.error);
-      } else {
-        // Успешное создание портфолио
-        console.log('Портфолио успешно создано:', response.data);
-        // Очистка полей формы
-        setTitle('');
-        setDescription('');
-        setWebsite('');
-        setPageCode('');
-        setImage('');
-      }
+      await createPortfolio(values);
     } catch (error) {
       console.error('Произошла ошибка:', error);
+    } finally {
+      setIsLoading(false);
     }
+    resetForm();
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '90px' }}>
-      <div>
-        <label htmlFor="title">Заголовок:</label>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Описание:</label>
-        <textarea
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Вебсайт:</label>
-        <input
-          type="url"
-          id="website"
-          value={website}
-          onChange={(e) => setWebsite(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="pageCode">Вебсайт:</label>
-        <input
-          type="url"
-          id="pageCode"
-          value={pageCode}
-          onChange={(e) => setPageCode(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="image">Изображение:</label>
-        <input
-          // type="file"
-          type="text"
-          id="image"
-          name="image"
-          onChange={(e) => setImage(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit">Создать портфолио</button>
-    </form>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={schema}
+      onSubmit={handleSubmit}
+    >
+      <Form>
+        <h2>создать портфолио</h2>
+        <div>
+          <Field type="text" name="title" placeholder="Enter your title" />
+          <ErrorMessage name="title">{(msg) => <div>{msg}</div>}</ErrorMessage>
+        </div>
+        <div>
+          <Field
+            type="text"
+            name="description"
+            placeholder="Enter your description"
+          />
+          <ErrorMessage name="description">
+            {(msg) => <div>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div>
+          <Field type="text" name="website" placeholder="Enter your website" />
+          <ErrorMessage name="website">
+            {(msg) => <div>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div>
+          <Field
+            type="text"
+            name="pageCode"
+            placeholder="Enter your pageCode"
+          />
+          <ErrorMessage name="pageCode">
+            {(msg) => <div>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div>
+          <Field type="text" name="image" placeholder="Enter your image" />
+          <ErrorMessage name="image">{(msg) => <div>{msg}</div>}</ErrorMessage>
+        </div>
+        <div>
+          <button type="submit">
+            {isLoading ? <p>Loading...</p> : 'Создать портфолио'}
+          </button>
+        </div>
+      </Form>
+    </Formik>
   );
 }
 

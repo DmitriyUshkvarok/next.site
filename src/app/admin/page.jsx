@@ -8,7 +8,7 @@ const Admin = () => {
       <PageTransition>
         <div className={styles.adminIconHome}>
           <GrSettingsOption
-            lassName={styles.adminIcon}
+            className={styles.adminIcon}
             size={300}
             style={{ color: 'black' }}
           />
