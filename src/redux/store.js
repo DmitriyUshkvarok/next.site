@@ -3,6 +3,7 @@ import persisteAuthReducer from './authApi/authSlice';
 import persistedLanguageReducer from './language/languageSlice';
 import { authApi } from './authApi/authApi';
 import { portfolioApi } from './createPortfolioApi/createPortfolioApi';
+import portfolioSlice from './portfolioSlice/portfolioSlice';
 import {
   persistStore,
   FLUSH,
@@ -17,6 +18,7 @@ const store = configureStore({
   reducer: {
     auth: persisteAuthReducer,
     language: persistedLanguageReducer,
+    portfolio: portfolioSlice,
     [authApi.reducerPath]: authApi.reducer,
     [portfolioApi.reducerPath]: portfolioApi.reducer,
   },

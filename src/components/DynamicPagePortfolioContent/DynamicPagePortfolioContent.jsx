@@ -3,11 +3,14 @@ import Link from 'next/link';
 import ButtonBack from '../ButtonBack/ButtonBack';
 import styles from './DynamicPagePortfolioContent.module.css';
 import { getAllPortfolio } from '@/src/actions/portfolioActions';
+import { items } from './data';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
   const { portfolios } = await getAllPortfolio();
 
   const item = portfolios.find((item) => item._id === id);
+
+  const localItem = items.find((localItem) => localItem.id === id);
 
   if (!item) {
     return <div>Item not found</div>;
@@ -20,7 +23,7 @@ const DynamicPagePortfolioContent = async ({ id }) => {
       <h2 className={styles.dynamicPageTitle}>{item.title}</h2>
       <div className={styles.dynamicPageImgWrapper}>
         <Image
-          src={item.image}
+          src={localItem ? localItem.image : item.image}
           alt={item.title}
           width={600}
           height={500}
@@ -42,7 +45,7 @@ const DynamicPagePortfolioContent = async ({ id }) => {
             target="_blank"
             className={styles.dynamicPageLink}
           >
-            live code: {item.pageCode}
+            live code
           </Link>
         </div>
       </div>
