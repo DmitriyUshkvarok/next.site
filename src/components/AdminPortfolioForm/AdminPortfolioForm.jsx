@@ -214,7 +214,7 @@ function PortfolioForm() {
     try {
       if (!isFormActive) {
         setIsLoading(true);
-        await createPortfolio(editingPortfolio);
+        await createPortfolio(editingPortfolios);
       }
 
       if (isFormActive) {
