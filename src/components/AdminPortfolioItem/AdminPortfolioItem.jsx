@@ -11,19 +11,37 @@ import {
   toggleCardSelection,
 } from '@/src/redux/portfolioSlice/portfolioSlice';
 import { animateScroll as scroll } from 'react-scroll';
-import { useTransition } from 'react';
+// import { useTransition } from 'react';
 import { deletedPortfolio } from '@/src/actions/portfolioActions';
+import { useState } from 'react';
 
 const AdminPortfolioItem = ({ portfolios }) => {
-  let [isPending, startTransition] = useTransition();
+  // let [isPending, startTransition] = useTransition();
+  const [isPendings, setIsPendings] = useState({});
   const dispatch = useDispatch();
   const selectedCardIds = useSelector(
     (state) => state.portfolio.selectedCardIds
   );
 
   async function handleDelete(porfolioId) {
-    console.log(porfolioId);
-    await deletedPortfolio(porfolioId);
+    try {
+      setIsPendings((prevState) => ({
+        ...prevState,
+        [porfolioId]: true,
+      }));
+
+      await deletedPortfolio(porfolioId);
+
+      setIsPendings((prevState) => ({
+        ...prevState,
+        [porfolioId]: false,
+      }));
+    } catch (error) {
+      setIsPendings((prevState) => ({
+        ...prevState,
+        [porfolioId]: false,
+      }));
+    }
   }
 
   const handleEditClick = (portfolio) => {
@@ -37,7 +55,7 @@ const AdminPortfolioItem = ({ portfolios }) => {
       dispatch(setEditingPortfolio(null));
     } else {
       dispatch(setEditingPortfolio(portfolio));
-      dispatch(toggleCardSelection(portfolio));
+      dispatch(toggleCardSelection(portfolio._id));
     }
     scroll.scrollToTop({
       duration: 1000,
@@ -71,15 +89,15 @@ const AdminPortfolioItem = ({ portfolios }) => {
           <div className={styles.adminChangePanel}>
             <div
               className={styles.adminChangePanelItem}
-              onClick={() => handleEditClick(item._id)}
+              onClick={() => handleEditClick(item)}
             >
               <RiFileEditFill size={20} color="green" />
             </div>
             <div
               className={styles.adminChangePanelItem}
-              onClick={() => startTransition(() => handleDelete(item._id))}
+              onClick={() => handleDelete(item._id)}
             >
-              {isPending ? (
+              {isPendings[item._id] ? (
                 'Loading...'
               ) : (
                 <AiFillDelete size={20} color="red" />

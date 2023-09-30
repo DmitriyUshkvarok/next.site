@@ -6,8 +6,9 @@ export const updatePortfolioAsync = createAsyncThunk(
   async ({ id, data }) => {
     const response = await updatePortfolio(id, data);
     // Исключите createdAt и updatedAt из данных
-    const { createdAt, updatedAt, ...payloadWithoutDates } = response;
-    return payloadWithoutDates;
+    // const { createdAt, updatedAt, ...payloadWithoutDates } = response;
+    // return payloadWithoutDates;
+    return response;
   }
 );
 
@@ -30,7 +31,9 @@ const portfolioSlice = createSlice({
   initialState,
   reducers: {
     setEditingPortfolio: (state, action) => {
-      state.portfolio = action.payload;
+      // Игнорируем createdAt и updatedAt
+      const { createdAt, updatedAt, ...payloadWithoutDates } = action.payload;
+      state.portfolio = payloadWithoutDates;
       state.isFormActive = true;
     },
     toggleCardSelection: (state, action) => {
@@ -44,6 +47,14 @@ const portfolioSlice = createSlice({
         // В противном случае добавьте карточку в массив выбранных
         state.selectedCardIds.push(cardId);
       }
+    },
+    clearPortfolioState: (state) => {
+      // Сбросите состояние до начального значения
+      state.portfolio = initialState.portfolio;
+      state.status = initialState.status;
+      state.error = initialState.error;
+      state.isFormActive = initialState.isFormActive;
+      state.selectedCardIds = initialState.selectedCardIds;
     },
   },
   extraReducers: (builder) => {
@@ -63,6 +74,6 @@ const portfolioSlice = createSlice({
   },
 });
 
-export const { setEditingPortfolio, toggleCardSelection } =
+export const { setEditingPortfolio, toggleCardSelection, clearPortfolioState } =
   portfolioSlice.actions;
 export default portfolioSlice.reducer;
