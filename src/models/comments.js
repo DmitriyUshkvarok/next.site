@@ -10,7 +10,7 @@ const commentSchema = new Schema(
     },
     postId: {
       type: Schema.Types.ObjectId,
-      ref: 'Post',
+      ref: 'Portfolio', // Ссылка на модель портфолио
       required: true,
     },
     userId: {
@@ -18,6 +18,10 @@ const commentSchema = new Schema(
       ref: 'User',
       required: true,
     },
+    userName: {
+      type: String,
+    },
+    userAvatar: { type: String },
   },
   { timestamps: true }
 );

@@ -14,37 +14,41 @@
 
 
 .aboutHeroImg {
-    max-width: 500px;
-    padding: 20px;
-    background: #000000;
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    background: -moz-linear-gradient(to right, #434343, #000000);
-    background: -o-linear-gradient(to right, #434343, #000000);
-    background: linear-gradient(to right, #434343, #000000);
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    /* background: #000000;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19); */
     animation: gradientAnimation 5s linear infinite, shadowAnimation 0.3s ease;
     background-size: 200% 200%;
-    box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(245, 240, 240, 0.2);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }
 
 .aboutWorkImg {
-    width: 100%;
-    object-fit: contain;
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     -webkit-filter: saturate(20%);
     filter: saturate(20%);
     transition: .4s;
@@ -73,6 +77,8 @@
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }
 
 @keyframes gradientAnimation {
@@ -109,12 +115,8 @@
     max-width: 100%;
     gap: 20px;
     padding: 20px;
-    box-shadow: 20px 20px 10px rgba(245, 240, 240, 0.2);
-    background: #000000;
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    background: -moz-linear-gradient(to right, #434343, #000000);
-    background: -o-linear-gradient(to right, #434343, #000000);
-    background: linear-gradient(to right, #434343, #000000);
+    box-shadow: 10px 10px 10px rgba(245, 240, 240, 0.2);
+    background-color: transparent;
     animation: gradientAnimation 5s linear infinite, shadowAnimation 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 7px;
@@ -122,6 +124,8 @@
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }
 
 @media screen and (max-width:840px) {

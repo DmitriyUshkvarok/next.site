@@ -36,6 +36,7 @@ export async function getAllPortfolio() {
 
 export async function updatePortfolio(id, data) {
   try {
+    delete data.updatedAt;
     const portfolio = await Portfolio.findByIdAndUpdate(id, data, {
       new: true,
     });

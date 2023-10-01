@@ -24,8 +24,8 @@ const portfolioSchema = new Schema(
       type: String, // Это может быть URL изображения портфолио
       required: true,
     },
-  },
-  { timestamps: true }
+  }
+  // { timestamps: true }
 );
 
 const Portfolio = models.Portfolio || model('Portfolio', portfolioSchema);

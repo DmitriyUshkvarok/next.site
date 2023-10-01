@@ -40,7 +40,7 @@ const Works = () => {
       <div className={styles.aboutHeroImg}>
         <Image
           className={styles.aboutWorkImg}
-          src="/other.PNG"
+          src="/about-title.webp"
           alt="page photo"
           width={400}
           height={500}

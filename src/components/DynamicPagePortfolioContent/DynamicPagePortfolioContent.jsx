@@ -4,6 +4,7 @@ import ButtonBack from '../ButtonBack/ButtonBack';
 import styles from './DynamicPagePortfolioContent.module.css';
 import { getAllPortfolio } from '@/src/actions/portfolioActions';
 import { items } from './data';
+import CommentsPortfolio from '../CommentsPortfolio/CommentsPortfolio';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
   const { portfolios } = await getAllPortfolio();
@@ -49,6 +50,7 @@ const DynamicPagePortfolioContent = async ({ id }) => {
           </Link>
         </div>
       </div>
+      <CommentsPortfolio postId={id} />
     </>
   );
 };
