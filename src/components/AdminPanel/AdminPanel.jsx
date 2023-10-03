@@ -40,9 +40,16 @@ const AdminPanel = () => {
             Edit About
           </Link>
         </li>
-        <li className={styles.adminPanelItem}>
-          <Link className={styles.adminPanelLink} href="/admin/profile">
-            Edit Contact
+        <li
+          className={
+            (styles.adminPanelItem,
+            pathname === '/admin/edit-comments'
+              ? styles.activeLink
+              : styles.adminPanelItem)
+          }
+        >
+          <Link className={styles.adminPanelLink} href="/admin/edit-comments">
+            Edit Comments
           </Link>
         </li>
         <li className={styles.adminPanelItem}>

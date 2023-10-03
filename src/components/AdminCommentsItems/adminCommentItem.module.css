@@ -1,0 +1,198 @@
+.adminCommentTitle {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.adminCommentList {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    background: -o-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
+    padding: 20px;
+}
+
+.adminCommentItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    background: -o-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminChangePanel {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    background: -o-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.adminChangePanelItem {
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminCommentImgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: 5px;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.adminCommentImg {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
+
+.adminCommentName {
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    text-align: center;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminCommentText {
+    color: aqua;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.adminCommentEditPanel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.adminCommentTextarea {
+    max-width: 300px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminCommentBtnSave {
+    padding: 10px;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: rgb(35, 35, 35);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminCommentBtnSave:hover {
+    opacity: 0.7;
+}

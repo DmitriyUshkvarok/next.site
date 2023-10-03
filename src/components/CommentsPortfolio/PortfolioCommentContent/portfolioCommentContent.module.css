@@ -1,0 +1,207 @@
+.formCommetForm {
+    max-width: 50%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    background: -o-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.formCommetTitle {
+    max-width: 150px;
+    margin-bottom: 3px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 14px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.formCommetTextarea {
+    min-width: 300px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.formCommetbtn {
+    padding: 10px;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: rgb(35, 35, 35);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.formCommetbtn:hover {
+    opacity: 0.7;
+}
+
+.commentList {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.commentListItem {
+    padding: 5px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    border-bottom: 1px solid orange;
+}
+
+.commentListItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.commentListImgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: 5px;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.commentListImg {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
+
+.commentListUserName {
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    text-align: center;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.commentListUserText {
+    color: aqua;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.formCommetbtnWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.commentListUserTextarea {
+    max-width: 300px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.loaderPortfolioComment {
+    color: gray;
+}
