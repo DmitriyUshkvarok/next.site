@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
@@ -52,6 +53,13 @@ const Navigation = () => {
           <p className={(styles.subTitleLogo, permanentMarker.className)}>
             WebDeveloper
           </p>
+          {/* <Image
+            className={styles.logoIcon}
+            src="/logoIcon.png"
+            alt="logo icon"
+            width={80}
+            height={80}
+          /> */}
         </Link>
         <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
         <div className={styles.authNavWrapper}>

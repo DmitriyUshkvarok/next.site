@@ -6,6 +6,7 @@
 }
 
 .logo {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +21,19 @@
     filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
     -webkit-filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
 }
+
+/* .logoIcon {
+    position: absolute;
+    top: 50%;
+    right: -130px;
+    transform: translate(-70px, -50%);
+    -webkit-transform: translate(-70px, -50%);
+    -moz-transform: translate(-70px, -50%);
+    -ms-transform: translate(-70px, -50%);
+    -o-transform: translate(-70px, -50%);
+    filter: sepia(1) hue-rotate(3deg) saturate(20);
+    filter: hue-rotate(180deg);
+} */
 
 .subTitleLogo {
     font-size: 10px;

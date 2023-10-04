@@ -20,11 +20,11 @@ export const items = [
     image: '/filmoteka-react.png',
   },
   {
-    id: '65118c24190fec6e915a2247',
+    id: '65118d27190fec6e915a224c',
     image: '/filmoteka-js.png',
   },
   {
-    id: '65118d27190fec6e915a224c',
+    id: '65118c24190fec6e915a2247',
     image: '/filmoteka-version-1.png',
   },
   {

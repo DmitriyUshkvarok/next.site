@@ -5,6 +5,7 @@ import { useState } from 'react';
 import styles from './forgotPassword.module.css';
 import ButtonSubmit from '@/src/components/Buttons/ButtonSubmit';
 import { forgotPasswordWithCredentials } from '@/src/actions/authActions';
+import { fredericka } from '../../fonts';
 
 const initialValues = {
   email: '',
@@ -36,7 +37,7 @@ const ForgotPassword = () => {
     resetForm();
   };
   return (
-    <div>
+    <div className={fredericka.className}>
       <h1 className={styles.forgotPasswordTitle}>Enter your e-mail</h1>
       <div className={styles.forgotPasswordBox}>
         <Formik

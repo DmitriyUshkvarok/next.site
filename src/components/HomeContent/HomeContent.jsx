@@ -53,7 +53,7 @@ const HomeContent = () => {
             <div className={style.buttonWrapper}>
               <Link
                 className={style.downloadLink}
-                href="/CV_Dmitriy_Ushkvarok_Frontend_Developer.pdf"
+                href="/CV_Dmitriy Ushkvarok_Frontend_Developer.pdf"
                 target="_blank"
               >
                 {t('home.download_cv')}
@@ -73,10 +73,10 @@ const HomeContent = () => {
           <div className={style.promoWrapperBlockPhoto}>
             <div className={style.promoWrapperImageBox}>
               <Image
-                src="/user1.png"
+                src="/homePhoto.png"
                 alt="photo user"
-                width={650}
-                height={950}
+                width={217}
+                height={750}
                 sizes="100vh"
                 className={style.promoWrapperImage}
                 style={{ objectFit: 'cover' }}
@@ -87,7 +87,7 @@ const HomeContent = () => {
         <motion.div
           className={style.shadow}
           initial={{ opacity: 1, x: '100%' }}
-          transition={{ opacity: { duration: 1 }, x: { duration: 1 } }}
+          transition={{ opacity: { duration: 0.5 }, x: { duration: 0.5 } }}
           animate={controls}
         >
           <div className={style.about}>{t('home.about_me')}</div>

@@ -16,6 +16,7 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'encrypted-tbn0.gstatic.com',
       'news.liga.net',
+      's.dou.ua',
     ],
   },
 };

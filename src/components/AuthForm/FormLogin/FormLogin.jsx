@@ -8,6 +8,7 @@ import Link from 'next/link';
 import styles from './formLogin.module.css';
 import { FcGoogle } from 'react-icons/fc';
 import { GiClick } from 'react-icons/gi';
+import { fredericka } from '@/src/app/fonts';
 
 const initialValues = {
   email: '',
@@ -53,7 +54,7 @@ function LogInForm() {
   };
 
   return (
-    <>
+    <div className={fredericka.className}>
       <h1 className={styles.authTitle}>
         log in or continue logging in with your google account.
       </h1>
@@ -103,7 +104,11 @@ function LogInForm() {
           </div>
           <div>
             <button className={styles.loginFormButton} type="submit">
-              {isLoading ? <p>Loading...</p> : 'Log In Now'}
+              {isLoading ? (
+                <p className={fredericka.className}>Loading...</p>
+              ) : (
+                <span className={fredericka.className}>Log In Now</span>
+              )}
             </button>
           </div>
           <Link className={styles.linkRegistr} href="/signup">
@@ -117,7 +122,7 @@ function LogInForm() {
         onClick={() => signIn('google', { callbackUrl: '/' })}
       >
         <FcGoogle size={20} />
-        to continue with google
+        <span className={fredericka.className}>to continue with google</span>
       </button>
       <div className={styles.forgotLinkWrapper}>
         <Link className={styles.forgotLink} href="signin/forgot-password/">
@@ -125,7 +130,7 @@ function LogInForm() {
         </Link>
         <GiClick className={styles.forgotLinkIcon} size={25} />
       </div>
-    </>
+    </div>
   );
 }
 export default LogInForm;

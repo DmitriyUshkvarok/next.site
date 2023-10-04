@@ -36,8 +36,7 @@ export const education = [
     id: 5,
     trainings: 'IT School GoIT',
     data: 'July 2022 - July 2023',
-    image:
-      'https://4.bp.blogspot.com/-IRTkhJ9sJEw/VEjHcoMSRAI/AAAAAAAAAdI/_1NyuzYr5z4/s1600/GoIT_baner.jpg',
+    image: 'https://s.dou.ua/img/static/companies/logo_orange_h-1000.png',
     region: 'distance learning',
     faculty: 'Fullstack Developer',
   },

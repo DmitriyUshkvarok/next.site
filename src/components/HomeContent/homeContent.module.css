@@ -71,14 +71,17 @@
 
 .promoWrapperBlockSubTitle {
     color: #28A745;
-    background: linear-gradient(to right, #1e9600, #fff200, #ff0000);
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     background-size: 200% auto;
     animation: shineEffect 5s linear infinite;
 }
@@ -113,7 +116,8 @@
     display: flex;
     justify-content: flex-end;
     max-width: 100%;
-    padding-top: 130px;
+    padding-top: 120px;
+    padding-right: 110px;
 }
 
 @media screen and (max-width:810px) {
@@ -123,11 +127,21 @@
 }
 
 .promoWrapperImage {
-    width: 100%;
+    width: 50%;
     height: auto;
     filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
     -webkit-filter: saturate(20%);
     filter: saturate(20%);
+    transition: filter 0.4s;
+    -webkit-transition: filter 0.4s;
+    -moz-transition: filter 0.4s;
+    -ms-transition: filter 0.4s;
+    -o-transition: filter 0.4s;
+}
+
+.promoWrapperImage:hover {
+    -webkit-filter: saturate(120%);
+    filter: saturate(120%);
 }
 
 @media screen and (max-width:810px) {
@@ -183,13 +197,13 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    color: aqua;
+    color: rgb(55, 44, 44);
     text-transform: uppercase;
     font-weight: bold;
     transition: transform 0.3s, box-shadow 0.2s;

@@ -8,6 +8,7 @@ import { signIn } from 'next-auth/react';
 import styles from './gormRegistration.module.css';
 import Link from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
+import { fredericka } from '@/src/app/fonts';
 
 const initialValues = {
   name: '',
@@ -57,7 +58,7 @@ function FormRegistration() {
   };
 
   return (
-    <>
+    <div className={fredericka.className}>
       <h1 className={styles.authTitle}>
         Signup or continue logging in with your google account.
       </h1>
@@ -118,11 +119,15 @@ function FormRegistration() {
           </div>
           <div>
             <button className={styles.loginFormButton} type="submit">
-              {isLoading ? <p>Loading...</p> : 'Registration'}
+              {isLoading ? (
+                <p>Loading...</p>
+              ) : (
+                <span className={fredericka.className}>Registration</span>
+              )}
             </button>
           </div>
           <Link className={styles.linkRegistr} href="/signin">
-            login
+            <span className={fredericka.className}>login</span>
           </Link>
         </Form>
       </Formik>
@@ -132,9 +137,9 @@ function FormRegistration() {
         onClick={() => signIn('google', { callbackUrl: '/' })}
       >
         <FcGoogle size={20} />
-        to continue with google
+        <span className={fredericka.className}> to continue with google</span>
       </button>
-    </>
+    </div>
   );
 }
 export default FormRegistration;
