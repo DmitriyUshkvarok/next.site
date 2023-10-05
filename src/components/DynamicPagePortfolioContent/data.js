@@ -43,4 +43,8 @@ export const items = [
     id: '651192e2190fec6e915a226f',
     image: '/webstudio.png',
   },
+  {
+    id: '65186d5fc8848642be13cfba',
+    image: '/my-site.png',
+  },
 ];
