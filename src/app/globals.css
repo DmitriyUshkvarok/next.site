@@ -42,15 +42,6 @@ p {
   margin: 0 auto;
 }
 
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  background: #000000;
-  background: -webkit-linear-gradient(to bottom, #434343, #000000);
-  background: -moz-linear-gradient(to bottom, #434343, #000000);
-  background: -o-linear-gradient(to bottom, #434343, #000000);
-  background: linear-gradient(to bottom, #434343, #000000);
-  padding: 20px;
-}
-
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
   color: #fff;
   background: -webkit-linear-gradient(to right, #f12711, #f5af19);
@@ -73,4 +64,13 @@ p {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  background-color: #000000 !important;
+  background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
+  background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
+  background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
+  background-image: linear-gradient(to bottom, #434343, #000000) !important;
+  padding: 20px;
 }

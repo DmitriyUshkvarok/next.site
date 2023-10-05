@@ -7,10 +7,17 @@
     -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
 }
 
+@media screen and (max-width:850px) {
+
+    .promoWrapper {
+        background-position: -70px 100px;
+    }
+}
+
 @media screen and (max-width:400px) {
 
     .promoWrapper {
-        background-position: -200px;
+        background-position: -300px 200px;
     }
 }
 
@@ -123,6 +130,19 @@
 @media screen and (max-width:810px) {
     .promoWrapperImageBox {
         padding-top: 190px;
+        padding-right: 80px;
+    }
+}
+
+@media screen and (max-width:665px) {
+    .promoWrapperImageBox {
+        padding-top: 130px;
+    }
+}
+
+@media screen and (max-width:445px) {
+    .promoWrapperImageBox {
+        padding-right: 20px;
     }
 }
 
@@ -144,17 +164,10 @@
     filter: saturate(120%);
 }
 
-@media screen and (max-width:810px) {
+@media screen and (max-width:665px) {
     .promoWrapperImage {
         width: 330px;
-        height: 630px;
-    }
-}
-
-@media screen and (max-width:400px) {
-    .promoWrapperImage {
-        width: 230px;
-        height: 430px;
+        height: auto;
     }
 }
 
@@ -196,7 +209,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    text-align: center;
+    background: linear-gradient(to right, #f12711, #f5af19);
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -221,8 +235,9 @@
 
 @media screen and (max-width:470px) {
     .downloadLink {
-        font-size: 17px;
+        font-size: 12px;
         text-align: center;
+        padding: 5px;
     }
 }
 
@@ -289,7 +304,7 @@
 
 @media screen and (max-width:850px) {
     .promoWrapperAboutLink {
-        margin-top: 350px;
+        margin-top: 250px;
     }
 }
 
@@ -310,12 +325,13 @@
         margin-top: 240px;
         justify-content: start;
         font-size: 30px;
+        margin-left: 20px;
     }
 }
 
 @media screen and (max-width:515px) {
     .promoWrapperAboutLink {
-        margin-top: 310px;
+        margin-top: 210px;
     }
 }
 
@@ -327,7 +343,7 @@
 
 @media screen and (max-width:470px) {
     .promoWrapperAboutLink {
-        margin-top: 50px;
+        margin-top: 190px;
         justify-content: center;
     }
 }

@@ -37,14 +37,15 @@ const schema = yup.object().shape({
 function FormRegistration() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isShowTextRegistr, setIsShowTextRegistr] = useState(false);
 
   const handleSubmit = async (values, { resetForm }) => {
     setIsLoading(true);
     try {
       values.callbackUrl = '/';
       const res = await signUpWithCredential(values);
+      setIsShowTextRegistr(true);
       // await signIn('credentials', values);
-      console.log(res);
     } catch (error) {
       console.log(error);
     } finally {
@@ -139,6 +140,15 @@ function FormRegistration() {
         <FcGoogle size={20} />
         <span className={fredericka.className}> to continue with google</span>
       </button>
+      {isShowTextRegistr && (
+        <p
+          className={fredericka.className}
+          style={{ color: 'lightgreen', textAlign: 'center' }}
+        >
+          a registration confirmation e-mail has been sent to your e-mail
+          address.
+        </p>
+      )}
     </div>
   );
 }

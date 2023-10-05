@@ -41,7 +41,8 @@ const links = [
 const Navigation = () => {
   const pathname = usePathname();
 
-  const isPhone = useMediaQuery({ minWidth: 690 });
+  const isPhone = useMediaQuery({ minWidth: 845 });
+  const ismediaQuery = useMediaQuery({ minWidth: 590 });
 
   const { t } = useTranslation();
 
@@ -61,10 +62,11 @@ const Navigation = () => {
             height={80}
           /> */}
         </Link>
-        <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
-        <div className={styles.authNavWrapper}>
-          <AuthNav />
-        </div>
+        {ismediaQuery && (
+          <div className={styles.authNavWrapper}>
+            <AuthNav />
+          </div>
+        )}
         <ul className={styles.navigationList}>
           {links.map((link) => (
             <li key={link.id} className={styles.navigationItem}>
@@ -77,6 +79,7 @@ const Navigation = () => {
             </li>
           ))}
         </ul>
+        <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
         <LanguageSelector />
       </nav>
     </div>

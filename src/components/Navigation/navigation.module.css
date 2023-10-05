@@ -55,7 +55,7 @@
     gap: 10px;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 845px) {
     .navigationList {
         display: none;
     }

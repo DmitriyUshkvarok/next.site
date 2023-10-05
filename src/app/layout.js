@@ -4,6 +4,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Header from '../components/Header/Header';
 import NextAuthProvider from '../context/provider';
+import Container from '../components/Container/Container';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,10 +20,12 @@ export default function RootLayout({ children }) {
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
-              <Header />
-              <div className="container">
-                <main> {children}</main>
-              </div>
+              <Container>
+                <Header />
+                <div className="container">
+                  <main> {children}</main>
+                </div>
+              </Container>
             </ReduxProvider>
           </LocalesProvider>
         </NextAuthProvider>

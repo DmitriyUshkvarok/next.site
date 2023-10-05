@@ -4,9 +4,13 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import styled from './burgerMenu.module.css';
+import { useMediaQuery } from 'react-responsive';
+import AuthNav from '../AuthForm/AuthNav/AuthNav';
 
 const BurgerMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const ismediaQuery = useMediaQuery({ minWidth: 590 });
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,6 +43,7 @@ const BurgerMenu = () => {
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
       >
+        {!ismediaQuery && <AuthNav />}
         <MenuItem onClick={handleMenuClose}>
           <Link href="/">Home</Link>
         </MenuItem>

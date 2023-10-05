@@ -1,6 +1,5 @@
 .updateUserTitle {
-    margin-top: 30px;
-    margin-bottom: 20px;
+    padding: 20px;
     color: #fff;
     background: -webkit-linear-gradient(to right, #f12711, #f5af19);
     background: -moz-linear-gradient(to right, #f12711, #f5af19);
@@ -11,7 +10,7 @@
     background-clip: text;
     text-transform: uppercase;
     text-align: center;
-    max-width: 200px;
+    max-width: 340px;
     margin-left: auto;
     margin-right: auto;
     filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
@@ -19,7 +18,7 @@
 }
 
 .updateUserForm {
-    max-width: 300px;
+    max-width: 340px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -27,7 +26,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 30px;
+    padding: 20px;
     background: #000000;
     background: -webkit-linear-gradient(to bottom, #434343, #000000);
     background: -moz-linear-gradient(to bottom, #434343, #000000);
@@ -38,7 +37,6 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
     filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
     -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }

@@ -44,6 +44,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
     background: #000000;
     background: -webkit-linear-gradient(to bottom, #434343, #000000);
     background: -moz-linear-gradient(to bottom, #434343, #000000);
@@ -129,6 +130,7 @@
 }
 
 .adminCommentText {
+    word-break: break-all;
     color: aqua;
     background: linear-gradient(to right, #b2fefa, #0ed2f7);
     -webkit-background-clip: text;

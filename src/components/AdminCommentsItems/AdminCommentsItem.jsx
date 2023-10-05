@@ -5,6 +5,7 @@ import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
 import { useState } from 'react';
 import { updateComment, deleteComment } from '@/src/actions/commentActions';
+import { fredericka } from '@/src/app/fonts';
 
 const AdminCommentsItem = ({ comments }) => {
   const [isPendings, setIsPendings] = useState({});
@@ -63,7 +64,7 @@ const AdminCommentsItem = ({ comments }) => {
   };
 
   return (
-    <>
+    <div className={fredericka.className}>
       <h1 className={styles.adminCommentTitle}>Edit and delete comments</h1>
       <ul className={styles.adminCommentList}>
         {comments?.map((item) => (
@@ -116,7 +117,7 @@ const AdminCommentsItem = ({ comments }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

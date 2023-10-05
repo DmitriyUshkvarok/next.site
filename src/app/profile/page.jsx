@@ -5,15 +5,28 @@ import UpdateUserForm from '@/src/components/AuthForm/UpdateUserForm/UpdateUserF
 import ChangePassword from '@/src/components/AuthForm/ChangePassword/ChangePassword';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import { fredericka } from '../fonts';
+import styles from './profile.module.css';
+import Container from '@/src/components/Container/Container';
 
 const UserProfile = () => {
   const { data: session, update } = useSession();
+
   return (
     <div className={fredericka.className}>
       <PageTransition>
-        <UserPanel />
-        <UpdateUserForm update={update} />
-        {session?.user?.provider === 'credentials' && <ChangePassword />}
+        <Container>
+          <div className={styles.componentProfileWrapper}>
+            <div>
+              <UserPanel />
+            </div>
+            <div>
+              <UpdateUserForm update={update} />
+            </div>
+            <div>
+              {session?.user?.provider === 'credentials' && <ChangePassword />}
+            </div>
+          </div>
+        </Container>
       </PageTransition>
     </div>
   );

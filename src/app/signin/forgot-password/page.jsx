@@ -36,6 +36,7 @@ const ForgotPassword = () => {
     }
     resetForm();
   };
+
   return (
     <div className={fredericka.className}>
       <h1 className={styles.forgotPasswordTitle}>Enter your e-mail</h1>
