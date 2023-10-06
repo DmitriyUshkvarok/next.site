@@ -21,8 +21,12 @@ const portfolioSchema = new Schema(
       required: true,
     },
     image: {
-      type: String, // Это может быть URL изображения портфолио
+      type: String,
       required: true,
+    },
+    order: {
+      type: Number,
+      default: 0, // начальный порядок
     },
   }
   // { timestamps: true }

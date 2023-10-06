@@ -94,3 +94,18 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+.dragging {
+    background-color: #f0f0f0;
+    opacity: 0.8;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+    -webkit-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+    -moz-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+    -ms-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+    -o-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+}

@@ -20,7 +20,8 @@ export async function createPortfolio(data) {
 
 export async function getAllPortfolio() {
   try {
-    const portfolios = await Portfolio.find();
+    // const portfolios = await Portfolio.find();
+    const portfolios = await Portfolio.find().sort({ order: 1 }); // сортируем по полю order
 
     const newData = portfolios.map((item) => ({
       ...item._doc,
@@ -34,9 +35,34 @@ export async function getAllPortfolio() {
   }
 }
 
+export async function updatePortfoliosOrder(updatedOrder) {
+  try {
+    // Массив updatedOrder содержит объекты с _id и order для обновления
+    updatedOrder.forEach(async (item) => {
+      await Portfolio.findByIdAndUpdate(item._id, { order: item.order });
+    });
+
+    // После обновления всех порядков, перезагружаем данные и возвращаем их
+    const portfolios = await Portfolio.find().sort({ order: 1 });
+
+    const newData = portfolios.map((item) => ({
+      ...item._doc,
+      _id: item._doc._id.toString(),
+    }));
+
+    revalidatePath('/');
+
+    return { portfolios: newData };
+  } catch (error) {
+    console.error('Произошла ошибка при обновлении порядка:', error);
+    throw error;
+  }
+}
+
 export async function updatePortfolio(id, data) {
   try {
     delete data.updatedAt;
+
     const portfolio = await Portfolio.findByIdAndUpdate(id, data, {
       new: true,
     });
