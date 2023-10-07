@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 import bcrypt, { compare } from 'bcrypt';
 import { generateToken, veryfyToken } from '../utils/token';
 import sendEmail from '../utils/sendEmail';
+import { revalidatePath } from 'next/cache';
 
 const BASE_URL = process.env.NEXTAUTH_URL;
 
@@ -125,3 +126,59 @@ export async function resetPasswordWithCredentials({ token, password }) {
     redirect(`/errors?error=${error.message}`);
   }
 }
+
+export const getAllUsers = async () => {
+  try {
+    const users = await User.find();
+
+    const newData = users.map((item) => ({
+      ...item._doc,
+      _id: item._doc._id.toString(),
+    }));
+
+    return { users: newData };
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
+};
+
+export const deleteUser = async (userId) => {
+  try {
+    const users = await User.findByIdAndDelete(userId, { new: true });
+
+    revalidatePath('/');
+
+    return { ...users._doc, _id: users._id.toString() };
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
+};
+
+export const updateUserRole = async (userId, newRole) => {
+  try {
+    const session = await getServerSession(authOption);
+    if (!session || !session.user) {
+      // Если пользователь не аутентифицирован, верните ошибку 401
+      throw new Error('Authentication required');
+    }
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      {
+        role: newRole,
+      },
+      { new: true }
+    );
+
+    revalidatePath('/');
+
+    if (!user) {
+      // Если пользователь не найден, верните ошибку
+      throw new Error('User not found');
+    }
+
+    return { msg: 'Role updated successfully' };
+  } catch (error) {
+    redirect(`/errors?error=${error.message}`);
+  }
+};

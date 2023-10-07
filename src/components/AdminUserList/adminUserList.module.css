@@ -1,0 +1,140 @@
+.adminUserTitle {
+    max-width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.adminUserList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* Определяем две колонки, изображение будет занимать 1/4 ширины, остальная информация 3/4 ширины */
+    gap: 20px;
+    /* Расстояние между элементами */
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    /* Занимает первую колонку (сайдбар) */
+}
+
+.content {
+    grid-column: 2 / 3;
+    /* Занимает вторую колонку (содержание) */
+}
+
+.content p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.userImage {
+    width: 100%;
+    height: auto;
+}
+
+.contentName,
+.contentEmail,
+.contentRole,
+.contentProvider,
+.contentDate,
+.contentUpdate {
+    max-width: 350px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contentSpan {
+    margin-right: 10px;
+    color: aqua;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contentDeletePanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contentRoleEditPanel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contentRoleInput {
+    min-width: 100px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+}
+
+.contentRoleBtnSave {
+    padding: 10px;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: rgb(35, 35, 35);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.contentRoleBtnSave:hover {
+    opacity: 0.7;
+}

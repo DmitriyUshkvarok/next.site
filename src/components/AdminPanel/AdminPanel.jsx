@@ -52,8 +52,15 @@ const AdminPanel = () => {
             Edit Comments
           </Link>
         </li>
-        <li className={styles.adminPanelItem}>
-          <Link className={styles.adminPanelLink} href="/admin/profile">
+        <li
+          className={
+            (styles.adminPanelItem,
+            pathname === '/admin/edit-users'
+              ? styles.activeLink
+              : styles.adminPanelItem)
+          }
+        >
+          <Link className={styles.adminPanelLink} href="/admin/edit-users">
             User List
           </Link>
         </li>
