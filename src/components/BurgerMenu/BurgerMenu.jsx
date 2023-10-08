@@ -51,7 +51,7 @@ const BurgerMenu = () => {
           <Link href="/about">About Me</Link>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
-          <Link href="/blog">Blog</Link>
+          <Link href="/gallery">Gallery</Link>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
           <Link href="/portfolio">Portfolio</Link>

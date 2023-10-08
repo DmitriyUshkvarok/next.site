@@ -23,8 +23,8 @@ const links = [
   },
   {
     id: 3,
-    title: 'Blog',
-    url: '/blog',
+    title: 'Gallery',
+    url: '/gallery',
   },
   {
     id: 4,

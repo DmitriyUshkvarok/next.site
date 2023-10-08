@@ -2,37 +2,40 @@
 import { works } from './data-work';
 import Image from 'next/image';
 import styles from './works.module.css';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { fredericka } from '@/src/app/fonts';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Works = () => {
   const { t } = useTranslation();
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [itemVisibility, setItemVisibility] = useState(
-    works.map(() => false) // Изначально все элементы скрыты
-  );
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const newVisibility = [...itemVisibility];
+  const animateOnScroll = () => {
+    works.forEach((work, index) => {
+      const workListItem = document.querySelector(
+        `.${styles.workListItem}:nth-child(${index + 1})`
+      );
 
-    for (let i = 0; i < works.length; i++) {
-      if (scrollTop > 100 * i && !itemVisibility[i]) {
-        newVisibility[i] = true;
-      }
-    }
-
-    setItemVisibility(newVisibility);
+      gsap.from(workListItem, {
+        opacity: 0,
+        x: -50,
+        scrollTrigger: {
+          trigger: workListItem,
+          start: 'top bottom-=100',
+          end: 'top center',
+          scrub: true,
+          toggleActions: 'play none none reset',
+        },
+      });
+    });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [itemVisibility]);
+    animateOnScroll();
+  }, []);
 
   return (
     <div className={fredericka.className}>
@@ -44,33 +47,17 @@ const Works = () => {
           alt="page photo"
           width={400}
           height={500}
-          onLoad={() => setImageLoaded(true)}
         />
       </div>
       <ul className={styles.workList}>
-        {works.map((work, index) => (
-          <motion.li
-            key={work.id}
-            className={styles.workListItem}
-            style={{
-              opacity: itemVisibility[index] ? 1 : 0, // Применяем видимость
-              y: itemVisibility[index] ? 0 : 50, // Применяем анимацию по оси Y
-            }}
-            initial={{ opacity: 0, y: 50 }} // Начальное состояние элемента
-            animate={{
-              opacity: itemVisibility[index] ? 1 : 0,
-              y: itemVisibility[index] ? 0 : 50,
-            }} // Анимация
-            transition={{ duration: 0.5 }} // Длительность анимации
-          >
+        {works.map((work) => (
+          <li key={work.id} className={styles.workListItem}>
             <Image
               src={work.image}
               alt={work.enterprise}
               width={400}
               height={500}
-              className={`${styles.workListImage} ${
-                imageLoaded ? styles.loaded : ''
-              }`}
+              className={styles.workListImage}
             />
             <div className={styles.workListInfoWrapper}>
               <h3 className={styles.workListInfoWrapperTitle}>
@@ -92,7 +79,7 @@ const Works = () => {
                 ))}
               </ul>
             </div>
-          </motion.li>
+          </li>
         ))}
       </ul>
     </div>

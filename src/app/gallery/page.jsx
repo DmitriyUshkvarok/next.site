@@ -1,15 +1,15 @@
 import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 
-const Blog = () => {
+const GalleryPage = () => {
   return (
     <>
       <PageTransition>
-        <div>Blog</div>
+        <div style={{ marginTop: '130px' }}>Gallery</div>
         <ButtonBack />
       </PageTransition>
     </>
   );
 };
 
-export default Blog;
+export default GalleryPage;
