@@ -64,6 +64,18 @@ const AdminPanel = () => {
             User List
           </Link>
         </li>
+        <li
+          className={
+            (styles.adminPanelItem,
+            pathname === '/admin/edit-gallery'
+              ? styles.activeLink
+              : styles.adminPanelItem)
+          }
+        >
+          <Link className={styles.adminPanelLink} href="/admin/edit-gallery">
+            Edit Gallery
+          </Link>
+        </li>
         <li className={styles.adminPanelItemIcon}>
           <MdAdminPanelSettings size={200} />
         </li>
