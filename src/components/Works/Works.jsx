@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from './works.module.css';
 import { useTranslation } from 'react-i18next';
 import { fredericka } from '@/src/app/fonts';
-import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,16 +14,16 @@ const Works = () => {
   const { t } = useTranslation();
 
   const animateOnScroll = () => {
-    works.forEach((work, index) => {
-      const workListItem = document.querySelector(
-        `.${styles.workListItem}:nth-child(${index + 1})`
-      );
-
-      gsap.from(workListItem, {
+    const workItems = document.querySelectorAll(`.${styles.workListItem}`);
+    workItems.forEach((workItem, index) => {
+      gsap.from(workItem, {
         opacity: 0,
-        x: -50,
+        scale: 0.7,
+        y: 50,
+        duration: 1,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: workListItem,
+          trigger: workItem,
           start: 'top bottom-=100',
           end: 'top center',
           scrub: true,
@@ -43,10 +43,12 @@ const Works = () => {
       <div className={styles.aboutHeroImg}>
         <Image
           className={styles.aboutWorkImg}
-          src="/about-title.webp"
+          src="https://res.cloudinary.com/dlllyuipi/image/upload/v1696954152/E09EED73-24BD-4239-B3FC-2EEB16027D8D_liwv1b.webp"
           alt="page photo"
-          width={400}
-          height={500}
+          width={200}
+          height={200}
+          sizes="100vw"
+          loading="lazy"
         />
       </div>
       <ul className={styles.workList}>
@@ -55,9 +57,11 @@ const Works = () => {
             <Image
               src={work.image}
               alt={work.enterprise}
+              sizes="100vw"
               width={400}
-              height={500}
+              height={200}
               className={styles.workListImage}
+              loading="lazy"
             />
             <div className={styles.workListInfoWrapper}>
               <h3 className={styles.workListInfoWrapperTitle}>

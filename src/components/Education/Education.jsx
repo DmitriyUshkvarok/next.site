@@ -23,7 +23,7 @@ const Educations = () => {
         opacity: 0,
         scale: 0.8,
         y: 50,
-        duration: 1,
+        duration: 0.4,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: educationListItem,
@@ -87,6 +87,7 @@ const Educations = () => {
                 width={900}
                 height={400}
                 className={styled.educationListImage}
+                loading="lazy"
               />
             </div>
             <div className={styled.flexContainerBottom}>

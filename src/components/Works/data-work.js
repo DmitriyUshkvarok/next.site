@@ -3,7 +3,8 @@ export const works = [
     id: 1,
     enterprise: 'Шахта 1/3 Новогродовская "Селидовуголь"',
     data: 'December 2007 - June 2018 ',
-    image: '/1-3.PNG',
+    image:
+      'https://res.cloudinary.com/dlllyuipi/image/upload/v1696951340/1-3_w5zvpu.webp',
     region: 'Donetsk region Ukraine',
     position: [
       'Горно-рабочий подземный: 2007 - 2009г.',
@@ -16,7 +17,8 @@ export const works = [
     id: 2,
     enterprise: 'Шахта Юбилейная ДТЭК "Павлоградуголь"',
     data: 'June 2018 - October 2018',
-    image: '/ubileinaja.PNG',
+    image:
+      'https://res.cloudinary.com/dlllyuipi/image/upload/v1696951340/ubileinaja_bxsl6g.webp',
     region: 'Dnipropetrovsk region Ukraine',
     position: ['Горный Мастер участка шахтного транспорта'],
   },
@@ -24,7 +26,8 @@ export const works = [
     id: 3,
     enterprise: 'Автозавод "HUTCHINSON"',
     data: 'January 2019 - July 2020',
-    image: '/hutchinson.PNG',
+    image:
+      'https://res.cloudinary.com/dlllyuipi/image/upload/v1696951340/hutchinson_cbhb1m.webp',
     region: 'Živec Poland',
     position: ['Оператор Автоклава Высокого Давления'],
   },
@@ -32,7 +35,8 @@ export const works = [
     id: 4,
     enterprise: 'Шахта Котляревская Шахта Котляревская "Селидовуголь"',
     data: 'September 2019 - now',
-    image: '/kotl-ka.PNG',
+    image:
+      'https://res.cloudinary.com/dlllyuipi/image/upload/v1696951340/kotl-ka_neitp5.webp',
     region: 'Donetsk region Ukraine',
     position: [
       'Горный Мастер Очистного Забоя / Помошник Начальника Участка : 2019 - 2021',
