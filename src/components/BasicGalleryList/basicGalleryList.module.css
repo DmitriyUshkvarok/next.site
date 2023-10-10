@@ -1,5 +1,3 @@
-/* BasicGalleryList.module.css */
-
 .galleryContainer {
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +15,6 @@
     gap: 16px;
 }
 
-/* Медиа-запрос для экранов с шириной менее 768px (мобильные устройства) */
 @media (max-width: 768px) {
     .imageList {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

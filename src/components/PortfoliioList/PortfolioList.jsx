@@ -79,6 +79,7 @@ const PortfolioList = ({ portfolios }) => {
                         alt={item.title}
                         width={300}
                         height={200}
+                        sizes="100vw"
                         className={styles.portfolioImg}
                       />
                     </Link>

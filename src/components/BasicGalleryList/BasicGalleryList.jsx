@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Modal from 'react-modal';
-import styles from './BasicGalleryList.module.css'; // Импортируем CSS-модуль
+import styles from './basicGalleryList.module.css';
 
 const BasicGalleryList = ({ photos }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -27,8 +27,6 @@ const BasicGalleryList = ({ photos }) => {
 
   return (
     <div className={styles.galleryContainer}>
-      {' '}
-      {/* Используем класс из CSS-модуля */}
       <ul className={styles.imageList}>
         {photos?.map((item, index) => (
           <li
