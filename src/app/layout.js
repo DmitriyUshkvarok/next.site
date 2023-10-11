@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google';
 import Header from '../components/Header/Header';
 import NextAuthProvider from '../context/provider';
 import Container from '../components/Container/Container';
+import Copyright from '../components/Copyright/Copyright';
+import UnderConstructionModal from '../components/UnderConstructionModal/UnderConstructionModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,10 +24,12 @@ export default function RootLayout({ children }) {
             <ReduxProvider>
               <Container>
                 <Header />
+                <UnderConstructionModal />
                 <div className="container">
                   <main> {children}</main>
                 </div>
               </Container>
+              <Copyright />
             </ReduxProvider>
           </LocalesProvider>
         </NextAuthProvider>
