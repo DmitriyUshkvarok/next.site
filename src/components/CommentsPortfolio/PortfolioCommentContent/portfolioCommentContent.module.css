@@ -20,8 +20,8 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(3px 3px 7px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 7px rgba(255, 255, 255, 0.5));
 }
 
 .formCommetTitle {

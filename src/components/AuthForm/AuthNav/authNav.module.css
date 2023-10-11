@@ -34,18 +34,22 @@
 }
 
 .avatarWrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
     height: 60px;
-    padding: 3px;
+    padding: 5px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
+    border: 1px solid #888;
 }
 
 .avatar {

@@ -1,10 +1,6 @@
 .header {
     padding: 10px;
-    background: #000000;
-    background-image: linear-gradient(to bottom, #434343, #000000);
-    background-image: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background-image: -moz-linear-gradient(to bottom, #434343, #000000);
-    background-image: -o-linear-gradient(to bottom, #434343, #000000);
+    background-image: var(--backgroundFirst);
     box-shadow: 0px 2px 8px rgba(251, 249, 249, 0.4);
     position: fixed;
     top: 0;

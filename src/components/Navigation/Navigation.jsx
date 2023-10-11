@@ -9,6 +9,7 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useTranslation } from 'react-i18next';
 import AuthNav from '../AuthForm/AuthNav/AuthNav';
 import { permanentMarker, fredericka } from '@/src/app/fonts';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 const links = [
   {
@@ -54,13 +55,6 @@ const Navigation = () => {
           <p className={(styles.subTitleLogo, permanentMarker.className)}>
             WebDeveloper
           </p>
-          {/* <Image
-            className={styles.logoIcon}
-            src="/logoIcon.png"
-            alt="logo icon"
-            width={80}
-            height={80}
-          /> */}
         </Link>
         {ismediaQuery && (
           <div className={styles.authNavWrapper}>
@@ -80,7 +74,14 @@ const Navigation = () => {
           ))}
         </ul>
         <div className={styles.burgerWrapper}>{!isPhone && <BurgerMenu />}</div>
-        <LanguageSelector />
+        <div className={styles.themeAndLanguageBox}>
+          <div>
+            <ThemeSwitcher />
+          </div>
+          <div>
+            <LanguageSelector />
+          </div>
+        </div>
       </nav>
     </div>
   );

@@ -90,7 +90,8 @@
     font-weight: bold;
     margin-bottom: 50px;
     background-size: 200% auto;
-    animation: shineEffect 5s linear infinite;
+    animation: shineEffect 10s linear infinite;
+    -webkit-animation: shineEffect 10s linear infinite;
 }
 
 @media screen and (max-width:1050px) {
@@ -206,25 +207,52 @@
 }
 
 .downloadLink {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    background: linear-gradient(to bottom, #434343, #000000);
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    color: rgb(55, 44, 44);
+    color: orange;
     text-transform: uppercase;
     font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.2s;
-    -webkit-transition: transform 0.3s, box-shadow 0.2s;
-    -moz-transition: transform 0.3s, box-shadow 0.2s;
-    -ms-transition: transform 0.3s, box-shadow 0.2s;
-    -o-transition: transform 0.3s, box-shadow 0.2s;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    border: 1px solid #888;
+}
+
+.downloadLink::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width:1050px) {
@@ -284,6 +312,30 @@
     background: #000000;
     background: linear-gradient(to bottom, #434343, #000000);
     background: -webkit-linear-gradient(to bottom, #434343, #000000);
+    border: 1px solid #888;
+}
+
+.shadow::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 

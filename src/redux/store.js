@@ -4,6 +4,7 @@ import persistedLanguageReducer from './language/languageSlice';
 import { authApi } from './authApi/authApi';
 import { portfolioApi } from './createPortfolioApi/createPortfolioApi';
 import portfolioSlice from './portfolioSlice/portfolioSlice';
+import persisteThemeReducer from './themeSlice/themeSlice';
 import {
   persistStore,
   FLUSH,
@@ -19,6 +20,7 @@ const store = configureStore({
     auth: persisteAuthReducer,
     language: persistedLanguageReducer,
     portfolio: portfolioSlice,
+    theme: persisteThemeReducer,
     [authApi.reducerPath]: authApi.reducer,
     [portfolioApi.reducerPath]: portfolioApi.reducer,
   },
