@@ -23,7 +23,7 @@ const ThemeSwitcher = () => {
         {themeColor === 'dark' ? (
           <FaSun size={20} color="orange" />
         ) : (
-          <FaMoon size={20} color="#gray" />
+          <FaMoon size={20} color="gray" />
         )}
       </button>
     </div>
