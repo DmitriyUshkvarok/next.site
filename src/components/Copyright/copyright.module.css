@@ -14,10 +14,7 @@
 
 .copyrightContent {
     color: #fff;
-    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
-    background: -moz-linear-gradient(to right, #f12711, #f5af19);
-    background: -o-linear-gradient(to right, #f12711, #f5af19);
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

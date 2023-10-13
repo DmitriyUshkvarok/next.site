@@ -6,11 +6,13 @@
 
 body[data-theme='dark'] {
   --backgroundFirst: linear-gradient(to bottom, #434343, #000000);
+  --colorText: linear-gradient(to right, #f12711, #f5af19);
   ;
 }
 
 body[data-theme='light'] {
-  --backgroundFirst: linear-gradient(to right, #334d50, #cbcaa5);
+  --backgroundFirst: linear-gradient(to right, #b2fefa, #0ed2f7);
+  --colorText: linear-gradient(to right, #232526, #414345);
   ;
 }
 
