@@ -47,7 +47,6 @@ const UpdateUserForm = ({ update }) => {
             edit avatar:
           </label>
           <input
-            // type="file"
             className={styles.updateUserInput}
             type="text"
             id="image"

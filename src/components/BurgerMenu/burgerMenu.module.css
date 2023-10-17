@@ -3,3 +3,12 @@
     background: -webkit-linear-gradient(to bottom, #434343, #000000);
     background: linear-gradient(to bottom, #434343, #000000);
 }
+
+.menuList {
+    background-color: #000000 !important;
+    background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: linear-gradient(to bottom, #434343, #000000) !important;
+    padding: 0 !important;
+}

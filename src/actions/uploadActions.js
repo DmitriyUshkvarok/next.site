@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import os from 'os';
 import cloudinary from 'cloudinary';
 import { revalidatePath } from 'next/cache';
+import Photo from '../models/photoModel';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -60,6 +61,16 @@ export async function uploadPhoto(formData) {
 
     await delay(2000);
 
+    const newPhotos = photos.map((photo) => {
+      const newPhoto = new Photo({
+        public_id: photo.public_id,
+        secure_url: photo.secure_url,
+      });
+      return newPhoto;
+    });
+
+    await Photo.insertMany(newPhotos);
+
     revalidatePath('/');
     return { msg: 'upload succsess' };
   } catch (error) {
@@ -67,13 +78,32 @@ export async function uploadPhoto(formData) {
   }
 }
 
+// Функция для загрузки аватара
+// export async function uploadAvatar({ userId, formData }) {
+//   try {
+//     const uploadResponse = await uploadPhoto(formData, userId);
+//     return uploadResponse;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
 export async function getAllPhotos() {
   try {
-    const { resources } = await cloudinary.v2.search
-      .expression('folder:my_site/*')
-      .sort_by('created_at', 'desc')
-      .max_results(500)
-      .execute();
+    // from cloudinary
+    // const { resources } = await cloudinary.v2.search
+    //   .expression('folder:my_site/*')
+    //   .sort_by('created_at', 'desc')
+    //   .max_results(500)
+    //   .execute();
+
+    // from mongodb
+    const photos = await Photo.find().sort('-createdAt');
+
+    const resources = photos.map((photo) => ({
+      ...photo._doc,
+      _id: photo._id.toString(),
+    }));
 
     return resources;
   } catch (error) {
@@ -83,4 +113,16 @@ export async function getAllPhotos() {
 
 export async function revalidate(path) {
   return revalidatePath(path);
+}
+
+export async function deletePhoto(public_id) {
+  try {
+    await Promise.all([
+      Photo.findOneAndDelete({ public_id }),
+      cloudinary.v2.uploader.destroy(public_id),
+    ]);
+
+    revalidatePath('/');
+    return { msg: 'Delete seccess' };
+  } catch (error) {}
 }

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { IconButton, Menu, MenuItem } from '@mui/material';
+import { IconButton, Menu, MenuItem, MenuList } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import styled from './burgerMenu.module.css';
@@ -44,21 +44,23 @@ const BurgerMenu = () => {
         onClose={handleMenuClose}
       >
         {!ismediaQuery && <AuthNav />}
-        <MenuItem onClick={handleMenuClose}>
-          <Link href="/">Home</Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link href="/about">About Me</Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link href="/gallery">Gallery</Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link href="/portfolio">Portfolio</Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link href="/contact">Contact</Link>
-        </MenuItem>
+        <MenuList className={styled.menuList}>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/">Home</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/about">About Me</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/gallery">Gallery</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/portfolio">Portfolio</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/contact">Contact</Link>
+          </MenuItem>
+        </MenuList>
       </Menu>
     </>
   );

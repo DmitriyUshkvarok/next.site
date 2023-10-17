@@ -3,7 +3,7 @@ import { authOption } from '@/src/app/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth/next';
 import User from '@/src/models/users';
 import { redirect } from 'next/navigation';
-import bcrypt, { compare } from 'bcrypt';
+import bcrypt from 'bcrypt';
 import { generateToken, veryfyToken } from '../utils/token';
 import sendEmail from '../utils/sendEmail';
 import { revalidatePath } from 'next/cache';

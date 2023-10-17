@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  object-fit: cover;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -76,11 +80,6 @@ p {
   -o-transform: scale(1.1);
 }
 
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  background-color: #000000 !important;
-  background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
-  background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
-  background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
-  background-image: linear-gradient(to bottom, #434343, #000000) !important;
-  padding: 20px;
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding: 0 !important;
 }

@@ -3,6 +3,12 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    background-color: #000000 !important;
+    background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: linear-gradient(to bottom, #434343, #000000) !important;
+    padding: 10px;
 }
 
 .authNavLinkBox {
