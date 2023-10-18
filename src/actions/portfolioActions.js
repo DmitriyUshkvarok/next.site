@@ -18,17 +18,26 @@ export async function createPortfolio(data) {
   }
 }
 
-export async function getAllPortfolio() {
+export async function getAllPortfolio(searchParams) {
+  const limit = searchParams.limit * 1 || 2;
+  const page = searchParams.page * 1 || 1;
+  const skip = searchParams.skip * 1 || limit * (page - 1);
+
   try {
     // const portfolios = await Portfolio.find();
-    const portfolios = await Portfolio.find().sort({ order: 1 }); // сортируем по полю order
+    const totalPortfolios = await Portfolio.countDocuments(); // Подсчет общего количества портфолио
+    const totalPages = Math.ceil(totalPortfolios / limit); // Вычисление общего количества страниц
+    const portfolios = await Portfolio.find()
+      .sort({ order: 1 })
+      .limit(limit)
+      .skip(skip); // сортируем по полю order
 
     const newData = portfolios.map((item) => ({
       ...item._doc,
       _id: item._doc._id.toString(),
     }));
 
-    return { portfolios: newData };
+    return { portfolios: newData, totalPortfolios, totalPages };
   } catch (error) {
     console.error('Произошла ошибка при получении портфолио:', error);
     throw error; // Перехватываем и перебрасываем ошибку

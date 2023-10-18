@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styled from './burgerMenu.module.css';
 import { useMediaQuery } from 'react-responsive';
 import AuthNav from '../AuthForm/AuthNav/AuthNav';
+import '../../app/globals.css';
 
 const BurgerMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -42,22 +43,23 @@ const BurgerMenu = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
+        className={styled.menu}
       >
         {!ismediaQuery && <AuthNav />}
-        <MenuList className={styled.menuList}>
-          <MenuItem onClick={handleMenuClose}>
+        <MenuList className={`${styled.menuList} ${styled.noPaddingMenuList}`}>
+          <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
             <Link href="/">Home</Link>
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
             <Link href="/about">About Me</Link>
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
             <Link href="/gallery">Gallery</Link>
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
             <Link href="/portfolio">Portfolio</Link>
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
             <Link href="/contact">Contact</Link>
           </MenuItem>
         </MenuList>

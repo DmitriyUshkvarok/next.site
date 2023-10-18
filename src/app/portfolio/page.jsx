@@ -6,14 +6,19 @@ import PortfolioList from '@/src/components/PortfoliioList/PortfolioList';
 import styles from './portfolio.module.css';
 
 const Portfolio = async () => {
-  const { portfolios } = await getAllPortfolio();
+  const searchParams = {
+    limit: 12,
+    page: 1, 
+    skip: 0, 
+  };
+  const { portfolios, totalPages } = await getAllPortfolio(searchParams);
 
   return (
     <div className={fredericka.className}>
       <PageTransition>
         <Container>
           <h1 className={styles.selectTitle}>Choose a gallery</h1>
-          <PortfolioList portfolios={portfolios} />
+          <PortfolioList portfolios={portfolios} totalPages={totalPages} />
         </Container>
       </PageTransition>
     </div>

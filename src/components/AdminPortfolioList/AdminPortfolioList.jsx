@@ -1,16 +1,17 @@
-import { getAllPortfolio } from '@/src/actions/portfolioActions';
+'use client';
 import styles from './adminPortfolioList.module.css';
 import AdminPortfolioItem from '../AdminPortfolioItem/AdminPortfolioItem';
+import { useState, useEffect } from 'react';
+import { getAllPortfolio } from '@/src/actions/portfolioActions';
 
-const AdminPortfolioList = async () => {
-  const { portfolios } = await getAllPortfolio();
+const AdminPortfolioList = () => {
   return (
     <>
       <h3 className={styles.adminPortfolioListTitle}>
         Edit admin portfolio list
       </h3>
       <ul className={styles.adminPortfolioList}>
-        <AdminPortfolioItem portfolios={portfolios} />
+        <AdminPortfolioItem />
       </ul>
     </>
   );

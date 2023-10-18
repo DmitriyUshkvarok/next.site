@@ -4,11 +4,42 @@
     background: linear-gradient(to bottom, #434343, #000000);
 }
 
+.menu ul {
+    padding: 0;
+}
+
 .menuList {
     background-color: #000000 !important;
     background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
     background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
     background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
     background-image: linear-gradient(to bottom, #434343, #000000) !important;
+}
+
+.noPaddingMenuList {
     padding: 0 !important;
+}
+
+.menuItem {
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.menuItem:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }

@@ -11,17 +11,38 @@ import {
   toggleCardSelection,
 } from '@/src/redux/portfolioSlice/portfolioSlice';
 import { animateScroll as scroll } from 'react-scroll';
-// import { useTransition } from 'react';
 import { deletedPortfolio } from '@/src/actions/portfolioActions';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Pagination from '../Pagination/Pagination';
+import { getAllPortfolio } from '@/src/actions/portfolioActions';
 
-const AdminPortfolioItem = ({ portfolios }) => {
-  // let [isPending, startTransition] = useTransition();
+const AdminPortfolioItem = () => {
   const [isPendings, setIsPendings] = useState({});
   const dispatch = useDispatch();
   const selectedCardIds = useSelector(
     (state) => state.portfolio.selectedCardIds
   );
+  const [portfolios, setPortfolios] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const searchParams = {
+      limit: 12,
+      page: currentPage, // Используйте currentPage для запроса страницы
+      skip: (currentPage - 1) * 12, // Вычисляем количество записей для пропуска
+    };
+
+    async function fetchData() {
+      const { portfolios: newPortfolios, totalPages } = await getAllPortfolio(
+        searchParams
+      );
+      setPortfolios(newPortfolios);
+      setTotalPages(totalPages);
+    }
+
+    fetchData();
+  }, [currentPage]);
 
   async function handleDelete(porfolioId) {
     try {
@@ -106,6 +127,15 @@ const AdminPortfolioItem = ({ portfolios }) => {
           </div>
         </li>
       ))}
+      <div>
+        {totalPages && (
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
+      </div>
     </>
   );
 };
