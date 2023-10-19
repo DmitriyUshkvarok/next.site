@@ -25,6 +25,7 @@ const AdminPortfolioItem = () => {
   const [portfolios, setPortfolios] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoaading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const searchParams = {
@@ -34,11 +35,18 @@ const AdminPortfolioItem = () => {
     };
 
     async function fetchData() {
-      const { portfolios: newPortfolios, totalPages } = await getAllPortfolio(
-        searchParams
-      );
-      setPortfolios(newPortfolios);
-      setTotalPages(totalPages);
+      try {
+        setIsLoading(true);
+        const { portfolios: newPortfolios, totalPages } = await getAllPortfolio(
+          searchParams
+        );
+        setPortfolios(newPortfolios);
+        setTotalPages(totalPages);
+      } catch (error) {
+        setIsLoading(false);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     fetchData();
@@ -85,50 +93,58 @@ const AdminPortfolioItem = () => {
   };
   return (
     <>
-      {portfolios?.map((item) => (
-        <li
-          key={item._id}
-          className={`${styles.adminPortfolioListItem} ${
-            selectedCardIds.includes(item._id) ? styles.selectedCard : ''
-          }`}
-        >
-          <Link
-            href={`/portfolio/${item._id}`}
-            className={styles.adminPortfolioListLink}
-          >
-            <Image
-              src={
-                items.find((localItem) => localItem.id === item._id)?.image ||
-                item.image
-              }
-              alt={item.title}
-              width={100}
-              height={100}
-              className={styles.adminPortfolioImg}
-            />
-          </Link>
-          <div className={styles.adminChangePanel}>
-            <div
-              className={styles.adminChangePanelItem}
-              onClick={() => handleEditClick(item)}
+      <ul className={styles.adminPortfolioList}>
+        {isLoaading ? (
+          <div className={styles.adminPortfolioListLoader}>Loading...</div>
+        ) : (
+          portfolios.map((item) => (
+            <li
+              key={item._id}
+              className={`${styles.adminPortfolioListItem} ${
+                selectedCardIds.includes(item._id) ? styles.selectedCard : ''
+              }`}
             >
-              <RiFileEditFill size={20} color="green" />
-            </div>
-            <div
-              className={styles.adminChangePanelItem}
-              onClick={() => handleDelete(item._id)}
-            >
-              {isPendings[item._id] ? (
-                'Loading...'
-              ) : (
-                <AiFillDelete size={20} color="red" />
-              )}
-            </div>
-          </div>
-        </li>
-      ))}
-      <div>
-        {totalPages && (
+              <Link
+                href={`/portfolio/${item._id}`}
+                className={styles.adminPortfolioListLink}
+              >
+                <Image
+                  src={
+                    items.find((localItem) => localItem.id === item._id)
+                      ?.image || item.image
+                  }
+                  alt={item.title}
+                  width={150}
+                  height={150}
+                  className={styles.adminPortfolioImg}
+                />
+              </Link>
+              <div className={styles.adminChangePanel}>
+                <div
+                  className={styles.adminChangePanelItem}
+                  onClick={() => handleEditClick(item)}
+                >
+                  <RiFileEditFill size={20} color="green" />
+                </div>
+                <div
+                  className={styles.adminChangePanelItem}
+                  onClick={() => handleDelete(item._id)}
+                >
+                  {isPendings[item._id] ? (
+                    'Loading...'
+                  ) : (
+                    <AiFillDelete size={20} color="red" />
+                  )}
+                </div>
+              </div>
+            </li>
+          ))
+        )}
+      </ul>
+      <div className={styles.adminPortfolioPaginationWrapper}>
+        {!totalPages ? (
+          <div className={styles.adminPortfolioPaginationNull}>not found</div>
+        ) : (
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}

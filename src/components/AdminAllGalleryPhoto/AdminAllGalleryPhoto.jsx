@@ -2,6 +2,7 @@
 import AdminGalleryList from '../AdminGalleryList/AdminGalleryList';
 import { deletePhoto } from '@/src/actions/uploadActions';
 import { useState } from 'react';
+import styles from './AdminGalleryPhoto.module.css';
 
 const AdminAllGalleryPhoto = ({ photos }) => {
   const [isPendings, setIsPendings] = useState({});
@@ -33,7 +34,7 @@ const AdminAllGalleryPhoto = ({ photos }) => {
   };
 
   return (
-    <>
+    <div className={styles.adminGalleryList}>
       {photos.map((item) => (
         <AdminGalleryList
           key={item?.public_id}
@@ -42,7 +43,7 @@ const AdminAllGalleryPhoto = ({ photos }) => {
           isPending={isPendings[item?.public_id]}
         />
       ))}
-    </>
+    </div>
   );
 };
 

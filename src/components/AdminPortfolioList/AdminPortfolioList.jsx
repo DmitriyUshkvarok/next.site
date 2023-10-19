@@ -1,8 +1,6 @@
 'use client';
 import styles from './adminPortfolioList.module.css';
 import AdminPortfolioItem from '../AdminPortfolioItem/AdminPortfolioItem';
-import { useState, useEffect } from 'react';
-import { getAllPortfolio } from '@/src/actions/portfolioActions';
 
 const AdminPortfolioList = () => {
   return (
@@ -10,9 +8,9 @@ const AdminPortfolioList = () => {
       <h3 className={styles.adminPortfolioListTitle}>
         Edit admin portfolio list
       </h3>
-      <ul className={styles.adminPortfolioList}>
+      <div className={styles.adminPortfolioListWrapper}>
         <AdminPortfolioItem />
-      </ul>
+      </div>
     </>
   );
 };

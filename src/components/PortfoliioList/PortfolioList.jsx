@@ -18,7 +18,6 @@ const PortfolioList = ({ portfolios, totalPages }) => {
   const isUserAdmin = session?.user?.role === 'admin';
 
   useEffect(() => {
-    // Добавим эффект, который будет вызываться при изменении currentPage
     const fetchData = async () => {
       const searchParams = {
         limit: 12,
@@ -111,7 +110,7 @@ const PortfolioList = ({ portfolios, totalPages }) => {
           )}
         </Droppable>
       </DragDropContext>
-      <div>
+      <div className={styles.paginationPortfolioWrapper}>
         {totalPages && (
           <Pagination
             totalPages={totalPages}

@@ -1,14 +1,28 @@
 'use client';
 import Image from 'next/image';
+import styles from './AdminGalleryList.module.css';
+import { AiFillDelete } from 'react-icons/ai';
 
 const AdminGalleryList = ({ url, onClick, isPending }) => {
   return (
     <>
-      <div style={{ marginTop: '120px' }}>
-        <Image src={url} alt="upload Image" width={150} height={150} priority />
+      <div className={styles.adminGalleryWrapper}>
         <div>
-          <button type="button" onClick={onClick}>
-            {isPending ? 'Deleting...' : 'Delete'}
+          <Image
+            src={url}
+            alt="upload Image"
+            width={150}
+            height={150}
+            priority
+          />
+        </div>
+        <div>
+          <button
+            type="button"
+            onClick={onClick}
+            className={styles.adminGalleryBtnDelete}
+          >
+            {isPending ? 'Deleting...' : <AiFillDelete size={20} color="red" />}
           </button>
         </div>
       </div>

@@ -108,3 +108,7 @@
     -ms-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
     -o-transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
 }
+
+.paginationPortfolioWrapper {
+    margin-bottom: 30px;
+}

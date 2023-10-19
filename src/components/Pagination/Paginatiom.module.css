@@ -1,0 +1,33 @@
+.paginationList {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.8));
+    -webkit-filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.8));
+}
+
+.paginationListItem {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.8));
+    -webkit-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.8));
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: darkgrey;
+}
+
+.paginationListItemBtn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
