@@ -66,14 +66,11 @@ const HomeContent = () => {
                 {t('home.download_certificate')}
               </Link>
             </div>
-            <Link href="/about" className={style.promoWrapperAboutLink}>
-              {t('home.aboutLink')}
-            </Link>
           </div>
           <div className={style.promoWrapperBlockPhoto}>
             <div className={style.promoWrapperImageBox}>
               <Image
-                src="/homePhoto.png"
+                src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697729202/my_site/other/homePhoto_wwhyar.png"
                 alt="photo user"
                 width={217}
                 height={750}

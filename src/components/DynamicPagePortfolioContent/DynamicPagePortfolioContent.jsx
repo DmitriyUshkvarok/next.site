@@ -8,7 +8,10 @@ import CommentsPortfolio from '../CommentsPortfolio/CommentsPortfolio';
 import Container from '../Container/Container';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
-  const { portfolios } = await getAllPortfolio();
+  const searchParams = {
+    limit: 1,
+  };
+  const { portfolios } = await getAllPortfolio(searchParams);
 
   const item = portfolios.find((item) => item._id === id);
 
