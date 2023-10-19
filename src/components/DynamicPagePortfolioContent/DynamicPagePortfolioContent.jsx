@@ -9,7 +9,7 @@ import Container from '../Container/Container';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
   const searchParams = {
-    limit: 1,
+    limit: 14,
   };
   const { portfolios } = await getAllPortfolio(searchParams);
 
