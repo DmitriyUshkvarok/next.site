@@ -17,11 +17,11 @@ const ContactsContent = () => {
       <div className={styles.contactsWrapper}>
         <div className={styles.contactImgWrapper}>
           <Image
-            src="/Тема.png"
+            src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697733790/my_site/other/%D0%A2%D0%B5%D0%BC%D0%B0_hfuqns.webp"
             alt="photo user"
             width={550}
             height={850}
-            sizes="100vh"
+            sizes="(max-width: 768px) 50vw ,100vw"
             className={styles.contactImg}
             style={{ objectFit: 'cover' }}
           />

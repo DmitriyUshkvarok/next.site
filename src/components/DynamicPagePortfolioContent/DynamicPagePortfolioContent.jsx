@@ -2,16 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ButtonBack from '../ButtonBack/ButtonBack';
 import styles from './DynamicPagePortfolioContent.module.css';
-import { getAllPortfolio } from '@/src/actions/portfolioActions';
+import { getAllPortfolioForDinamycPage } from '@/src/actions/portfolioActions';
 import { items } from './data';
 import CommentsPortfolio from '../CommentsPortfolio/CommentsPortfolio';
 import Container from '../Container/Container';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
-  const searchParams = {
-    limit: 14,
-  };
-  const { portfolios } = await getAllPortfolio(searchParams);
+  const { portfolios } = await getAllPortfolioForDinamycPage();
 
   const item = portfolios.find((item) => item._id === id);
 

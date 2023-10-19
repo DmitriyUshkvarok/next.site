@@ -47,8 +47,8 @@ const Works = () => {
           alt="page photo"
           width={200}
           height={200}
-          sizes="100vw"
-          loading="lazy"
+          sizes="(max-width: 768px) 50vw ,75vw"
+          quality={60}
         />
       </div>
       <ul className={styles.workList}>

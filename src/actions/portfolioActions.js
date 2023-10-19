@@ -44,6 +44,20 @@ export async function getAllPortfolio(searchParams) {
   }
 }
 
+export async function getAllPortfolioForDinamycPage() {
+  try {
+    const portfolios = await Portfolio.find().sort({ order: 1 }); // Получаем все портфолио и сортируем
+    const newData = portfolios.map((item) => ({
+      ...item._doc,
+      _id: item._doc._id.toString(),
+    }));
+    return { portfolios: newData };
+  } catch (error) {
+    console.error('Произошла ошибка при получении портфолио:', error);
+    throw error;
+  }
+}
+
 export async function updatePortfoliosOrder(updatedOrder) {
   try {
     // Массив updatedOrder содержит объекты с _id и order для обновления

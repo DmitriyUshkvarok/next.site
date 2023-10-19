@@ -74,7 +74,8 @@ const HomeContent = () => {
                 alt="photo user"
                 width={217}
                 height={750}
-                sizes="100vh"
+                sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,100vw"
+                quality={60}
                 className={style.promoWrapperImage}
                 style={{ objectFit: 'cover' }}
               />

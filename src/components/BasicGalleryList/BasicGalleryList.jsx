@@ -39,8 +39,8 @@ const BasicGalleryList = ({ photos }) => {
               alt="photo admin"
               width={400}
               height={500}
-              sizes="100vw"
-              loading="lazy"
+              sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,75vw"
+              quality={60}
               style={{ objectFit: 'cover' }}
               className={styles.image}
             />
