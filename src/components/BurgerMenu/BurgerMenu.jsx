@@ -48,19 +48,29 @@ const BurgerMenu = () => {
         {!ismediaQuery && <AuthNav />}
         <MenuList className={`${styled.menuList} ${styled.noPaddingMenuList}`}>
           <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
-            <Link href="/">Home</Link>
+            <Link href="/" className={styled.menuItemLink}>
+              Home
+            </Link>
           </MenuItem>
           <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
-            <Link href="/about">About Me</Link>
+            <Link href="/about" className={styled.menuItemLink}>
+              About Me
+            </Link>
           </MenuItem>
           <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
-            <Link href="/gallery">Gallery</Link>
+            <Link href="/gallery" className={styled.menuItemLink}>
+              Gallery
+            </Link>
           </MenuItem>
           <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/portfolio" className={styled.menuItemLink}>
+              Portfolio
+            </Link>
           </MenuItem>
           <MenuItem onClick={handleMenuClose} className={styled.menuItem}>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className={styled.menuItemLink}>
+              Contact
+            </Link>
           </MenuItem>
         </MenuList>
       </Menu>

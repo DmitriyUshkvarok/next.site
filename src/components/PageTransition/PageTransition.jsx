@@ -6,13 +6,13 @@ const PageTransition = ({ children }) => {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start({ opacity: 1, x: 0, transition: { duration: 0.5 } });
+    controls.start({ opacity: 1, x: 0, transition: { duration: 0.2 } });
   }, [controls]);
 
   const exitAnimation = {
     opacity: 0,
     x: '-100vw',
-    transition: { duration: 0.5 },
+    transition: { duration: 0.2 },
   };
 
   return (
@@ -24,7 +24,7 @@ const PageTransition = ({ children }) => {
       }}
       animate={{ opacity: 1, x: 0 }}
       exit={exitAnimation}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.2 }}
     >
       {children}
     </motion.div>
