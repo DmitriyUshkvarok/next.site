@@ -14,8 +14,6 @@ const AdminGalleryList = ({ url, onClick, isPending }) => {
             width={150}
             height={150}
             sizes="100vh"
-            loading="lazy"
-            priority
           />
         </div>
         <div>
