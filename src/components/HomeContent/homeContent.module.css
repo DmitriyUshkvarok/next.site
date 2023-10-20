@@ -7,6 +7,14 @@
     -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
 }
 
+body[data-theme='light'] .promoWrapper {
+    background-image: url('/fonwhite.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 0px 10px rgba(87, 207, 240, 0.9));
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(87, 207, 240, 0.9));
+}
+
 @media screen and (max-width:850px) {
 
     .promoWrapper {
@@ -31,7 +39,7 @@
     margin-bottom: 15px;
     text-align: center;
     color: #222;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -78,10 +86,7 @@
 
 .promoWrapperBlockSubTitle {
     color: #28A745;
-    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
-    background: -moz-linear-gradient(to right, #f12711, #f5af19);
-    background: -o-linear-gradient(to right, #f12711, #f5af19);
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -284,19 +289,6 @@
     box-shadow: none;
 }
 
-.about {
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    text-align: justify;
-    font-size: 21px;
-    background: linear-gradient(to right, #f12711, #f5af19);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-}
-
 .shadow {
     position: relative;
     width: 90%;
@@ -309,11 +301,13 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     margin-bottom: 30px;
-    background: #000000;
-    background: linear-gradient(to bottom, #434343, #000000);
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
     border: 1px solid #888;
 }
+
+body[data-theme='light'] .shadow {
+    border: 10px solid rgba(0, 0, 0, 0.7);
+}
+
 
 .shadow::after {
     content: '';
@@ -336,4 +330,21 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+}
+
+body[data-theme='light'] .shadow::after {
+    background-color: transparent;
+}
+
+.about {
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    text-align: justify;
+    font-size: 21px;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }

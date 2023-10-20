@@ -23,9 +23,7 @@
     gap: 5px;
     padding: 5px;
     border: none;
-    background: #000000;
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background: -moz-linear-gradient(to bottom, #434343, #000000);
+    background-image: var(--backgroundFirst);
     color: darkorange;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -44,7 +42,7 @@
 .languageDropdownBtn {
     border: none;
     background-color: transparent;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,10 +71,8 @@
     align-items: center;
     gap: 5px;
     border: none;
-    background: #000000;
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background: -moz-linear-gradient(to bottom, #434343, #000000);
-    color: darkorange;
+    background-image: var(--backgroundFirst);
+    color: var(--colorSelectLanguage);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

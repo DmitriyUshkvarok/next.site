@@ -7,12 +7,14 @@
 body[data-theme='dark'] {
   --backgroundFirst: linear-gradient(to bottom, #434343, #000000);
   --colorText: linear-gradient(to right, #f12711, #f5af19);
+  --colorSelectLanguage: orange;
   ;
 }
 
 body[data-theme='light'] {
   --backgroundFirst: linear-gradient(to right, #b2fefa, #0ed2f7);
   --colorText: linear-gradient(to right, #232526, #414345);
+  --colorSelectLanguage: black;
   ;
 }
 
