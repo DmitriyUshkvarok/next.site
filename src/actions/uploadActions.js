@@ -59,7 +59,7 @@ export async function uploadPhoto(formData) {
 
     newFiles.map((file) => fs.unlink(file.filePath));
 
-    await delay(9000);
+    await delay(3000);
 
     const newPhotos = photos.map((photo) => {
       const newPhoto = new Photo({
