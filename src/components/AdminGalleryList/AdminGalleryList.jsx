@@ -13,9 +13,8 @@ const AdminGalleryList = ({ url, onClick, isPending }) => {
             alt="upload Image"
             width={150}
             height={150}
-            sizes="100vh"
-            loading="lazy"
-            priority
+            sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,75vw"
+            quality={60}
           />
         </div>
         <div>
