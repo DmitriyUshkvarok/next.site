@@ -7,6 +7,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fredericka } from '@/src/app/fonts';
+import TechnologyList from '../TechnologyList/TechnologyList';
 
 const HomeContent = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -82,6 +83,7 @@ const HomeContent = () => {
             </div>
           </div>
         </div>
+        <TechnologyList />
         <motion.div
           className={style.shadow}
           initial={{ opacity: 1, x: '100%' }}
