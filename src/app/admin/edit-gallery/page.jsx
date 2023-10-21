@@ -11,7 +11,7 @@ const EditGalleryPage = async () => {
         <UploadForm />
       </div>
       <div>
-        <AdminAllGalleryPhoto photos={photos || []} />
+        <AdminAllGalleryPhoto photos={photos} />
       </div>
     </>
   );

@@ -50,7 +50,6 @@ const BasicGalleryList = () => {
   return (
     <div className={styles.galleryContainer}>
       {loading ? (
-        // Показать индикатор загрузки или другой контент во время загрузки данных
         <div
           style={{
             display: 'flex',
