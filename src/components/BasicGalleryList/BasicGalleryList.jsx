@@ -1,14 +1,25 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Modal from 'react-modal';
 import styles from './basicGalleryList.module.css';
+import { getAllPhotos } from '@/src/actions/uploadActions';
 
-const BasicGalleryList = ({ photos }) => {
+const BasicGalleryList = (/*{ photos }*/) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const photos = await getAllPhotos();
+      setPhotos(photos);
+    }
+
+    fetchData();
+  }, []);
 
   const openModal = (index) => {
     setSelectedImageIndex(index);
