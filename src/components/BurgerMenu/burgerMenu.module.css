@@ -1,3 +1,7 @@
+.menuIcon {
+    color: var(--colorBurger);
+}
+
 .mobMenu {
     background: #000000;
     background: -webkit-linear-gradient(to bottom, #434343, #000000);
@@ -9,11 +13,7 @@
 }
 
 .menuList {
-    background-color: #000000 !important;
-    background-image: -webkit-linear-gradient(to bottom, #434343, #000000) !important;
-    background-image: -moz-linear-gradient(to bottom, #434343, #000000) !important;
-    background-image: -o-linear-gradient(to bottom, #434343, #000000) !important;
-    background-image: linear-gradient(to bottom, #434343, #000000) !important;
+    background-image: var(--backgroundFirst);
 }
 
 .noPaddingMenuList {
@@ -22,10 +22,7 @@
 
 .menuItem {
     color: #fff;
-    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
-    background: -moz-linear-gradient(to right, #f12711, #f5af19);
-    background: -o-linear-gradient(to right, #f12711, #f5af19);
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

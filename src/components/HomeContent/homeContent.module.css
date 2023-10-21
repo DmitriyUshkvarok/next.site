@@ -15,8 +15,13 @@ body[data-theme='light'] .promoWrapper {
     -webkit-filter: drop-shadow(0px 0px 10px rgba(87, 207, 240, 0.9));
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width:472px) {
+    body[data-theme='light'] .promoWrapper {
+        background-position: -10px 100px;
+    }
+}
 
+@media screen and (max-width:850px) {
     .promoWrapper {
         background-position: -70px 100px;
     }
@@ -121,6 +126,7 @@ body[data-theme='light'] .promoWrapper {
 }
 
 .promoWrapperBlockPhoto {
+    position: relative;
     width: 50%;
 }
 
@@ -177,6 +183,45 @@ body[data-theme='light'] .promoWrapper {
     }
 }
 
+.promoWrapperImageWhiteTheme {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
+    -webkit-filter: saturate(20%);
+    transition: filter 0.4s;
+    -webkit-transition: filter 0.4s;
+    -moz-transition: filter 0.4s;
+    -ms-transition: filter 0.4s;
+    -o-transition: filter 0.4s;
+}
+
+@media screen and (max-width:665px) {
+    .promoWrapperImageWhiteTheme {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: 150px;
+    }
+}
+
+@media screen and (max-width:482px) {
+    .promoWrapperImageWhiteTheme {
+        top: 120px;
+    }
+}
+
+@media screen and (max-width:471px) {
+    .promoWrapperImageWhiteTheme {
+        top: 150px;
+        width: 200px;
+    }
+}
+
+.promoWrapperImageWhiteTheme:hover {
+    -webkit-filter: saturate(120%);
+    filter: saturate(120%);
+}
+
 .buttonWrapper {
     margin-left: auto;
     margin-right: auto;
@@ -217,16 +262,14 @@ body[data-theme='light'] .promoWrapper {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #000000;
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background: linear-gradient(to bottom, #434343, #000000);
+    background-image: var(--backgroundFirst);
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    color: orange;
+    color: var(--colorBurger);
     text-transform: uppercase;
     font-weight: bold;
     transition: 0.3s;
@@ -305,7 +348,7 @@ body[data-theme='light'] .promoWrapper {
 }
 
 body[data-theme='light'] .shadow {
-    border: 10px solid rgba(0, 0, 0, 0.7);
+    border: 5px solid rgba(0, 0, 0, 0.4);
 }
 
 
@@ -338,6 +381,7 @@ body[data-theme='light'] .shadow::after {
 
 .about {
     filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
     text-align: justify;
     font-size: 21px;
     background-image: var(--colorText);
@@ -346,5 +390,4 @@ body[data-theme='light'] .shadow::after {
     background-clip: text;
     margin-left: auto;
     margin-right: auto;
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }

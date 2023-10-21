@@ -8,12 +8,14 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fredericka } from '@/src/app/fonts';
 import TechnologyList from '../TechnologyList/TechnologyList';
+import { useSelector } from 'react-redux';
 
 const HomeContent = () => {
   const [scrollY, setScrollY] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const controls = useAnimation();
   const { t } = useTranslation();
+  const currentTheme = useSelector((state) => state.theme.themeColor);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,16 +72,33 @@ const HomeContent = () => {
           </div>
           <div className={style.promoWrapperBlockPhoto}>
             <div className={style.promoWrapperImageBox}>
-              <Image
-                src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697729202/my_site/other/homePhoto_wwhyar.png"
-                alt="photo user"
-                width={217}
-                height={750}
-                sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,100vw"
-                quality={60}
-                className={style.promoWrapperImage}
-                style={{ objectFit: 'cover' }}
-              />
+              {currentTheme === 'dark' ? (
+                <Image
+                  src={
+                    'https://res.cloudinary.com/dlllyuipi/image/upload/v1697889779/homePhoto_zjm3od.png'
+                  }
+                  alt="photo user"
+                  width={217}
+                  height={750}
+                  sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,100vw"
+                  quality={60}
+                  className={style.promoWrapperImage}
+                  style={{ objectFit: 'cover' }}
+                />
+              ) : (
+                <Image
+                  src={
+                    'https://res.cloudinary.com/dlllyuipi/image/upload/v1697891546/%D0%A2%D0%B5%D0%BC%D0%B0_nkqb8h.webp'
+                  }
+                  alt="photo user"
+                  width={217}
+                  height={750}
+                  sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,100vw"
+                  quality={60}
+                  className={style.promoWrapperImageWhiteTheme}
+                  style={{ objectFit: 'cover' }}
+                />
+              )}
             </div>
           </div>
         </div>

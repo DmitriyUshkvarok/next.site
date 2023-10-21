@@ -10,7 +10,7 @@
     margin-top: 90px;
     margin-bottom: 20px;
     color: #c1bdbd;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -36,11 +36,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: #000000;
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    background: -moz-linear-gradient(to right, #434343, #000000);
-    background: -o-linear-gradient(to right, #434343, #000000);
-    background: linear-gradient(to right, #434343, #000000);
+    background-image: var(--backgroundFirst);
     box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
     border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -75,7 +71,7 @@
 .trainingsTitle {
     text-align: center;
     color: #c1bdbd;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -84,7 +80,7 @@
 .trainingsData,
 .trainingsRegion,
 .trainingsFaculty {
-    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

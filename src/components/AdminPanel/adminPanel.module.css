@@ -28,7 +28,6 @@
 }
 
 .adminPanelItem {
-    padding: 10px;
     background: -webkit-linear-gradient(to right, #f12711, #f5af19);
     background: -moz-linear-gradient(to right, #f12711, #f5af19);
     background: -o-linear-gradient(to right, #f12711, #f5af19);
@@ -50,6 +49,11 @@
     -o-transition: 0.4s;
     filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
     -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.adminPanelLink {
+    display: flex;
+    padding: 10px;
 }
 
 .adminPanelItem:hover {

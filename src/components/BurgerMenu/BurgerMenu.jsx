@@ -30,12 +30,7 @@ const BurgerMenu = () => {
         color="inherit"
         id="burger"
       >
-        <MenuIcon
-          sx={{
-            fontSize: '40px',
-            color: '#f12711',
-          }}
-        />
+        <MenuIcon className={styled.menuIcon} />
       </IconButton>
       <Menu
         id="menu"
