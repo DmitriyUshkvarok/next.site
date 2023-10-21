@@ -35,14 +35,15 @@ const AdminAllGalleryPhoto = ({ photos }) => {
 
   return (
     <div className={styles.adminGalleryList}>
-      {photos.map((item) => (
-        <AdminGalleryList
-          key={item?.public_id}
-          url={item?.secure_url}
-          onClick={() => handleDeletePhoto(item?.public_id)}
-          isPending={isPendings[item?.public_id]}
-        />
-      ))}
+      {photos &&
+        photos?.map((item) => (
+          <AdminGalleryList
+            key={item?.public_id}
+            url={item?.secure_url}
+            onClick={() => handleDeletePhoto(item?.public_id)}
+            isPending={isPendings[item?.public_id]}
+          />
+        ))}
     </div>
   );
 };

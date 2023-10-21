@@ -63,23 +63,24 @@ const BasicGalleryList = () => {
         </div>
       ) : (
         <ul className={styles.imageList}>
-          {photos?.map((item, index) => (
-            <li
-              key={item?.public_id}
-              onClick={() => openModal(index)}
-              className={styles.imageItem}
-            >
-              <Image
-                src={item?.secure_url}
-                alt="photo admin"
-                width={400}
-                height={500}
-                sizes="100vw"
-                style={{ objectFit: 'cover' }}
-                className={styles.image}
-              />
-            </li>
-          ))}
+          {photos &&
+            photos?.map((item, index) => (
+              <li
+                key={item?.public_id}
+                onClick={() => openModal(index)}
+                className={styles.imageItem}
+              >
+                <Image
+                  src={item?.secure_url}
+                  alt="photo admin"
+                  width={400}
+                  height={500}
+                  sizes="100vw"
+                  style={{ objectFit: 'cover' }}
+                  className={styles.image}
+                />
+              </li>
+            ))}
         </ul>
       )}
       <Modal
