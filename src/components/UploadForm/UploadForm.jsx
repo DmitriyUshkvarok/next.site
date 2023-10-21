@@ -12,7 +12,7 @@ const UploadForm = () => {
   const handleInputChange = async (e) => {
     const files = e.target.files;
     const newFiles = [...files].filter((file) => {
-      if (file.size < 2024 * 2024 && file.type.startsWith('image/')) {
+      if (file.size < 6024 * 6024 && file.type.startsWith('image/')) {
         return file;
       }
     });

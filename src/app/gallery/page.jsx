@@ -5,7 +5,6 @@ import { getAllPhotos } from '@/src/actions/uploadActions';
 
 const GalleryPage = async () => {
   const photos = await getAllPhotos();
-  console.log(photos);
   return (
     <>
       <PageTransition>
