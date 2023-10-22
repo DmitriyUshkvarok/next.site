@@ -1,4 +1,4 @@
-import cloudinary from '@/src/config/cloudinary-config';
+import cloudinary from 'cloudinary';
 import { NextResponse } from 'next/server';
 
 export default async function handler(req, res) {
