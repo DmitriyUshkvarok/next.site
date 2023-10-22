@@ -36,7 +36,7 @@ const AdminPanel = () => {
           </Link>
         </li>
         <li className={styles.adminPanelItem}>
-          <Link className={styles.adminPanelLink} href="/admin/profile">
+          <Link className={styles.adminPanelLink} href="/admin/edit-about">
             Edit About
           </Link>
         </li>

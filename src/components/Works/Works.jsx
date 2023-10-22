@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Works = () => {
+const Works = ({ works }) => {
   const { t } = useTranslation();
 
   const animateOnScroll = () => {
@@ -52,8 +52,8 @@ const Works = () => {
         />
       </div>
       <ul className={styles.workList}>
-        {works.map((work) => (
-          <li key={work.id} className={styles.workListItem}>
+        {works?.map((work) => (
+          <li key={work._id} className={styles.workListItem}>
             <Image
               src={work.image}
               alt={work.enterprise}
@@ -61,25 +61,18 @@ const Works = () => {
               width={400}
               height={200}
               className={styles.workListImage}
-              loading="lazy"
             />
             <div className={styles.workListInfoWrapper}>
               <h3 className={styles.workListInfoWrapperTitle}>
-                {t(`about.enterpriseJob${work.id}`)}
+                {work.enterprise}
               </h3>
-              <p className={styles.workListInfoWrapperData}>
-                {t(`about.enterpriseJob${work.id}Dates`)}
-              </p>
+              <p className={styles.workListInfoWrapperData}>{work.data}</p>
               <h3 className={styles.workListInfoWrapperRegion}>
-                {t(`about.region${work.id}`)}
+                {work.region}
               </h3>
               <ul className={styles.workListInfoWrapperList}>
-                {work.position.map((_, index) => (
-                  <li key={index}>
-                    {t(
-                      `about.position${work.id}.position${work.id}_${index + 1}`
-                    )}
-                  </li>
+                {work.position.map((pos, index) => (
+                  <li key={index}>{pos}</li>
                 ))}
               </ul>
             </div>

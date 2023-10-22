@@ -48,6 +48,8 @@ body[data-theme='light'] .promoWrapper {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.6));
+    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.6));
 }
 
 @media screen and (max-width:1050px) {

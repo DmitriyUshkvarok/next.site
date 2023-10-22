@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import os from 'os';
 import cloudinary from 'cloudinary';
 import { revalidatePath } from 'next/cache';
-import Photo from '../models/photoModel';
+import { createWork } from './worksAction';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -41,7 +41,7 @@ async function savePhotoToLocal(formData) {
 
 async function uploadPhotosToCloudinary(newFiles) {
   const multiplePhotosPromise = newFiles.map((file) =>
-    cloudinary.v2.uploader.upload(file.filePath, { folder: 'my_site' })
+    cloudinary.v2.uploader.upload(file.filePath, { folder: 'works_photo' })
   );
 
   return await Promise.all(multiplePhotosPromise);
@@ -51,7 +51,7 @@ async function uploadPhotosToCloudinary(newFiles) {
 //   return new Promise((resolve) => setTimeout(resolve, delayInms));
 // };
 
-export async function uploadPhoto(formData) {
+export async function uploadPhotoWork(formData, workData) {
   try {
     const newFiles = await savePhotoToLocal(formData);
 
@@ -61,18 +61,14 @@ export async function uploadPhoto(formData) {
 
     // await delay(2000);
 
-    const newPhotos = photos.map((photo) => {
-      const newPhoto = new Photo({
-        public_id: photo.public_id,
-        secure_url: photo.secure_url,
-      });
-      return newPhoto;
-    });
+    const secureUrl = photos[0].secure_url;
 
-    await Photo.insertMany(newPhotos);
+    workData.image = secureUrl;
+
+    await createWork(workData);
 
     revalidatePath('/');
-    return { msg: 'upload succsess' };
+    return { msg: 'upload success' };
   } catch (error) {
     return { erMsg: error.message };
   }
@@ -87,29 +83,6 @@ export async function uploadPhoto(formData) {
 //     console.log(error);
 //   }
 // }
-
-export async function getAllPhotos() {
-  try {
-    // for cloudinary
-    // const { resources } = await cloudinary.v2.search
-    //   .expression('folder:my_site/*')
-    //   .sort_by('created_at', 'desc')
-    //   .max_results(500)
-    //   .execute();
-
-    // for mongodb
-    const photos = await Photo.find().sort('-createdAt');
-
-    const resources = photos.map((photo) => ({
-      ...photo._doc,
-      _id: photo._id.toString(),
-    }));
-
-    return resources;
-  } catch (error) {
-    return { erMsg: error.message };
-  }
-}
 
 export async function revalidate(path) {
   return revalidatePath(path);
