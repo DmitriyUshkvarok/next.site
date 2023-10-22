@@ -1,5 +1,5 @@
 'use client';
-import { works } from './data-work';
+// import { works } from './data-work';
 import Image from 'next/image';
 import styles from './works.module.css';
 import { useTranslation } from 'react-i18next';
@@ -48,36 +48,36 @@ const Works = ({ works }) => {
           width={200}
           height={200}
           sizes="(max-width: 768px) 50vw ,75vw"
-          quality={60}
         />
       </div>
       <ul className={styles.workList}>
-        {works?.map((work) => (
-          <li key={work._id} className={styles.workListItem}>
-            <Image
-              src={work.image}
-              alt={work.enterprise}
-              sizes="100vw"
-              width={400}
-              height={200}
-              className={styles.workListImage}
-            />
-            <div className={styles.workListInfoWrapper}>
-              <h3 className={styles.workListInfoWrapperTitle}>
-                {work.enterprise}
-              </h3>
-              <p className={styles.workListInfoWrapperData}>{work.data}</p>
-              <h3 className={styles.workListInfoWrapperRegion}>
-                {work.region}
-              </h3>
-              <ul className={styles.workListInfoWrapperList}>
-                {work.position.map((pos, index) => (
-                  <li key={index}>{pos}</li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        ))}
+        {works &&
+          works?.map((work) => (
+            <li key={work._id} className={styles.workListItem}>
+              <Image
+                src={`${work?.image}`}
+                alt="work photo"
+                sizes="100vw"
+                width={400}
+                height={200}
+                className={styles.workListImage}
+              />
+              <div className={styles.workListInfoWrapper}>
+                <h3 className={styles.workListInfoWrapperTitle}>
+                  {work.enterprise}
+                </h3>
+                <p className={styles.workListInfoWrapperData}>{work.data}</p>
+                <h3 className={styles.workListInfoWrapperRegion}>
+                  {work.region}
+                </h3>
+                <ul className={styles.workListInfoWrapperList}>
+                  {work.position.map((pos, index) => (
+                    <li key={index}>{pos}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
       </ul>
     </div>
   );
