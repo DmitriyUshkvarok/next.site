@@ -47,9 +47,9 @@ async function uploadPhotosToCloudinary(newFiles) {
   return await Promise.all(multiplePhotosPromise);
 }
 
- const delay = (delayInms) => {
-   return new Promise((resolve) => setTimeout(resolve, delayInms));
- };
+const delay = (delayInms) => {
+  return new Promise((resolve) => setTimeout(resolve, delayInms));
+};
 
 export async function uploadPhoto(formData) {
   try {
@@ -59,7 +59,7 @@ export async function uploadPhoto(formData) {
 
     newFiles.map((file) => fs.unlink(file.filePath));
 
-     await delay(2000);
+    await delay(2000);
 
     const newPhotos = photos.map((photo) => {
       const newPhoto = new Photo({
@@ -90,7 +90,7 @@ export async function uploadPhoto(formData) {
 
 export async function getAllPhotos() {
   try {
-    // from cloudinary
+    // for cloudinary
     // const { resources } = await cloudinary.v2.search
     //   .expression('folder:my_site/*')
     //   .sort_by('created_at', 'desc')
