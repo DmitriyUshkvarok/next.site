@@ -97,7 +97,7 @@ export async function getAllPhotos() {
     //   .max_results(500)
     //   .execute();
 
-    // from mongodb
+    // for mongodb
     const photos = await Photo.find().sort('-createdAt');
 
     const resources = photos.map((photo) => ({
