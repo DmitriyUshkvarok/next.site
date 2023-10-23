@@ -3,6 +3,8 @@ import AdminGalleryList from '../AdminGalleryList/AdminGalleryList';
 import { deletePhoto } from '@/src/actions/uploadActions';
 import { useState } from 'react';
 import styles from './AdminGalleryPhoto.module.css';
+import { AiFillDelete } from 'react-icons/ai';
+import Image from 'next/image';
 
 const AdminAllGalleryPhoto = ({ photos }) => {
   const [isPendings, setIsPendings] = useState({});
@@ -36,12 +38,34 @@ const AdminAllGalleryPhoto = ({ photos }) => {
   return (
     <div className={styles.adminGalleryList}>
       {photos?.map((item) => (
-        <AdminGalleryList
-          key={item?.public_id}
-          url={item?.secure_url}
-          onClick={() => handleDeletePhoto(item?.public_id)}
-          isPending={isPendings[item?.public_id]}
-        />
+        <div key={item?.public_id} className={styles.galleryItem}>
+          <Image
+            src={item?.secure_url}
+            alt="upload Image"
+            width={150}
+            height={150}
+            sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,75vw"
+          />
+          <div>
+            <button
+              type="button"
+              onClick={() => handleDeletePhoto(item?.public_id)}
+              className={styles.adminGalleryBtnDelete}
+            >
+              {isPendings[item?.public_id] ? (
+                'Deleting...'
+              ) : (
+                <AiFillDelete size={20} color="red" />
+              )}
+            </button>
+          </div>
+        </div>
+        // <AdminGalleryList
+        //   key={item?.public_id}
+        //   url={item?.secure_url}
+        //   onClick={() => handleDeletePhoto(item?.public_id)}
+        //   isPending={isPendings[item?.public_id]}
+        // />
       ))}
     </div>
   );

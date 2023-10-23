@@ -3,16 +3,16 @@
     background-image: url('/fon.png');
     background-repeat: no-repeat;
     background-position: left;
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 body[data-theme='light'] .promoWrapper {
     background-image: url('/fonwhite.png');
     background-repeat: no-repeat;
     background-position: center;
-    filter: drop-shadow(0px 0px 10px rgba(87, 207, 240, 0.9));
-    -webkit-filter: drop-shadow(0px 0px 10px rgba(87, 207, 240, 0.9));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:472px) {
@@ -44,12 +44,12 @@ body[data-theme='light'] .promoWrapper {
     margin-bottom: 15px;
     text-align: center;
     color: #222;
-    background-image: var(--colorText);
+    background-image: var(--colorTextTitle);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.6));
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.6));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:1050px) {
@@ -93,7 +93,7 @@ body[data-theme='light'] .promoWrapper {
 
 .promoWrapperBlockSubTitle {
     color: #28A745;
-    background-image: var(--colorText);
+    background-image: var(--colorTextTitle);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -104,6 +104,8 @@ body[data-theme='light'] .promoWrapper {
     background-size: 200% auto;
     animation: shineEffect 10s linear infinite;
     -webkit-animation: shineEffect 10s linear infinite;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:1050px) {
@@ -139,6 +141,8 @@ body[data-theme='light'] .promoWrapper {
     max-width: 100%;
     padding-top: 120px;
     padding-right: 110px;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:810px) {
@@ -234,6 +238,8 @@ body[data-theme='light'] .promoWrapper {
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 30px;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:570px) {
@@ -280,6 +286,8 @@ body[data-theme='light'] .promoWrapper {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     border: 1px solid #888;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .downloadLink::after {
@@ -382,8 +390,6 @@ body[data-theme='light'] .shadow::after {
 }
 
 .about {
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
     text-align: justify;
     font-size: 21px;
     background-image: var(--colorText);
