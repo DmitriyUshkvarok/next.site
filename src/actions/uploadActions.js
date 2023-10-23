@@ -6,6 +6,9 @@ import os from 'os';
 import cloudinary from 'cloudinary';
 import { revalidatePath } from 'next/cache';
 import Photo from '../models/photoModel';
+import connectDB from '../utils/db';
+
+connectDB();
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
