@@ -50,6 +50,7 @@ const ResetPasswordComponent = ({ token }) => {
               type="text"
               name="password"
               placeholder="Enter your password"
+              aria-label="password"
             />
             <ErrorMessage name="password">
               {(msg) => <div>{msg}</div>}

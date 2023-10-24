@@ -7,7 +7,12 @@ const ButtonSubmit = ({ value, ...props }) => {
   const { pending } = useFormStatus();
   return (
     <>
-      <button className={styles.btnSubmit} {...props} disabled={pending}>
+      <button
+        className={styles.btnSubmit}
+        {...props}
+        disabled={pending}
+        type="button"
+      >
         <span className={fredericka.className}>
           {pending ? 'Loading...' : value}
         </span>

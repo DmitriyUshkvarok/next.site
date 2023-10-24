@@ -78,7 +78,7 @@ const AdminAboutWorksForm = () => {
         ref={formRef}
         className={styles.adminPortfolioForm}
       >
-        <h2 className={styles.adminPortfolioFormTitle}>Editin About Page</h2>
+        <h1 className={styles.adminPortfolioFormTitle}>Editin About Page</h1>
         <div className={styles.adminPortfolioFormGroup}>
           <input
             className={styles.adminPortfolioFormInput}

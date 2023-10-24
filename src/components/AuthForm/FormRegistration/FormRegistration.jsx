@@ -76,6 +76,7 @@ function FormRegistration() {
               type="text"
               name="name"
               placeholder="Enter your name"
+              aria-label="name"
             />
             <ErrorMessage name="name">
               {(msg) => <div className={styles.validationError}>{msg}</div>}
@@ -87,6 +88,7 @@ function FormRegistration() {
               type="email"
               name="email"
               placeholder="Enter your email"
+              aria-label="email"
             />
             <ErrorMessage name="email">
               {(msg) => <div className={styles.validationError}>{msg}</div>}
@@ -99,6 +101,7 @@ function FormRegistration() {
                 type={showPassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Confirm a password"
+                aria-label="password"
               />
               <div
                 className={styles.formLoginInputBtnShowPassword}

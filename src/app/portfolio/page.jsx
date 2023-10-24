@@ -5,11 +5,25 @@ import Container from '@/src/components/Container/Container';
 import PortfolioList from '@/src/components/PortfoliioList/PortfolioList';
 import styles from './portfolio.module.css';
 
+export const metadata = {
+  title: 'Portfolio Page | My Site Portfolio Portfolio',
+  description:
+    'web developer Dmitriy Ushkvarok,welcome to my portfolio page Dmitriy Ushkvarok',
+  alternates: {
+    canonical: '/portfolio',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+      'ru-RU': '/ru-RU',
+    },
+  },
+};
+
 const Portfolio = async () => {
   const searchParams = {
     limit: 12,
-    page: 1, 
-    skip: 0, 
+    page: 1,
+    skip: 0,
   };
   const { portfolios, totalPages } = await getAllPortfolio(searchParams);
 

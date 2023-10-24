@@ -23,7 +23,7 @@ const DynamicPagePortfolioContent = async ({ id }) => {
         <div className={styles.btnBackWrapper}>
           <ButtonBack />
         </div>
-        <h2 className={styles.dynamicPageTitle}>{item.title}</h2>
+        <h1 className={styles.dynamicPageTitle}>{item.title}</h1>
         <div className={styles.dynamicPageImgWrapper}>
           <Image
             src={localItem ? localItem.image : item.image}

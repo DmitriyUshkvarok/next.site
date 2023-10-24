@@ -39,6 +39,7 @@ const UpdateUserForm = ({ update }) => {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            aria-label="name"
             required
           />
         </div>
@@ -53,6 +54,7 @@ const UpdateUserForm = ({ update }) => {
             name="image"
             value={image}
             onChange={(e) => setImage(e.target.value)}
+            aria-label="image"
             required
           />
         </div>

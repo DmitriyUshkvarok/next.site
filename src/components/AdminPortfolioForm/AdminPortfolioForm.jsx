@@ -83,7 +83,7 @@ function PortfolioForm() {
   return (
     <div className={fredericka.className}>
       <form onSubmit={handleSubmit} className={styles.adminPortfolioForm}>
-        <h2 className={styles.adminPortfolioFormTitle}>Build a portfolio</h2>
+        <h1 className={styles.adminPortfolioFormTitle}>Build a portfolio</h1>
         <div className={styles.adminPortfolioFormGroup}>
           <input
             className={styles.adminPortfolioFormInput}
@@ -92,6 +92,7 @@ function PortfolioForm() {
             placeholder="Enter your title"
             value={editingPortfolios.title}
             onChange={handleChange}
+            aria-label="title"
           />
         </div>
         <div className={styles.adminPortfolioFormGroup}>
@@ -102,6 +103,7 @@ function PortfolioForm() {
             placeholder="Enter your description"
             value={editingPortfolios.description}
             onChange={handleChange}
+            aria-label="desctiption"
           />
         </div>
         <div className={styles.adminPortfolioFormGroup}>
@@ -112,6 +114,7 @@ function PortfolioForm() {
             placeholder="Enter your website"
             value={editingPortfolios.website}
             onChange={handleChange}
+            aria-label="website"
           />
         </div>
         <div className={styles.adminPortfolioFormGroup}>
@@ -122,6 +125,7 @@ function PortfolioForm() {
             placeholder="Enter your pageCode"
             value={editingPortfolios.pageCode}
             onChange={handleChange}
+            aria-label="page code"
           />
         </div>
         <div className={styles.adminPortfolioFormGroup}>
@@ -132,6 +136,7 @@ function PortfolioForm() {
             placeholder="Enter your image"
             value={editingPortfolios.image}
             onChange={handleChange}
+            aria-label="image"
           />
         </div>
         <div className={styles.createFormButtonWrapper}>

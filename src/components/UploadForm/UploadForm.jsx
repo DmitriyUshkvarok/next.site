@@ -47,6 +47,7 @@ const UploadForm = () => {
   return (
     <>
       <form action={handleUpload} ref={formRef}>
+        <h1>Edit gallery</h1>
         <div>
           <input
             type="file"

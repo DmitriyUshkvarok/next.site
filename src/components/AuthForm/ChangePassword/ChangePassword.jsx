@@ -61,6 +61,7 @@ const ChangePassword = () => {
               type={showPassword ? 'text' : 'password'}
               name="old_pass"
               placeholder="Old password"
+              aria-label="old_pass"
             />
             <ErrorMessage name="old_pass">
               {(msg) => <div className={styles.validationError}>{msg}</div>}
@@ -73,6 +74,7 @@ const ChangePassword = () => {
                 type={showPassword ? 'text' : 'password'}
                 name="new_pass"
                 placeholder="New password"
+                aria-label="new_pass"
               />
               <div
                 className={styles.changePasswordShow}

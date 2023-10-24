@@ -38,7 +38,7 @@ const Works = ({ works }) => {
 
   return (
     <div className={fredericka.className}>
-      <h2 className={styles.aboutTitle}>{t('about.work_experience')}</h2>
+      <h1 className={styles.aboutTitle}>{t('about.work_experience')}</h1>
       <div className={styles.aboutHeroImg}>
         <Image
           className={styles.aboutWorkImg}

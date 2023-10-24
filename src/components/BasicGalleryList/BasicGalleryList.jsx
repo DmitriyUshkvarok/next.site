@@ -27,6 +27,7 @@ const BasicGalleryList = ({ photos }) => {
 
   return (
     <div className={styles.galleryContainer}>
+      <h1>Gallery</h1>
       <ul className={styles.imageList}>
         {photos?.map((item, index) => (
           <li

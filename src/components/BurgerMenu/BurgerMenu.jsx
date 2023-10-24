@@ -24,6 +24,8 @@ const BurgerMenu = () => {
   return (
     <>
       <IconButton
+        type="button"
+        name="burger"
         aria-controls="menu"
         aria-haspopup="true"
         onClick={handleMenuOpen}

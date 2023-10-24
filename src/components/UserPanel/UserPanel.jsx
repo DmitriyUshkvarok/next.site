@@ -7,7 +7,7 @@ const UserPanel = () => {
   const { data: session } = useSession();
   return (
     <>
-      <h2 className={styles.userPanelTitle}>User Panel</h2>
+      <h1 className={styles.userPanelTitle}>User Panel</h1>
       <div className={styles.userPanelBox}>
         <div className={styles.avatarWrapper}>
           <Image

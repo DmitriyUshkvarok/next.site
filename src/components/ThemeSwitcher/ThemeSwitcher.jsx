@@ -19,7 +19,12 @@ const ThemeSwitcher = () => {
   };
   return (
     <div className={styles.themeSwitcherBox}>
-      <button className={styles.themeSwitcherBtn} onClick={handleThemeToggle}>
+      <button
+        type="button"
+        name="toggle theme"
+        className={styles.themeSwitcherBtn}
+        onClick={handleThemeToggle}
+      >
         {themeColor === 'dark' ? (
           <FaSun size={20} color="orange" />
         ) : (

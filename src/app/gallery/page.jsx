@@ -3,6 +3,20 @@ import PageTransition from '@/src/components/PageTransition/PageTransition';
 import BasicGalleryList from '@/src/components/BasicGalleryList/BasicGalleryList';
 import { getAllPhotos } from '@/src/actions/uploadActions';
 
+export const metadata = {
+  title: 'Gallery Page | My Site Portfolio Gallery',
+  description:
+    'web developer Dmitriy Ushkvarok,welcome to my gallery page Dmitriy Ushkvarok',
+  alternates: {
+    canonical: '/gallery',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+      'ru-RU': '/ru-RU',
+    },
+  },
+};
+
 const GalleryPage = async () => {
   const photos = await getAllPhotos();
   return (
