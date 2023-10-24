@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import persisteAuthReducer from './authApi/authSlice';
 import persistedLanguageReducer from './language/languageSlice';
 import { portfolioApi } from './createPortfolioApi/createPortfolioApi';
 import portfolioSlice from './portfolioSlice/portfolioSlice';
