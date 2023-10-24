@@ -30,13 +30,9 @@
 
 .adminPortfolioListItem {
     padding: 10px;
-    background: #000000;
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background: -moz-linear-gradient(to bottom, #434343, #000000);
-    background: -o-linear-gradient(to bottom, #434343, #000000);
-    background: linear-gradient(to bottom, #434343, #000000);
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -55,13 +51,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #000000;
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);
-    background: -moz-linear-gradient(to bottom, #434343, #000000);
-    background: -o-linear-gradient(to bottom, #434343, #000000);
-    background: linear-gradient(to bottom, #434343, #000000);
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;

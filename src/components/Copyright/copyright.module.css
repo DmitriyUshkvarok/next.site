@@ -1,6 +1,6 @@
 .copyright {
     padding: 10px;
-    background-image: var(--backgroundFirst);
+    background-image: var(--backgroundImage), var(--backgroundFirst);
     display: flex;
     align-items: center;
     justify-content: center;

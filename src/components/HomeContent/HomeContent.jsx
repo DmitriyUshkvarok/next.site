@@ -6,7 +6,7 @@ import Container from '../Container/Container';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fredericka } from '@/src/app/fonts';
+import { fredericka, montserrat } from '@/src/app/fonts';
 import TechnologyList from '../TechnologyList/TechnologyList';
 import { useSelector } from 'react-redux';
 
@@ -104,7 +104,7 @@ const HomeContent = () => {
         </div>
         <TechnologyList />
         <motion.div
-          className={style.shadow}
+          className={(montserrat.className, style.shadow)}
           initial={{ opacity: 1, x: '100%' }}
           transition={{ opacity: { duration: 0.5 }, x: { duration: 0.5 } }}
           animate={controls}

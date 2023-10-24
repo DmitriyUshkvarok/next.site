@@ -3,16 +3,12 @@
     background-image: url('/fon.png');
     background-repeat: no-repeat;
     background-position: left;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
 
 body[data-theme='light'] .promoWrapper {
     background-image: url('/fonwhite.png');
     background-repeat: no-repeat;
     background-position: center;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:472px) {
@@ -44,7 +40,7 @@ body[data-theme='light'] .promoWrapper {
     margin-bottom: 15px;
     text-align: center;
     color: #222;
-    background-image: var(--colorTextTitle);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -93,7 +89,7 @@ body[data-theme='light'] .promoWrapper {
 
 .promoWrapperBlockSubTitle {
     color: #28A745;
-    background-image: var(--colorTextTitle);
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -355,6 +351,7 @@ body[data-theme='light'] .promoWrapper {
     -o-border-radius: 10px;
     margin-bottom: 30px;
     border: 1px solid #888;
+    background-image: var(--backgroundImage), var(--backgroundFirst);
 }
 
 body[data-theme='light'] .shadow {

@@ -1,5 +1,7 @@
 .themeSwitcherBox {
     margin-right: 20px;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .themeSwitcherBtn {

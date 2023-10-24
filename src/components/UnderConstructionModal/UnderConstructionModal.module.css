@@ -24,7 +24,7 @@
 
 .modalContent {
     position: relative;
-    background-image: var(--backgroundFirst);
+    background-image: var(--backgroundImage), var(--backgroundFirst);
     border: 1px solid #888;
     border-radius: 8px;
     padding: 10px;

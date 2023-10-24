@@ -18,8 +18,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
-    -webkit-filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+    text-align: center;
 }
 
 .subTitleLogo {
@@ -65,8 +66,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .navigationItem a:hover {

@@ -1,5 +1,4 @@
 'use client';
-// import { works } from './data-work';
 import Image from 'next/image';
 import styles from './works.module.css';
 import { useTranslation } from 'react-i18next';

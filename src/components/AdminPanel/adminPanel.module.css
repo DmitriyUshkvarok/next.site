@@ -95,10 +95,7 @@
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    background: -webkit-linear-gradient(to right, #313030, #575756);
-    background: -moz-linear-gradient(to right, #313030, #575756);
-    background: -o-linear-gradient(to right, #313030, #575756);
-    background: linear-gradient(to right, #313030, #575756);
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }

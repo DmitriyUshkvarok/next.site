@@ -37,6 +37,8 @@
     -moz-transition: transform .4s;
     -ms-transition: transform .4s;
     -o-transition: transform .4s;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .languageDropdownBtn {

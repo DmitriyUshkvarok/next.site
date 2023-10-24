@@ -2,6 +2,7 @@ import {
   Permanent_Marker,
   Philosopher,
   Fredericka_the_Great,
+  Montserrat,
 } from 'next/font/google';
 
 export const permanentMarker = Permanent_Marker({
@@ -17,4 +18,9 @@ export const philosopher = Philosopher({
 export const fredericka = Fredericka_the_Great({
   subsets: ['latin'],
   weight: ['400'],
+});
+
+export const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
 });
