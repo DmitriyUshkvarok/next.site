@@ -52,7 +52,7 @@ export const metadata = {
     ],
   },
   verification: {
-    google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44',
+    // google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44',
   },
 };
 
