@@ -13,17 +13,25 @@ body[data-theme='dark'] {
   --filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
   --filterTextAbout: drop-shadow(0px 0px 1px rgba(247, 249, 249, 0.9));
   --backgroundImage: url('/fon2.png');
+  --backgroundHeader: url('/fon2.png');
+  --backgroundTechList: transparent;
+  --boxShadowTechList: 0px 0px 5px 5px rgba(245, 240, 240, 0.2);
+  --boxShadow: 0px 0px 10px 10px rgba(245, 240, 240, 0.2);
 }
 
 body[data-theme='light'] {
   --backgroundFirst: linear-gradient(to right, #b2fefa, #0ed2f7);
-  --colorText: linear-gradient(to right, #232526, #414345);
+  --colorText: linear-gradient(to right, white, gold);
   --colorTextTitle: linear-gradient(to right, #232526, #414345);
   --colorSelectLanguage: black;
   --colorBurger: #232526;
   --filter: drop-shadow(3px 3px 10px rgba(25, 24, 24, 0.7));
   --filterTextAbout: drop-shadow(0px 0px 1px rgba(87, 207, 240, 0.9));
-  --backgroundImage: none;
+  --backgroundImage: url('/fonwhite5.jpeg');
+  --backgroundHeader: url('/fonwhite5.jpeg');
+  --boxShadow: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
+  --boxShadowTechList: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
+  --backgroundTechList: transparent;
 }
 
 html,
@@ -34,22 +42,25 @@ body {
 
 body {
   margin: 0;
-  /* background-image: var(--backgroundImage), var(--backgroundFirst);
-  background-attachment: fixed;
-  -webkit-background-attachment: fixed; */
+  background-image: var(--backgroundFirst);
 }
 
 .fixedBlockForIos {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
   width: 100%;
   height: 100%;
-  background-image: var(--backgroundImage), var(--backgroundFirst);
+  background-image: var(--backgroundImage);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
 }
 
 a {

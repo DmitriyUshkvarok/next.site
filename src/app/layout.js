@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   metadataBase: new URL('https://my-site-portfolio-three.vercel.app/'),
-  title: 'My Site Portfolio',
+  title: 'My Site Portfolio | Dmitriy Ushkvarok',
   description:
     'site about web developer Dmitriy Ushkvarok,portfolio,about,gallery,contacts',
   generator: 'Next.js',
@@ -38,6 +38,23 @@ export const metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  openGraph: {
+    title: 'My Site Portfolio | Dmitriy Ushkvarok',
+    description:
+      'My site portfolio, web developer Dmitriy Ushkvarok,portfolio,about,gallery,contacts',
+    images: [
+      {
+        url: '/opengraph.png',
+        width: 400,
+        height: 300,
+      },
+    ],
+  },
+  verification: {
+    google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44',
+    yandex: 'yandex',
+    yahoo: 'yahoo',
   },
 };
 

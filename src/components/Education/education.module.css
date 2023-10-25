@@ -36,8 +36,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: var(--backgroundFirst);
-    box-shadow: 30px 30px 10px rgba(245, 240, 240, 0.2);
+    box-shadow: 10px 10px 10px rgba(245, 240, 240, 0.2);
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;

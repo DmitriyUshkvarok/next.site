@@ -10,12 +10,13 @@ import {
 import { AiOutlineMail, AiFillGithub } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
+import { fredericka } from '@/src/app/fonts';
 
 const ContactsContent = () => {
   return (
-    <section>
+    <section className={fredericka.className}>
       <div className={styles.contactsWrapper}>
-        <h1>My Contacts</h1>
+        <h1 className={styles.contactsTitle}>My Contacts</h1>
         <div className={styles.contactImgWrapper}>
           <Image
             src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697733790/my_site/other/%D0%A2%D0%B5%D0%BC%D0%B0_hfuqns.webp"

@@ -11,9 +11,18 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     margin-bottom: 30px;
-    background-image: var(--backgroundFirst);
+    background-image: var(--backgroundImage);
     filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
     -webkit-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
+}
+
+.contactsTitle {
+    color: #222;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    max-width: 200px;
 }
 
 .contactsList {

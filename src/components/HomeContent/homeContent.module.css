@@ -38,14 +38,12 @@ body[data-theme='light'] .promoWrapper {
 .promoWrapperBlockTitle {
     font-size: 67px;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: start;
     color: #222;
     background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:1050px) {
@@ -93,15 +91,13 @@ body[data-theme='light'] .promoWrapper {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-align: center;
+    text-align: start;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 50px;
     background-size: 200% auto;
     animation: shineEffect 10s linear infinite;
     -webkit-animation: shineEffect 10s linear infinite;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:1050px) {
@@ -234,8 +230,6 @@ body[data-theme='light'] .promoWrapper {
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 30px;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
 
 @media screen and (max-width:570px) {
@@ -266,7 +260,11 @@ body[data-theme='light'] .promoWrapper {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: var(--backgroundFirst);
+    box-shadow: var(--boxShadowTechList);
+    background-image: var(--backgroundHeader);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -302,7 +300,6 @@ body[data-theme='light'] .promoWrapper {
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -351,7 +348,7 @@ body[data-theme='light'] .promoWrapper {
     -o-border-radius: 10px;
     margin-bottom: 30px;
     border: 1px solid #888;
-    background-image: var(--backgroundImage), var(--backgroundFirst);
+    box-shadow: var(--boxShadow);
 }
 
 body[data-theme='light'] .shadow {
@@ -380,6 +377,10 @@ body[data-theme='light'] .shadow {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    background-image: var(--backgroundHeader), var(--backgroundFirst);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body[data-theme='light'] .shadow::after {
@@ -395,4 +396,6 @@ body[data-theme='light'] .shadow::after {
     background-clip: text;
     margin-left: auto;
     margin-right: auto;
+    filter: drop-shadow(1px 1px 5px rgba(5, 5, 5, 0.5));
+    -webkit-filter: drop-shadow(1px 1px 5px rgba(5, 5, 5, 0.5));
 }

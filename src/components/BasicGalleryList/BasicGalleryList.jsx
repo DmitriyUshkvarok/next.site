@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Modal from 'react-modal';
 import styles from './basicGalleryList.module.css';
+import { fredericka } from '@/src/app/fonts';
 
 const BasicGalleryList = ({ photos }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -26,8 +27,8 @@ const BasicGalleryList = ({ photos }) => {
   }));
 
   return (
-    <div className={styles.galleryContainer}>
-      <h1>Gallery</h1>
+    <div className={(styles.galleryContainer, fredericka.className)}>
+      <h1 className={styles.galleryTitle}>Gallery</h1>
       <ul className={styles.imageList}>
         {photos?.map((item, index) => (
           <li

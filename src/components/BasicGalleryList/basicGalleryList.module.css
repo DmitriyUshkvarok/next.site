@@ -3,6 +3,19 @@
     margin-bottom: 40px;
 }
 
+.galleryTitle {
+    color: #222;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    max-width: 200px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .imageList {
     list-style: none;
     margin: 0;

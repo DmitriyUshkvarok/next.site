@@ -1,6 +1,9 @@
 .copyright {
     padding: 10px;
-    background-image: var(--backgroundImage), var(--backgroundFirst);
+    background-image: var(--backgroundHeader), var(--backgroundFirst);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

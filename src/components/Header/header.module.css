@@ -1,7 +1,10 @@
 .header {
     padding: 10px;
-    background-image: var(--backgroundImage), var(--backgroundFirst);
-    box-shadow: 0px 2px 8px rgba(251, 249, 249, 0.4);
+    background-image: var(--backgroundHeader), var(--backgroundFirst);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: var(--boxShadowTechList);
     position: fixed;
     top: 0;
     left: 0;

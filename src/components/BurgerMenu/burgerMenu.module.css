@@ -13,7 +13,10 @@
 }
 
 .menuList {
-    background-image: var(--backgroundFirst);
+    background-image: var(--backgroundHeader);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .noPaddingMenuList {
