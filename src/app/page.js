@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <>
       <PageTransition>
+        <h1 className="hiddenTitle">Welcome Page</h1>
         <HomeContent />
       </PageTransition>
     </>

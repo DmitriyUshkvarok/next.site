@@ -27,8 +27,8 @@ body[data-theme='light'] {
   --colorBurger: #232526;
   --filter: drop-shadow(3px 3px 10px rgba(25, 24, 24, 0.7));
   --filterTextAbout: drop-shadow(0px 0px 1px rgba(87, 207, 240, 0.9));
-  --backgroundImage: url('/fonwhite5.jpeg');
-  --backgroundHeader: url('/fonwhite5.jpeg');
+  --backgroundImage: url('/fonwhite5.webp');
+  --backgroundHeader: url('/fonwhite5.webp');
   --boxShadow: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
   --boxShadowTechList: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
   --backgroundTechList: transparent;
@@ -61,6 +61,19 @@ body {
   -webkit-background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
+}
+
+.hiddenTitle {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 a {
