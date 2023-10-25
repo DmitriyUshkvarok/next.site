@@ -28,6 +28,7 @@ const BurgerMenu = () => {
         name="burger"
         aria-controls="menu"
         aria-haspopup="true"
+        aria-label="burger"
         onClick={handleMenuOpen}
         color="inherit"
         id="burger"

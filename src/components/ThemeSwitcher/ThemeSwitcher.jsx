@@ -22,6 +22,7 @@ const ThemeSwitcher = () => {
       <button
         type="button"
         name="toggle theme"
+        aria-label="toggle theme"
         className={styles.themeSwitcherBtn}
         onClick={handleThemeToggle}
       >
