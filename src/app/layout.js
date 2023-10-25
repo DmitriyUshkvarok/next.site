@@ -45,6 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
+        <div className="fixedBlockForIos"></div>
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
