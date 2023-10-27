@@ -76,12 +76,14 @@ const AdminAboutWorksForm = () => {
       <form
         action={handleSubmit}
         ref={formRef}
-        className={styles.adminPortfolioForm}
+        className={styles.adminAboutForm}
       >
-        <h1 className={styles.adminPortfolioFormTitle}>Editin About Page</h1>
-        <div className={styles.adminPortfolioFormGroup}>
+        <h1 className={`${fredericka.className} ${styles.adminAboutFormTitle}`}>
+          Editin About Page
+        </h1>
+        <div className={styles.adminAboutFormGroup}>
           <input
-            className={styles.adminPortfolioFormInput}
+            className={styles.adminAboutFormInput}
             type="text"
             name="enterprise"
             placeholder="Enter your enterprise"
@@ -89,9 +91,9 @@ const AdminAboutWorksForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.adminPortfolioFormGroup}>
+        <div className={styles.adminAboutFormGroup}>
           <input
-            className={styles.adminPortfolioFormInput}
+            className={styles.adminAboutFormInput}
             type="text"
             name="data"
             placeholder="Enter your data"
@@ -99,17 +101,21 @@ const AdminAboutWorksForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.adminPortfolioFormGroup}>
-          <input
-            type="file"
-            accept="image/*"
-            // name="image"
-            onChange={handleInputImageChange}
-          />
+        <div className={styles.adminAboutFormGroup}>
+          <label htmlFor="uploadPhotoAbout" className={styles.uploadAboutLabel}>
+            Upload Photo (push)
+            <input
+              className={styles.inputFile}
+              type="file"
+              accept="image/*"
+              onChange={handleInputImageChange}
+              id="uploadPhotoAbout"
+            />
+          </label>
         </div>
-        <div className={styles.adminPortfolioFormGroup}>
+        <div className={styles.adminAboutFormGroup}>
           <input
-            className={styles.adminPortfolioFormInput}
+            className={styles.adminAboutFormInput}
             type="text"
             name="region"
             placeholder="Enter your region"
@@ -117,9 +123,9 @@ const AdminAboutWorksForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.adminPortfolioFormGroup}>
+        <div className={styles.adminAboutFormGroup}>
           <input
-            className={styles.adminPortfolioFormInput}
+            className={styles.adminAboutFormInput}
             type="text"
             name="position"
             placeholder="Enter your position"

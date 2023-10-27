@@ -1,0 +1,42 @@
+.uploadGalleryTitle {
+    max-width: 200px;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.uploadGalleryLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    border-radius: 4px;
+    padding: 8px;
+    background-image: var(--colorText);
+    cursor: pointer;
+    color: black;
+    margin-bottom: 15px;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+}
+
+.uploadGalleryLabel:hover {
+    transform: scale(1.1);
+}
+
+.inputFile {
+    display: none;
+}
+
+.buttonSubmitWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}

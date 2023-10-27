@@ -1,5 +1,4 @@
 'use client';
-import AdminGalleryList from '../AdminGalleryList/AdminGalleryList';
 import { deletePhoto } from '@/src/actions/uploadActions';
 import { useState } from 'react';
 import styles from './AdminGalleryPhoto.module.css';
@@ -60,12 +59,6 @@ const AdminAllGalleryPhoto = ({ photos }) => {
             </button>
           </div>
         </div>
-        // <AdminGalleryList
-        //   key={item?.public_id}
-        //   url={item?.secure_url}
-        //   onClick={() => handleDeletePhoto(item?.public_id)}
-        //   isPending={isPendings[item?.public_id]}
-        // />
       ))}
     </div>
   );

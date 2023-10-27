@@ -45,6 +45,28 @@ body {
   background-image: var(--backgroundFirst);
 }
 
+@media (max-width: 768px) {
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    body {
+      background-image:
+        url("/fondarktalet.png");
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    body {
+      background-image:
+        url("/fondarkmobile.png");
+    }
+  }
+}
+
 .fixedBlockForIos {
   position: fixed;
   top: 0;

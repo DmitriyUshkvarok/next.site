@@ -1,4 +1,5 @@
-import AdminAbouttWorksForm from '@/src/components/AdminAboutListWorks/AdminAboutListWorksForm';
+import AdminAbouttWorksForm from '@/src/components/AdminAboutFormWorks/AdminAboutListWorksForm';
+import AdminAboutWorkList from '@/src/components/AdminAboutWorkList/AdminAboutWorkList';
 import { getAllWorks } from '@/src/actions/worksAction';
 
 const EditAboutPage = async () => {
@@ -6,6 +7,7 @@ const EditAboutPage = async () => {
   return (
     <>
       <AdminAbouttWorksForm />
+      <AdminAboutWorkList works={works} />
     </>
   );
 };

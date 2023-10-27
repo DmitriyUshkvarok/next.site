@@ -4,10 +4,13 @@ import AdminGalleryList from '../AdminGalleryList/AdminGalleryList';
 import ButtonSubmit from '../Buttons/ButtonSubmit';
 import { uploadPhoto } from '@/src/actions/uploadActions';
 import { revalidate } from '@/src/actions/uploadActions';
+import { fredericka } from '@/src/app/fonts';
+import styles from './UploadForm.module.css';
 
 const UploadForm = () => {
   const formRef = useRef();
   const [files, setFiles] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = async (e) => {
     const files = e.target.files;
@@ -32,29 +35,45 @@ const UploadForm = () => {
     files.forEach((file) => {
       formData.append('files', file);
     });
+    try {
+      setLoading(true);
+      const res = await uploadPhoto(formData);
+      if (res.msg) alert(`Success:${res?.msg}`);
+      if (res?.erMsg) alert(`Error:${res.erMsg}`);
 
-    const res = await uploadPhoto(formData);
-    if (res.msg) alert(`Success:${res?.msg}`);
-    if (res?.erMsg) alert(`Error:${res.erMsg}`);
+      setFiles([]);
 
-    setFiles([]);
+      formRef.current.reset();
 
-    formRef.current.reset();
-
-    revalidate('/');
+      revalidate('/');
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
-      <form action={handleUpload} ref={formRef}>
-        <h1>Edit gallery</h1>
+      <form
+        action={handleUpload}
+        ref={formRef}
+        className={fredericka.className}
+      >
+        <h1 className={styles.uploadGalleryTitle}>Edit gallery</h1>
         <div>
-          <input
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={handleInputChange}
-          />
+          <label htmlFor="uploadPhoto" className={styles.uploadGalleryLabel}>
+            Upload Photo (push)
+            <input
+              className={styles.inputFile}
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleInputChange}
+              id="uploadPhoto"
+            />
+          </label>
         </div>
         <div>
           {files.map((file, index) => (
@@ -65,7 +84,14 @@ const UploadForm = () => {
             />
           ))}
         </div>
-        <ButtonSubmit value="Upload to Cloudinary" />
+        <div className={styles.buttonSubmitWrapper}>
+          <ButtonSubmit
+            value="Upload to Cloudinary"
+            onClick={handleUpload}
+            disabled={loading}
+          />
+          {loading && <p>Loading...</p>}
+        </div>
       </form>
     </>
   );

@@ -1,40 +1,26 @@
-.adminPortfolioForm {
-    margin-top: 70px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    background-image: var(--backgroundImage), var(--backgroundFirst);
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
-    padding: 20px;
+.adminAboutForm {
+    max-width: 800px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
     justify-content: center;
     align-items: center;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-}
-
-.adminPortfolioFormTitle {
-    margin-bottom: 10px;
-    max-width: 300px;
+    flex-direction: column;
+    gap: 10px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    color: #fff;
-    background: var(--colorText);
+    margin-top: 20px;
+}
+
+.adminAboutFormTitle {
+    max-width: 200px;
+    background-image: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.adminPortfolioFormGroup {
+.adminAboutFormGroup {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -42,7 +28,7 @@
     align-items: center;
 }
 
-.adminPortfolioFormInput {
+.adminAboutFormInput {
     min-width: 300px;
     background-color: transparent;
     outline: none;
@@ -61,9 +47,29 @@
     font-size: 16px;
 }
 
-.validationError {
-    color: red;
-    text-align: center;
+.uploadAboutLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    border-radius: 4px;
+    padding: 8px;
+    background-image: var(--colorText);
+    cursor: pointer;
+    color: black;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+}
+
+.uploadAboutLabel:hover {
+    transform: scale(1.1);
+}
+
+.inputFile {
+    display: none;
 }
 
 .createFormButton {
@@ -88,21 +94,4 @@
 
 .createFormButton:hover {
     opacity: 0.7;
-}
-
-.createFormButton:disabled {
-    background: -webkit-linear-gradient(to right, #313030, #575756);
-    background: -moz-linear-gradient(to right, #313030, #575756);
-    background: -o-linear-gradient(to right, #313030, #575756);
-    background: linear-gradient(to right, #313030, #575756);
-}
-
-.createFormButtonWrapper {
-    display: flex;
-    gap: 10px;
-}
-
-.textChangePortfolio {
-    margin-top: 10px;
-    color: lightgreen;
 }
