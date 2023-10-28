@@ -71,12 +71,12 @@ export async function uploadPhoto(formData) {
       });
       return newPhoto;
     });
-
     await Photo.insertMany(newPhotos);
 
     revalidatePath('/');
     return { msg: 'upload succsess' };
   } catch (error) {
+    console.error('Ошибка при загрузке на Cloudinary:', error);
     return { erMsg: error.message };
   }
 }

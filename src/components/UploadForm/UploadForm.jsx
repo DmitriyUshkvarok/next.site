@@ -38,6 +38,7 @@ const UploadForm = () => {
     try {
       setLoading(true);
       const res = await uploadPhoto(formData);
+      console.log('Полученный ответ от сервера:', res);
       if (res.msg) alert(`Success:${res?.msg}`);
       if (res?.erMsg) alert(`Error:${res.erMsg}`);
 
@@ -47,7 +48,7 @@ const UploadForm = () => {
 
       revalidate('/');
     } catch (error) {
-      console.error('Ошибка при отправке запроса:', error);
+      console.log('Ошибка при отправке запроса:', error);
       setLoading(false);
     } finally {
       setLoading(false);
