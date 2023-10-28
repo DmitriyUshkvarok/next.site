@@ -47,7 +47,7 @@ const UploadForm = () => {
 
       revalidate('/');
     } catch (error) {
-      console.log(error);
+      console.error('Ошибка при отправке запроса:', error);
       setLoading(false);
     } finally {
       setLoading(false);
