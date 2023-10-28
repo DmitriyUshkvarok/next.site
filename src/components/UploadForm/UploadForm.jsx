@@ -88,7 +88,7 @@ const UploadForm = () => {
         <div className={styles.buttonSubmitWrapper}>
           <button className={styles.btnUpload}>
             <span className={fredericka.className}>
-              {loading ? <p>Loading...</p> : 'Upload Photo'}
+              {loading ? 'Loading...' : 'Upload Photo'}
             </span>
           </button>
         </div>
