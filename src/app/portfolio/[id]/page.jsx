@@ -6,6 +6,7 @@ const CollectionSite = ({ params: { id } }) => {
   return (
     <div className={fredericka.className}>
       <PageTransition>
+        <h1 className="hiddenTitle">Dynamic Portfolio Page</h1>
         <DynamicPagePortfolioContent id={id} />
       </PageTransition>
     </div>

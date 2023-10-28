@@ -31,7 +31,6 @@ export const metadata = {
   authors: [
     { name: 'Dmitriy Ushkvarok', url: 'my-site-portfolio-three.vercel.app/' },
   ],
-  colorScheme: 'dark',
   creator: 'Dmitriy Ushkvarok',
   publisher: 'Dmitriy Ushkvarok',
   formatDetection: {

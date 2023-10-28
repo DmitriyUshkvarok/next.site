@@ -15,6 +15,7 @@ const UserProfile = () => {
     <div className={fredericka.className}>
       <PageTransition>
         <Container>
+          <h1 className="hiddenTitle">Profile Page</h1>
           <div className={styles.componentProfileWrapper}>
             <div>
               <UserPanel />

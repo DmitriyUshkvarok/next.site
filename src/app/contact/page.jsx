@@ -19,6 +19,7 @@ const Contacts = () => {
   return (
     <>
       <PageTransition>
+        <h1 className="hiddenTitle">Contact Page</h1>
         <ContactsContent />
       </PageTransition>
     </>

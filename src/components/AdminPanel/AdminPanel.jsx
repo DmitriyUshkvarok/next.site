@@ -35,7 +35,14 @@ const AdminPanel = () => {
             Edit Portfolio
           </Link>
         </li>
-        <li className={styles.adminPanelItem}>
+        <li
+          className={
+            (styles.adminPanelItem,
+            pathname === '/admin/edit-about'
+              ? styles.activeLink
+              : styles.adminPanelItem)
+          }
+        >
           <Link className={styles.adminPanelLink} href="/admin/edit-about">
             Edit About
           </Link>

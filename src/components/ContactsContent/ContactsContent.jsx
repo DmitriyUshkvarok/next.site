@@ -16,10 +16,10 @@ const ContactsContent = () => {
   return (
     <section className={fredericka.className}>
       <div className={styles.contactsWrapper}>
-        <h1 className={styles.contactsTitle}>My Contacts</h1>
+        <h2 className={styles.contactsTitle}>My Contacts</h2>
         <div className={styles.contactImgWrapper}>
           <Image
-            src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697733790/my_site/other/%D0%A2%D0%B5%D0%BC%D0%B0_hfuqns.webp"
+            src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697891201/testfon1_iitvzu.webp"
             alt="photo user"
             width={550}
             height={850}

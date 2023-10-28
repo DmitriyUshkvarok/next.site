@@ -13,6 +13,7 @@ const Admin = () => {
   return (
     <>
       <PageTransition>
+        <h1 className="hiddenTitle">Admin Page</h1>
         <div className={styles.adminIconHome}>
           <GrSettingsOption
             className={styles.adminIcon}

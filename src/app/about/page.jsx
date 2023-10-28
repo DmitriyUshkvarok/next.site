@@ -22,6 +22,7 @@ const About = async () => {
   return (
     <>
       <PageTransition>
+        <h1 className="hiddenTitle">About Page</h1>
         <section className={styles.aboutSection}>
           <Works works={works} />
           <Educations />

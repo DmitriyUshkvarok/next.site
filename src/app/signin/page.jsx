@@ -1,5 +1,3 @@
-// import LogInForm from '@/src/components/AuthForm/FormLogin/FormLogin';
-// import PageTransition from '@/src/components/PageTransition/PageTransition';
 export const metadata = {
   title: 'Sign In Page | My Site Portfolio SignIn',
   description:
@@ -14,7 +12,11 @@ export const metadata = {
 };
 
 const ForgotPassword = () => {
-  return <></>;
+  return (
+    <>
+      <h1 className="hiddenTitle">Login Page</h1>
+    </>
+  );
 };
 
 export default ForgotPassword;

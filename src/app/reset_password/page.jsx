@@ -3,6 +3,7 @@ import ResetPasswordComponent from '@/src/components/AuthForm/ResetPassword/Rese
 const ResetPasswordPage = ({ searchParams: { token } }) => {
   return (
     <>
+      <h1 className="hiddenTitle">Reset Password Page</h1>
       <ResetPasswordComponent token={token} />
     </>
   );

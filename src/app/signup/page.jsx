@@ -20,6 +20,7 @@ const SignUp = () => {
     <>
       <PageTransition>
         <Container>
+          <h1 className="hiddenTitle">Registration Page</h1>
           <FormRegistration />
         </Container>
       </PageTransition>

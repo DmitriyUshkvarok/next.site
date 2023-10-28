@@ -1,22 +1,47 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // appDir: true,
-    serverActions: true,
-  },
-  output: 'standalone',
   images: {
-    domains: [
-      'svoi.city',
-      'www.gorod.dp.ua',
-      'htmlacademy.org',
-      'd92mrp7hetgfk.cloudfront.net',
-      '4.bp.blogspot.com',
-      'res.cloudinary.com',
-      'lh3.googleusercontent.com',
-      'encrypted-tbn0.gstatic.com',
-      'news.liga.net',
-      's.dou.ua',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'svoi.city',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.gorod.dp.ua',
+      },
+      {
+        protocol: 'https',
+        hostname: 'htmlacademy.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'd92mrp7hetgfk.cloudfront.net',
+      },
+      {
+        protocol: 'https',
+        hostname: '4.bp.blogspot.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'news.liga.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 's.dou.ua',
+      },
     ],
   },
 };

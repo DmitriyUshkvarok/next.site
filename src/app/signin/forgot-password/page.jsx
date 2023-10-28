@@ -38,7 +38,8 @@ const ForgotPassword = () => {
 
   return (
     <div className={fredericka.className}>
-      <h1 className={styles.forgotPasswordTitle}>Enter your e-mail</h1>
+      <h1 className="hiddenTitle">Forgot password Page</h1>
+      <h2 className={styles.forgotPasswordTitle}>Enter your e-mail</h2>
       <div className={styles.forgotPasswordBox}>
         <Formik
           initialValues={initialValues}

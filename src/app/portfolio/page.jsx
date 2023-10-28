@@ -30,7 +30,8 @@ const Portfolio = async () => {
     <div className={fredericka.className}>
       <PageTransition>
         <Container>
-          <h1 className={styles.selectTitle}>Choose a gallery</h1>
+          <h1 className="hiddenTitle">Portfolio Page</h1>
+          <h2 className={styles.selectTitle}>Choose a gallery</h2>
           <PortfolioList portfolios={portfolios} totalPages={totalPages} />
         </Container>
       </PageTransition>
