@@ -86,12 +86,11 @@ const UploadForm = () => {
           ))}
         </div>
         <div className={styles.buttonSubmitWrapper}>
-          <ButtonSubmit
-            value="Upload to Cloudinary"
-            onClick={handleUpload}
-            disabled={loading}
-          />
-          {loading && <p>Loading...</p>}
+          <button className={styles.btnUpload}>
+            <span className={fredericka.className}>
+              {loading ? <p>Loading...</p> : 'Upload Photo'}
+            </span>
+          </button>
         </div>
       </form>
     </>
