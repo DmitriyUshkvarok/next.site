@@ -127,7 +127,7 @@ function LogInForm() {
         <span className={fredericka.className}>to continue with google</span>
       </button>
       <div className={styles.forgotLinkWrapper}>
-        <Link className={styles.forgotLink} href="signin/forgot-password/">
+        <Link className={styles.forgotLink} href="/signin/forgot-password/">
           Forgot your password?
         </Link>
         <GiClick className={styles.forgotLinkIcon} size={25} />
