@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { updateUser } from '@/src/actions/authActions';
-import ButtonSubmit from '../../Buttons/ButtonSubmit';
 import styles from './updateUserForm.module.css';
 
 const UpdateUserForm = ({ update }) => {
@@ -17,6 +16,7 @@ const UpdateUserForm = ({ update }) => {
         update({ name, image });
       }
       const res = await updateUser({ name, image });
+      console.log(res);
     } catch (error) {
       console.log(error);
     } finally {
@@ -58,11 +58,9 @@ const UpdateUserForm = ({ update }) => {
             required
           />
         </div>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <ButtonSubmit value="edit profile" />
-        )}
+        <button className={styles.btnEditProfile}>
+          {isLoading ? 'Loading...' : 'Edit Prpfile'}
+        </button>
       </form>
     </>
   );

@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from 'react';
 import styles from './forgotPassword.module.css';
-import ButtonSubmit from '@/src/components/Buttons/ButtonSubmit';
 import { forgotPasswordWithCredentials } from '@/src/actions/authActions';
 import { fredericka } from '../../fonts';
 
@@ -57,7 +56,9 @@ const ForgotPassword = () => {
               <ErrorMessage name="email">
                 {(msg) => <div className={styles.validationError}>{msg}</div>}
               </ErrorMessage>
-              <ButtonSubmit value="Forgot Password" />
+              <button className={styles.btnForgotPass} type="submit">
+                {isLoading ? 'Loading...' : 'Forgot Password'}
+              </button>
             </div>
           </Form>
         </Formik>

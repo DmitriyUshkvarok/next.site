@@ -95,6 +95,7 @@ export async function changePasswordWithCredentials({ old_pass, new_pass }) {
 export async function forgotPasswordWithCredentials({ email }) {
   try {
     const user = await User.findOne({ email });
+
     if (!user) throw new Error('Email does not exists!');
 
     if (user?.provider !== 'credentials') {
