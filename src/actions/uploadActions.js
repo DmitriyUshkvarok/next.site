@@ -71,6 +71,7 @@ export async function uploadPhoto(formData) {
       });
       return newPhoto;
     });
+
     await Photo.insertMany(newPhotos);
 
     revalidatePath('/');
@@ -80,16 +81,6 @@ export async function uploadPhoto(formData) {
     return { erMsg: error.message };
   }
 }
-
-// Функция для загрузки аватара
-// export async function uploadAvatar({ userId, formData }) {
-//   try {
-//     const uploadResponse = await uploadPhoto(formData, userId);
-//     return uploadResponse;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export async function getAllPhotos() {
   try {

@@ -27,7 +27,8 @@ const UploadForm = () => {
     setFiles(newFiles);
   };
 
-  const handleUpload = async () => {
+  const handleUpload = async (e) => {
+    e.preventDefault();
     if (!files.length) return alert('no image files');
 
     const formData = new FormData();
@@ -38,7 +39,6 @@ const UploadForm = () => {
     try {
       setLoading(true);
       const res = await uploadPhoto(formData);
-      console.log('Полученный ответ от сервера:', res);
       if (res.msg) alert(`Success:${res?.msg}`);
       if (res?.erMsg) alert(`Error:${res.erMsg}`);
 
@@ -58,7 +58,8 @@ const UploadForm = () => {
   return (
     <>
       <form
-        action={handleUpload}
+        // action={handleUpload}
+        onSubmit={handleUpload}
         ref={formRef}
         className={fredericka.className}
       >
@@ -87,9 +88,11 @@ const UploadForm = () => {
         </div>
         <div className={styles.buttonSubmitWrapper}>
           <button className={styles.btnUpload}>
-            <span className={fredericka.className}>
-              {loading ? 'Loading...' : 'Upload Photo'}
-            </span>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <span className={fredericka.className}>Upload Photo</span>
+            )}
           </button>
         </div>
       </form>
