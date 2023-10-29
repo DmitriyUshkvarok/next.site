@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import persistedLanguageReducer from './language/languageSlice';
-import { portfolioApi } from './createPortfolioApi/createPortfolioApi';
 import portfolioSlice from './portfolioSlice/portfolioSlice';
+import workSlice from './workSlice/workSlice';
 import persisteThemeReducer from './themeSlice/themeSlice';
 import {
   persistStore,
@@ -17,15 +17,15 @@ const store = configureStore({
   reducer: {
     language: persistedLanguageReducer,
     portfolio: portfolioSlice,
+    work: workSlice,
     theme: persisteThemeReducer,
-    [portfolioApi.reducerPath]: portfolioApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(portfolioApi.middleware),
+    }).concat(),
 });
 
 export const persistor = persistStore(store);

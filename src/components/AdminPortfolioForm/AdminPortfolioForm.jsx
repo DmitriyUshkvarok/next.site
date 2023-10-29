@@ -23,7 +23,7 @@ function PortfolioForm() {
   const dispatch = useDispatch();
   const isFormActive = useSelector((state) => state.portfolio.isFormActive);
   const editingPortfolio = useSelector((state) => state.portfolio.portfolio);
-
+  
   useEffect(() => {
     if (isFormActive) {
       // Обновите состояние editingPortfolio из Redux

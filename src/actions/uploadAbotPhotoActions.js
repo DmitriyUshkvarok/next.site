@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import os from 'os';
 import cloudinary from 'cloudinary';
 import { revalidatePath } from 'next/cache';
-import { createWork } from './worksAction';
+import { createWork, updateWork } from './worksAction';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -51,7 +51,7 @@ async function uploadPhotosToCloudinary(newFiles) {
 //   return new Promise((resolve) => setTimeout(resolve, delayInms));
 // };
 
-export async function uploadPhotoWork(formData, workData) {
+export async function uploadPhotoWork(formData, workData, workId) {
   try {
     const newFiles = await savePhotoToLocal(formData);
 
@@ -65,7 +65,13 @@ export async function uploadPhotoWork(formData, workData) {
 
     workData.image = secureUrl;
 
-    await createWork(workData);
+    if (workId) {
+      // Если workId существует, обновляем карточку работы
+      await updateWork(workId, workData);
+    } else {
+      // Если workId не существует, создаем новую карточку работы
+      await createWork(workData);
+    }
 
     revalidatePath('/');
     return { msg: 'upload success' };
@@ -73,16 +79,6 @@ export async function uploadPhotoWork(formData, workData) {
     return { erMsg: error.message };
   }
 }
-
-// Функция для загрузки аватара
-// export async function uploadAvatar({ userId, formData }) {
-//   try {
-//     const uploadResponse = await uploadPhoto(formData, userId);
-//     return uploadResponse;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export async function revalidate(path) {
   return revalidatePath(path);

@@ -1,0 +1,47 @@
+.workListItem {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 5px;
+}
+
+.workListInfoWrapperTitle,
+.workListInfoWrapperData,
+.workListInfoWrapperRegion {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.workListSubItem {
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.adminChangePanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adminChangePanelItem {
+    cursor: pointer;
+}
