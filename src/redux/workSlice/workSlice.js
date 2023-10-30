@@ -36,21 +36,22 @@ const workSlice = createSlice({
     toggleCardSelection: (state, action) => {
       const cardId = action.payload;
       if (state.selectedWorkCardIds.includes(cardId)) {
-        // Если карточка уже выбрана, уберите ее из массива выбранных
         state.selectedWorkCardIds = state.selectedWorkCardIds.filter(
           (id) => id !== cardId
         );
       } else {
-        // В противном случае добавьте карточку в массив выбранных
         state.selectedWorkCardIds.push(cardId);
       }
+    },
+    clearWorkState: (state) => {
+      state.work = initialState.work;
+      state.isWorkFormActive = initialState.isWorkFormActive;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(updateWorkAsync.fulfilled, (state, action) => {
       const work = selectWork(state);
 
-      // Заполните поля объекта work данными из action.payload
       work.id = action.payload._id;
       work.enterprise = action.payload.enterprise;
       work.data = action.payload.data;
@@ -59,18 +60,11 @@ const workSlice = createSlice({
       work.image = action.payload.image;
       work.order = action.payload.order;
       work.photos = action.payload.photos;
-      // state.isWorkFormActive = true;
-      // state.work.id = action.payload._id;
-      // state.work.enterprise = action.payload.enterprise;
-      // state.work.data = action.payload.data;
-      // state.work.region = action.payload.region;
-      // state.work.position = action.payload.position;
-      // state.work.image = action.payload.image;
-      // state.work.order = action.payload.order;
-      // state.work.photos = action.payload.photos;
+      state.isWorkFormActive = false;
     });
   },
 });
 
-export const { toggleCardSelection, toggleWorkFormActive } = workSlice.actions;
+export const { toggleCardSelection, toggleWorkFormActive, clearWorkState } =
+  workSlice.actions;
 export default workSlice.reducer;

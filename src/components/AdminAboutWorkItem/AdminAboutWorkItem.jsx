@@ -5,11 +5,12 @@ import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
 import styles from './AdminWorkItem.module.css';
 import { deletedWorks, updateWork } from '@/src/actions/worksAction';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleWorkFormActive } from '@/src/redux/workSlice/workSlice';
 
 const AdminAboutWorkItem = ({ works }) => {
   const [isPendings, setIsPendings] = useState({});
+  const workId = useSelector((state) => state.work.work._id);
   const dispatch = useDispatch();
   const handleDelete = async (workId) => {
     try {
@@ -40,13 +41,19 @@ const AdminAboutWorkItem = ({ works }) => {
   return (
     <>
       {works?.map((work) => (
-        <li key={work._id} className={styles.workListItem}>
+        <li
+          key={work._id}
+          className={`${styles.workListItem} ${
+            workId.includes(work._id) ? `${styles.work_active}` : ''
+          }`}
+        >
           <Image
             src={`${work?.image}`}
             alt="work photo"
             sizes="100vw"
             width={100}
             height={100}
+            blurDataURL={`${work?.image}`}
             className="styles.workListImage"
           />
           <div className={styles.workListInfoWrapper}>

@@ -22,10 +22,11 @@ const ContactsContent = () => {
             src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697891201/testfon1_iitvzu.webp"
             alt="photo user"
             width={550}
-            height={850}
+            height={590}
             sizes="(max-width: 768px) 50vw ,100vw"
             className={styles.contactImg}
             style={{ objectFit: 'cover' }}
+            placeholder="blur"
           />
         </div>
         <ul className={styles.contactsList}>

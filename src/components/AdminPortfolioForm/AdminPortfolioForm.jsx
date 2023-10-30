@@ -26,7 +26,6 @@ function PortfolioForm() {
   
   useEffect(() => {
     if (isFormActive) {
-      // Обновите состояние editingPortfolio из Redux
       setEditingPortfolios({
         title: editingPortfolio.title || '',
         description: editingPortfolio.description || '',

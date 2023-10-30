@@ -1,9 +1,12 @@
 .workListItem {
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
     gap: 5px;
+}
+
+.work_active {
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .workListInfoWrapperTitle,

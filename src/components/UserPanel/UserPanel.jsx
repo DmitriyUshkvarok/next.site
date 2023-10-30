@@ -19,6 +19,10 @@ const UserPanel = () => {
             alt={session?.user?.name || 'user name'}
             width={50}
             height={50}
+            blurDataURL={
+              session?.user?.image ||
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDX326p2qgkC1VI2N1jm1u_Ihb2PAM8MecsWOJfIBSESk_GmadQUf4INIVkBpzvut48&usqp=CAU'
+            }
           />
         </div>
         <p className={styles.userPanelBoxName}>

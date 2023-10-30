@@ -1,14 +1,15 @@
 'use client';
 import styles from './AdminAboutWorks.module.css';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { fredericka } from '@/src/app/fonts';
 import { uploadPhotoWork } from '@/src/actions/uploadAbotPhotoActions';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Image from 'next/image';
-import { updateWork } from '@/src/actions/worksAction';
+import { clearWorkState } from '@/src/redux/workSlice/workSlice';
 
 const AdminAboutWorksForm = () => {
   const formRef = useRef();
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingUpdate, setIsLoadingUpdate] = useState(false);
   const [files, setFiles] = useState([]);
@@ -21,8 +22,28 @@ const AdminAboutWorksForm = () => {
   });
   const isWorkFormActive = useSelector((state) => state.work.isWorkFormActive);
   const workId = useSelector((state) => state.work.work._id);
+  const editingWork = useSelector((state) => state.work.work);
 
-  const handleSubmit = async () => {
+  useEffect(() => {
+    if (isWorkFormActive) {
+      setEditingWorks({
+        enterprise: editingWork.enterprise || '',
+        data: editingWork.data || '',
+        region: editingWork.region || '',
+        position: editingWork.position || '',
+      });
+    }
+  }, [
+    editingWork.data,
+    editingWork.enterprise,
+    editingWork.position,
+    editingWork.region,
+    isWorkFormActive,
+  ]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const workData = {
       enterprise: editingWorks.enterprise,
       data: editingWorks.data,
@@ -47,34 +68,48 @@ const AdminAboutWorksForm = () => {
           } else {
             alert(`Error: ${uploadResult.erMsg}`);
           }
-          formRef.current.reset();
+          setEditingWorks({
+            enterprise: '',
+            data: '',
+            region: '',
+            position: '',
+          });
           setFiles([]);
           setSelectedImage(null);
         }
 
         if (isWorkFormActive) {
-          setIsLoading(true);
-          try {
-            const uploadResult = await uploadPhotoWork(
-              formData,
-              workData,
-              workId
-            );
-            if (uploadResult.msg) {
-              alert(`Success: ${uploadResult.msg}`);
-            } else {
-              alert(`Error: ${uploadResult.erMsg}`);
-            }
-            formRef.current.reset();
-          } catch (error) {}
+          setIsLoadingUpdate(true);
+
+          const uploadResult = await uploadPhotoWork(
+            formData,
+            workData,
+            workId
+          );
+          if (uploadResult.msg) {
+            alert(`Success: ${uploadResult.msg}`);
+          } else {
+            alert(`Error: ${uploadResult.erMsg}`);
+          }
+
+          setEditingWorks({
+            enterprise: '',
+            data: '',
+            region: '',
+            position: '',
+          });
+          setFiles([]);
+          setSelectedImage(null);
+          dispatch(clearWorkState());
         }
       } catch (error) {
         console.error(error);
-
+        setIsLoadingUpdate(false);
         setIsLoading(false);
         alert('An error occurred during the image upload.');
       } finally {
         setIsLoading(false);
+        setIsLoadingUpdate(false);
       }
     } else {
       alert('No image files selected');
@@ -107,7 +142,7 @@ const AdminAboutWorksForm = () => {
   return (
     <div>
       <form
-        action={handleSubmit}
+        onSubmit={handleSubmit}
         ref={formRef}
         className={styles.adminAboutForm}
       >
@@ -154,6 +189,7 @@ const AdminAboutWorksForm = () => {
               width={50}
               height={50}
               className={styles.selectedImage}
+              blurDataURL={URL.createObjectURL(selectedImage)}
             />
             <button
               className={styles.removeImageButton}
@@ -184,18 +220,19 @@ const AdminAboutWorksForm = () => {
           />
         </div>
         <div className={styles.createFormButtonWrapper}>
-          <button
-            className={styles.createFormButton}
-            type="submit"
-            disabled={isWorkFormActive}
-          >
-            {isLoading ? <p>Loading...</p> : 'Сreate Work'}
-          </button>
-          {isWorkFormActive && (
+          {isWorkFormActive ? (
             <button className={styles.createFormButton} type="submit">
               <span className={fredericka.className}>
                 {isLoadingUpdate ? <p>Loading...</p> : 'Update Portfolio'}
               </span>
+            </button>
+          ) : (
+            <button
+              className={styles.createFormButton}
+              type="submit"
+              disabled={isWorkFormActive}
+            >
+              {isLoading ? <p>Loading...</p> : 'Сreate Work'}
             </button>
           )}
         </div>

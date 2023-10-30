@@ -25,7 +25,7 @@ const TechnologyList = () => {
                       height={30}
                       sizes="100vw"
                       className={styles.techImage}
-                      layout="fixed"
+                      // layout="fixed"
                     />
                   </div>
                   <h2 className={styles.techTitle}>{item.title}</h2>

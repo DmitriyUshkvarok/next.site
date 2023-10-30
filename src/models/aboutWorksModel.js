@@ -22,7 +22,7 @@ const aboutWorksSchema = new Schema(
     },
     image: {
       type: [String],
-      // required: true,
+      required: true,
     },
     order: {
       type: Number,

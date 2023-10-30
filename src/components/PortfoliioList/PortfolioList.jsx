@@ -31,6 +31,11 @@ const PortfolioList = ({ portfolios, totalPages }) => {
     fetchData();
   }, [currentPage]);
 
+  const getFilteredPortfolioImage = (itemId) => {
+    const localImage = items.find((localItem) => localItem.id === itemId);
+    return localImage?.image;
+  };
+
   const handleDragEnd = async (result) => {
     if (!result.destination) return;
 
@@ -91,14 +96,16 @@ const PortfolioList = ({ portfolios, totalPages }) => {
                       >
                         <Image
                           src={
-                            items.find((localItem) => localItem.id === item._id)
-                              ?.image || item.image
+                            getFilteredPortfolioImage(item._id) || item.image
                           }
                           alt={item.title}
                           width={300}
                           height={200}
                           sizes="100vw"
                           className={styles.portfolioImg}
+                          blurDataURL={
+                            getFilteredPortfolioImage(item._id) || item.image
+                          }
                         />
                       </Link>
                     </li>
