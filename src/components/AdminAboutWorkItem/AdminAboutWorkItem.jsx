@@ -1,9 +1,9 @@
 'use client';
+import styles from './AdminWorkItem.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
 import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
-import styles from './AdminWorkItem.module.css';
 import { deletedWorks, updateWork } from '@/src/actions/worksAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleWorkFormActive } from '@/src/redux/workSlice/workSlice';

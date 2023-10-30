@@ -29,14 +29,13 @@ const AdminCommentsItem = ({ comments }) => {
       }
 
       const updatedComment = await updateComment(editingCommentId, {
-        text: editedCommentText, // Передайте отредактированный текст комментария
+        text: editedCommentText,
       });
 
       if (updatedComment.error) {
         // Обработка ошибки при обновлении комментария, если это необходимо
         console.error(updatedComment.error);
       } else {
-        // Успешное обновление комментария
         setEditingCommentId(null);
       }
     } catch (error) {
