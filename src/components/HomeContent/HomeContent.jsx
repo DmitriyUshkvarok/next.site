@@ -56,15 +56,17 @@ const HomeContent = () => {
             <div className={style.buttonWrapper}>
               <Link
                 className={style.downloadLink}
-                href="CV_Dmitriy Ushkvarok_Frontend_Developer.pdf"
+                href="/CV_Dmitriy Ushkvarok_Frontend_Developer.pdf"
                 target="_blank"
+                download
               >
                 {t('home.download_cv')}
               </Link>
               <Link
                 className={style.downloadLink}
-                href="Dmytro_Ushkvarok.pdf"
+                href="/Dmytro_Ushkvarok.pdf"
                 target="_blank"
+                download
               >
                 {t('home.download_certificate')}
               </Link>
