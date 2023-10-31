@@ -8,7 +8,7 @@ import PageTransition from '@/src/components/PageTransition/PageTransition';
 const UserAdmimProfile = () => {
   const { data: session, update } = useSession();
   return (
-    <div style={{ marginTop: '150px' }}>
+    <div style={{ marginTop: '50px' }}>
       <PageTransition>
         <UserPanel />
         <UpdateUserForm update={update} />

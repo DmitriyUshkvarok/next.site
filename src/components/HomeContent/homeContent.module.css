@@ -346,7 +346,7 @@ body[data-theme='light'] .promoWrapper {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     border: 1px solid #888;
     box-shadow: var(--boxShadow);
 }

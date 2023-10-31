@@ -16,6 +16,10 @@
     -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
 }
 
+.adminPortfolioListWrapper {
+    margin-bottom: 70px;
+}
+
 .adminPortfolioList {
     max-width: 100%;
     margin-top: 30px;

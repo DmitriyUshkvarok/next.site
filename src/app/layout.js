@@ -66,10 +66,6 @@ export default function RootLayout({ children }) {
               <Container>
                 <Header />
                 <UnderConstructionModal />
-                <h1 className="hiddenTitle">
-                  Welcome Page incudes base info,stack techology and opportunity
-                  download sertificate and resume
-                </h1>
                 <main> {children}</main>
               </Container>
               <Copyright />

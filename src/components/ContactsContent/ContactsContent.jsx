@@ -26,7 +26,6 @@ const ContactsContent = () => {
             sizes="(max-width: 768px) 50vw ,100vw"
             className={styles.contactImg}
             style={{ objectFit: 'cover' }}
-            placeholder="blur"
           />
         </div>
         <ul className={styles.contactsList}>

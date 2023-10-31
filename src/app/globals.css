@@ -21,14 +21,14 @@ body[data-theme='dark'] {
 
 body[data-theme='light'] {
   --backgroundFirst: linear-gradient(to right, #b2fefa, #0ed2f7);
-  --colorText: linear-gradient(to right, white, gold);
+  --colorText: linear-gradient(to right, #000000, #434343);
   --colorTextTitle: linear-gradient(to right, #232526, #414345);
   --colorSelectLanguage: black;
   --colorBurger: #232526;
   --filter: drop-shadow(3px 3px 10px rgba(25, 24, 24, 0.7));
   --filterTextAbout: drop-shadow(0px 0px 1px rgba(87, 207, 240, 0.9));
-  --backgroundImage: url('/fonwhite5.webp');
-  --backgroundHeader: url('/fonwhite5.webp');
+  --backgroundImage: url('/white.jpg');
+  --backgroundHeader: url('/white.jpg');
   --boxShadow: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
   --boxShadowTechList: 0px 0px 5px 5px rgba(20, 19, 19, 0.8);
   --backgroundTechList: transparent;
@@ -119,12 +119,6 @@ h3,
 h4,
 p {
   margin: 0;
-}
-
-.container {
-  max-width: 1280px;
-  min-height: 100vh;
-  margin: 0 auto;
 }
 
 .notFoundTitle,

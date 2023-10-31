@@ -60,7 +60,7 @@ const PortfolioList = ({ portfolios, totalPages }) => {
   };
 
   return (
-    <>
+    <div className={styles.portfolioListWrapp}>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="portfolio-list" direction="vertical">
           {(provided = {}) => (
@@ -126,7 +126,7 @@ const PortfolioList = ({ portfolios, totalPages }) => {
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -15,11 +15,7 @@ const Admin = () => {
       <PageTransition>
         <h1 className="hiddenTitle">Admin Page</h1>
         <div className={styles.adminIconHome}>
-          <GrSettingsOption
-            className={styles.adminIcon}
-            size={300}
-            style={{ color: 'black' }}
-          />
+          <GrSettingsOption className={styles.adminIcon} size={300} />
         </div>
       </PageTransition>
     </>
