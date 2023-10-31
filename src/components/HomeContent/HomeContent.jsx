@@ -54,22 +54,22 @@ const HomeContent = () => {
               {t('home.subTitle')}
             </p>
             <div className={style.buttonWrapper}>
-              <Link
+              <a
                 className={style.downloadLink}
                 href="/CV_Dmitriy Ushkvarok_Frontend_Developer.pdf"
                 target="_blank"
                 download
               >
                 {t('home.download_cv')}
-              </Link>
-              <Link
+              </a>
+              <a
                 className={style.downloadLink}
                 href="/Dmytro_Ushkvarok.pdf"
                 target="_blank"
                 download
               >
                 {t('home.download_certificate')}
-              </Link>
+              </a>
             </div>
           </div>
           <div className={style.promoWrapperBlockPhoto}>
