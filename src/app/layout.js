@@ -66,9 +66,11 @@ export default function RootLayout({ children }) {
               <Container>
                 <Header />
                 <UnderConstructionModal />
-                <div className="container">
-                  <main> {children}</main>
-                </div>
+                <h1 className="hiddenTitle">
+                  Welcome Page incudes base info,stack techology and opportunity
+                  download sertificate and resume
+                </h1>
+                <main> {children}</main>
               </Container>
               <Copyright />
             </ReduxProvider>
