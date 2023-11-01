@@ -1,6 +1,6 @@
-import ButtonBack from '@/src/components/ButtonBack/ButtonBack';
+import ButtonBack from '@/src/components/Buttons/ButtonBack/ButtonBack';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
-import BasicGalleryList from '@/src/components/BasicGalleryList/BasicGalleryList';
+import BasicGalleryList from '@/src/components/Gallery/BasicGalleryList/BasicGalleryList';
 import { getAllPhotos } from '@/src/actions/uploadActions';
 
 export const metadata = {

@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     padding: 10px;
-    background-image: var(--backgroundHeader), var(--backgroundFirst);
+    background-image: var(--backgroundHeader);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
-    -webkit-filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.7));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
     margin-left: auto;
     margin-right: auto;
     gap: 10px;

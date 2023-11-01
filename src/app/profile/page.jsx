@@ -1,8 +1,8 @@
 'use client';
 import { useSession } from 'next-auth/react';
-import UserPanel from '@/src/components/UserPanel/UserPanel';
-import UpdateUserForm from '@/src/components/AuthForm/UpdateUserForm/UpdateUserForm';
-import ChangePassword from '@/src/components/AuthForm/ChangePassword/ChangePassword';
+import UserPanel from '@/src/components/Admin/UserPanel/UserPanel';
+import UpdateUserForm from '@/src/components/Auth/UpdateUserForm/UpdateUserForm';
+import ChangePassword from '@/src/components/Auth/ChangePassword/ChangePassword';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import { fredericka } from '../fonts';
 import styles from './profile.module.css';

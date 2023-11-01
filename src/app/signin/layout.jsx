@@ -1,4 +1,4 @@
-import LogInForm from '@/src/components/AuthForm/FormLogin/FormLogin';
+import LogInForm from '@/src/components/Auth/FormLogin/FormLogin';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import Container from '@/src/components/Container/Container';
 

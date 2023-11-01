@@ -40,13 +40,13 @@ export async function getAllPortfolio(searchParams) {
     return { portfolios: newData, totalPortfolios, totalPages };
   } catch (error) {
     console.error('Произошла ошибка при получении портфолио:', error);
-    throw error; // Перехватываем и перебрасываем ошибку
+    throw error;
   }
 }
 
 export async function getAllPortfolioForDinamycPage() {
   try {
-    const portfolios = await Portfolio.find().sort({ order: 1 }); // Получаем все портфолио и сортируем
+    const portfolios = await Portfolio.find().sort({ order: 1 });
     const newData = portfolios.map((item) => ({
       ...item._doc,
       _id: item._doc._id.toString(),

@@ -9,7 +9,7 @@
     margin-top: 100px;
     margin-bottom: 20px;
     color: #c1bdbd;
-    background: linear-gradient(to right, #f12711, #f5af19);
+    background: var(--colorText);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -18,8 +18,8 @@
     line-height: 50px;
     letter-spacing: -3px;
     text-align: center;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .portfolioList {

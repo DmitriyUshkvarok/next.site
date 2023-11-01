@@ -12,8 +12,8 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     background-image: var(--backgroundImage);
-    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .contactsTitle {
@@ -44,19 +44,19 @@
 }
 
 .contactsListLink:hover {
-    color: aqua;
+    color: gray;
 }
 
 .contactImgWrapper {
     display: flex;
     justify-content: flex-end;
-    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }
 
 .contactImg {
-    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
     filter: saturate(10%);
     transition: filter .4s;
     -webkit-transition: filter .4s;

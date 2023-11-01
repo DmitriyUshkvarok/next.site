@@ -37,7 +37,7 @@ export const createComment = async ({
     return new NextResponse('Comment created successfully', { status: 201 });
   } catch (error) {
     console.error('Произошла ошибка при создании коментария:', error);
-    throw error; // Перехватываем и перебрасываем ошибку
+    throw error;
   }
 };
 
@@ -56,7 +56,6 @@ export const getAllComments = async (postId) => {
   }
 };
 
-// Серверный экшен для получения всех комментариев
 export const getAllCommentsForAdmin = async () => {
   try {
     const comments = await Comment.find();
@@ -82,7 +81,6 @@ export const updateComment = async (id, data) => {
     const comment = await Comment.findByIdAndUpdate(id, data, { new: true });
 
     if (!comment) {
-      // Если комментарий не найден, верните ошибку 404
       return new NextResponse('Comment not found', { status: 404 });
     }
     revalidatePath('/');
@@ -98,7 +96,6 @@ export const deleteComment = async (commentId) => {
     const session = await getServerSession(authOption);
 
     if (!session || !session.user) {
-      // Если пользователь не аутентифицирован, верните ошибку 401
       return new NextResponse('Authentication required', { status: 401 });
     }
 

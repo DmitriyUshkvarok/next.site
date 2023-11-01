@@ -1,0 +1,70 @@
+.uploadGalleryTitle {
+    max-width: 200px;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.uploadGalleryLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    border-radius: 4px;
+    padding: 8px;
+    background-image: var(--backgroundHeader);
+    cursor: pointer;
+    color: var(--colorBurger);
+    margin-bottom: 15px;
+    transition: transform .4s;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+}
+
+.uploadGalleryLabel:hover {
+    transform: scale(1.1);
+}
+
+.inputFile {
+    display: none;
+}
+
+.buttonSubmitWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnUpload {
+    padding: 10px;
+    background: var(--backgroundHeader);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: var(--colorBurger);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+}
+
+.btnUpload:hover {
+    opacity: 0.7;
+}

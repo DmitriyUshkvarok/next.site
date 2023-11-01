@@ -1,0 +1,98 @@
+.btnBackWrapper {
+    margin-top: 110px;
+    cursor: pointer;
+}
+
+.dynamicPageTitle {
+    font-size: 47px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #222;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dynamicPageImgWrapper {
+    max-width: 650px;
+    padding: 20px;
+    background: #000000;
+    background-image: var(--backgroundImage);
+    background-size: 200% 200%;
+    box-shadow: 10px 10px 10px rgba(245, 240, 240, 0.2);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+}
+
+.dynamicPageImage {
+    border: 1px solid #888;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    -webkit-filter: saturate(20%);
+    filter: saturate(20%);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.dynamicPageImage:hover {
+    filter: saturate(150%);
+    -webkit-filter: saturate(150%);
+}
+
+.dynamicPageDescription {
+    max-width: 800px;
+    text-align: justify;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dynamicPageLinkWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.dynamicPageLink {
+    color: aqua;
+    background-image: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: underline;
+    font-size: 21px;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}

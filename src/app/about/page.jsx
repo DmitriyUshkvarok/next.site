@@ -1,7 +1,7 @@
-import Educations from '@/src/components/Education/Education';
+import Educations from '@/src/components/About/Education/Education';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import styles from './aboutPage.module.css';
-import Works from '@/src/components/Works/Works';
+import Works from '@/src/components/About/Works/Works';
 import { getAllWorks } from '@/src/actions/worksAction';
 
 export const metadata = {

@@ -1,0 +1,87 @@
+.updateUserTitle {
+    padding: 10px;
+    color: #fff;
+    background: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.updateUserForm {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+}
+
+.updateFormGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.updateUserLabel {
+    color: #fff;
+    background: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.updateUserInput {
+    background-color: transparent;
+    color: #fff;
+    background: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    outline: none;
+    padding: 5px;
+}
+
+.btnEditProfile {
+    padding: 10px;
+    background: var(--backgroundHeader);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: var(--colorBurger);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+}
+
+.btnEditProfile:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,105 @@
+.adminPortfolioListTitle {
+    max-width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: #fff;
+    background: var(--colorText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.adminPortfolioListWrapper {
+    margin-bottom: 70px;
+}
+
+.adminPortfolioList {
+    max-width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.adminPortfolioListItem {
+    padding: 10px;
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    width: 200px;
+}
+
+.adminPortfolioImg {
+    width: 100%;
+    object-fit: cover;
+}
+
+.adminChangePanel {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: var(--backgroundImage), var(--backgroundFirst);
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.adminChangePanelItem {
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+}
+
+.selectedCard {
+    outline: 3px solid green
+}
+
+.adminPortfolioListLoader {
+    font-size: 30px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.adminPortfolioPaginationWrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminPortfolioPaginationNull {
+    margin-left: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+    background: -moz-linear-gradient(to right, #f12711, #f5af19);
+    background: -o-linear-gradient(to right, #f12711, #f5af19);
+    background: linear-gradient(to right, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

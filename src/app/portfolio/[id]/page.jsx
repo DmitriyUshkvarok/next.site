@@ -1,4 +1,4 @@
-import DynamicPagePortfolioContent from '@/src/components/DynamicPagePortfolioContent/DynamicPagePortfolioContent';
+import DynamicPagePortfolioContent from '@/src/components/Portfolio/DynamicPagePortfolioContent/DynamicPagePortfolioContent';
 import { fredericka } from '@/src/app/fonts';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 

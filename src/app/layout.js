@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import NextAuthProvider from '../context/provider';
 import Container from '../components/Container/Container';
 import Copyright from '../components/Copyright/Copyright';
-import UnderConstructionModal from '../components/UnderConstructionModal/UnderConstructionModal';
+import UnderConstructionModal from '../components/Gallery/UnderConstructionModal/UnderConstructionModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -41,7 +41,7 @@ export const metadata = {
   openGraph: {
     title: 'My Site Portfolio | Dmitriy Ushkvarok',
     description:
-      'My site portfolio, web developer Dmitriy Ushkvarok,portfolio,about,gallery,contacts',
+      'Welcome to my site portfolio, where you can explore my work as a web developer, learn about my skills and experience, browse through my portfolio showcasing various projects, read about my background and interests, view my gallery of creative work, and easily get in touch with me to discuss potential collaborations or projects. This site is built with Next.js and features server-side rendering for a seamless user experience.',
     images: [
       {
         url: '/opengraph.png',

@@ -2,7 +2,7 @@ import PageTransition from '@/src/components/PageTransition/PageTransition';
 import { getAllPortfolio } from '@/src/actions/portfolioActions';
 import { fredericka } from '@/src/app/fonts';
 import Container from '@/src/components/Container/Container';
-import PortfolioList from '@/src/components/PortfoliioList/PortfolioList';
+import PortfolioList from '@/src/components/Portfolio/PortfoliioList/PortfolioList';
 import styles from './portfolio.module.css';
 
 export const metadata = {
@@ -28,9 +28,9 @@ const Portfolio = async () => {
 
   return (
     <div className={fredericka.className}>
+      <h1 className="hiddenTitle">Portfolio Page</h1>
       <PageTransition>
         <Container>
-          <h1 className="hiddenTitle">Portfolio Page</h1>
           <h2 className={styles.selectTitle}>Choose a gallery</h2>
           <PortfolioList portfolios={portfolios} totalPages={totalPages} />
         </Container>

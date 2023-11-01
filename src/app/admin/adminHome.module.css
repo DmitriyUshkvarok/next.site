@@ -7,6 +7,6 @@
 
 .adminIcon {
     color: black;
-    filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
-    -webkit-filter: drop-shadow(3px 3px 15px rgba(255, 255, 255, 0.5));
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
 }

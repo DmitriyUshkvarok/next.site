@@ -1,4 +1,4 @@
-import ResetPasswordComponent from '@/src/components/AuthForm/ResetPassword/ResetPassword';
+import ResetPasswordComponent from '@/src/components/Auth/ResetPassword/ResetPassword';
 
 const ResetPasswordPage = ({ searchParams: { token } }) => {
   return (

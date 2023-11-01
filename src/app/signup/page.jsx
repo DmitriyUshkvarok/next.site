@@ -1,4 +1,4 @@
-import FormRegistration from '@/src/components/AuthForm/FormRegistration/FormRegistration';
+import FormRegistration from '@/src/components/Auth/FormRegistration/FormRegistration';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import Container from '@/src/components/Container/Container';
 
