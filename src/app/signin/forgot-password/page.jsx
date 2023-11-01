@@ -37,34 +37,36 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className={fredericka.className}>
+    <>
       <h1 className="hiddenTitle">Forgot password Page</h1>
-      <h2 className={styles.forgotPasswordTitle}>Enter your e-mail</h2>
-      <div className={styles.forgotPasswordBox}>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={schema}
-          onSubmit={handleForgotPassword}
-        >
-          <Form>
-            <div className={styles.formWrapper}>
-              <Field
-                className={styles.formLoginInput}
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-              />
-              <ErrorMessage name="email">
-                {(msg) => <div className={styles.validationError}>{msg}</div>}
-              </ErrorMessage>
-              <button className={styles.btnForgotPass} type="submit">
-                {isLoading ? 'Loading...' : 'Forgot Password'}
-              </button>
-            </div>
-          </Form>
-        </Formik>
+      <div className={fredericka.className}>
+        <h2 className={styles.forgotPasswordTitle}>Enter your e-mail</h2>
+        <div className={styles.forgotPasswordBox}>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={schema}
+            onSubmit={handleForgotPassword}
+          >
+            <Form>
+              <div className={styles.formWrapper}>
+                <Field
+                  className={styles.formLoginInput}
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+                <ErrorMessage name="email">
+                  {(msg) => <div className={styles.validationError}>{msg}</div>}
+                </ErrorMessage>
+                <button className={styles.btnForgotPass} type="submit">
+                  {isLoading ? 'Loading...' : 'Forgot Password'}
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

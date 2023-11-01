@@ -18,9 +18,9 @@ export const metadata = {
 const SignUp = () => {
   return (
     <>
+      <h1 className="hiddenTitle">Registration Page</h1>
       <PageTransition>
         <Container>
-          <h1 className="hiddenTitle">Registration Page</h1>
           <FormRegistration />
         </Container>
       </PageTransition>

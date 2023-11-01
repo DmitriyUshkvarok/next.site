@@ -27,15 +27,17 @@ const Portfolio = async () => {
   const { portfolios, totalPages } = await getAllPortfolio(searchParams);
 
   return (
-    <div className={fredericka.className}>
+    <>
       <h1 className="hiddenTitle">Portfolio Page</h1>
-      <PageTransition>
-        <Container>
-          <h2 className={styles.selectTitle}>Choose a gallery</h2>
-          <PortfolioList portfolios={portfolios} totalPages={totalPages} />
-        </Container>
-      </PageTransition>
-    </div>
+      <div className={fredericka.className}>
+        <PageTransition>
+          <Container>
+            <h2 className={styles.selectTitle}>Choose a gallery</h2>
+            <PortfolioList portfolios={portfolios} totalPages={totalPages} />
+          </Container>
+        </PageTransition>
+      </div>
+    </>
   );
 };
 

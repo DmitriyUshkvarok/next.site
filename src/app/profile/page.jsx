@@ -12,24 +12,28 @@ const UserProfile = () => {
   const { data: session, update } = useSession();
 
   return (
-    <div className={fredericka.className}>
-      <PageTransition>
-        <Container>
-          <h1 className="hiddenTitle">Profile Page</h1>
-          <div className={styles.componentProfileWrapper}>
-            <div>
-              <UserPanel />
+    <>
+      <h1 className="hiddenTitle">Profile Page</h1>
+      <div className={fredericka.className}>
+        <PageTransition>
+          <Container>
+            <div className={styles.componentProfileWrapper}>
+              <div>
+                <UserPanel />
+              </div>
+              <div>
+                <UpdateUserForm update={update} />
+              </div>
+              <div>
+                {session?.user?.provider === 'credentials' && (
+                  <ChangePassword />
+                )}
+              </div>
             </div>
-            <div>
-              <UpdateUserForm update={update} />
-            </div>
-            <div>
-              {session?.user?.provider === 'credentials' && <ChangePassword />}
-            </div>
-          </div>
-        </Container>
-      </PageTransition>
-    </div>
+          </Container>
+        </PageTransition>
+      </div>
+    </>
   );
 };
 
