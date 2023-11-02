@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { items } from '../../Portfolio/DynamicPagePortfolioContent/data';
 import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
 import styles from '../AdminPortfolioList/adminPortfolioList.module.css';
@@ -109,10 +108,7 @@ const AdminPortfolioItem = () => {
                 className={styles.adminPortfolioListLink}
               >
                 <Image
-                  src={
-                    items.find((localItem) => localItem.id === item._id)
-                      ?.image || item.image
-                  }
+                  src={item.image}
                   alt={item.title}
                   width={150}
                   height={150}

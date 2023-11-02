@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../../app/portfolio/portfolio.module.css';
-import { items } from '../DynamicPagePortfolioContent/data';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useState, useEffect } from 'react';
 import { updatePortfoliosOrder } from '@/src/actions/portfolioActions';
@@ -30,11 +29,6 @@ const PortfolioList = ({ portfolios, totalPages }) => {
 
     fetchData();
   }, [currentPage]);
-
-  const getFilteredPortfolioImage = (itemId) => {
-    const localImage = items.find((localItem) => localItem.id === itemId);
-    return localImage?.image;
-  };
 
   const handleDragEnd = async (result) => {
     if (!result.destination) return;
@@ -95,17 +89,13 @@ const PortfolioList = ({ portfolios, totalPages }) => {
                         className={styles.portfolioListLink}
                       >
                         <Image
-                          src={
-                            getFilteredPortfolioImage(item._id) || item.image
-                          }
+                          src={item.image}
                           alt={item.title}
                           width={300}
                           height={200}
                           sizes="100vw"
                           className={styles.portfolioImg}
-                          blurDataURL={
-                            getFilteredPortfolioImage(item._id) || item.image
-                          }
+                          blurDataURL={item.image}
                         />
                       </Link>
                     </li>
