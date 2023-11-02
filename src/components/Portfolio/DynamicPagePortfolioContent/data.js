@@ -45,6 +45,6 @@ export const items = [
   },
   {
     id: '65186d5fc8848642be13cfba',
-    image: '/my-site.png',
+    image: '/opengraph.png',
   },
 ];

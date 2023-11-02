@@ -83,7 +83,7 @@ const HomeContent = () => {
                   width={217}
                   height={750}
                   sizes="(max-width: 480px) 25vw ,(max-width: 768px) 50vw ,100vw"
-                  quality={60}
+                  quality={75}
                   className={style.promoWrapperImage}
                   style={{ objectFit: 'cover' }}
                 />

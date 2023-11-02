@@ -160,14 +160,20 @@ body[data-theme='light'] .promoWrapper {
     width: 200px;
     height: auto;
     filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.5));
-    -webkit-filter: saturate(20%);
     filter: saturate(20%);
     transition: filter 0.4s;
     -webkit-transition: filter 0.4s;
     -moz-transition: filter 0.4s;
     -ms-transition: filter 0.4s;
     -o-transition: filter 0.4s;
+    transition: filter 0.4s;
+    -webkit-transition: filter 0.4s;
+    -moz-transition: filter 0.4s;
+    -ms-transition: filter 0.4s;
+    -o-transition: filter 0.;
+    -webkit-filter: saturate(20%);
 }
+
 
 .promoWrapperImage:hover {
     -webkit-filter: saturate(120%);
