@@ -77,7 +77,7 @@ const HomeContent = () => {
               {currentTheme === 'dark' ? (
                 <Image
                   src={
-                    'https://res.cloudinary.com/dlllyuipi/image/upload/v1697889779/homePhoto_zjm3od.png'
+                    'https://res.cloudinary.com/dlllyuipi/image/upload/v1698944576/%D0%A2%D0%B5%D0%BC%D0%B0_daqv8v.webp'
                   }
                   alt="photo user"
                   width={217}
