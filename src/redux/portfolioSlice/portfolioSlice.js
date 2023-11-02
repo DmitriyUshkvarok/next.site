@@ -11,6 +11,7 @@ export const updatePortfolioAsync = createAsyncThunk(
 
 const initialState = {
   portfolio: {
+    _id: '',
     title: '',
     description: '',
     website: '',

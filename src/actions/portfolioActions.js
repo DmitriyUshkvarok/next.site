@@ -37,6 +37,8 @@ export async function getAllPortfolio(searchParams) {
       _id: item._doc._id.toString(),
     }));
 
+    revalidatePath('/');
+
     return { portfolios: newData, totalPortfolios, totalPages };
   } catch (error) {
     console.error('Произошла ошибка при получении портфолио:', error);
@@ -82,13 +84,17 @@ export async function updatePortfoliosOrder(updatedOrder) {
   }
 }
 
-export async function updatePortfolio(id, data) {
+export async function updatePortfolio(id, data, newImage = null) {
   try {
     delete data.updatedAt;
 
     const portfolio = await Portfolio.findByIdAndUpdate(id, data, {
       new: true,
     });
+
+    if (newImage) {
+      portfolio.image = newImage; // Обновляем изображение, если новое изображение передано
+    }
 
     revalidatePath('/');
 

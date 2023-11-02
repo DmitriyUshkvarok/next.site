@@ -1,13 +1,11 @@
 'use client';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { createPortfolio } from '@/src/actions/portfolioActions';
 import styles from './adminPortfolioForm.module.css';
 import { fredericka } from '@/src/app/fonts';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  updatePortfolioAsync,
-  clearPortfolioState,
-} from '@/src/redux/portfolioSlice/portfolioSlice';
+import { clearPortfolioState } from '@/src/redux/portfolioSlice/portfolioSlice';
+import { uploadPhotoPortfolio } from '@/src/actions/uploadPortfolioPhotoAction';
 
 function PortfolioForm() {
   const [editingPortfolios, setEditingPortfolios] = useState({
@@ -15,15 +13,17 @@ function PortfolioForm() {
     description: '',
     website: '',
     pageCode: '',
-    image: '',
   });
 
+  const [files, setFiles] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingUpdate, setIsLoadingUpdate] = useState(false);
   const dispatch = useDispatch();
   const isFormActive = useSelector((state) => state.portfolio.isFormActive);
   const editingPortfolio = useSelector((state) => state.portfolio.portfolio);
-  
+  const portfolioId = useSelector((state) => state.portfolio.portfolio._id);
+
   useEffect(() => {
     if (isFormActive) {
       setEditingPortfolios({
@@ -39,36 +39,87 @@ function PortfolioForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      if (!isFormActive) {
-        setIsLoading(true);
-        await createPortfolio(editingPortfolios);
-      }
+    if (files.length > 0) {
+      const formData = new FormData();
 
-      if (isFormActive) {
-        setIsLoadingUpdate(true);
-        await dispatch(
-          updatePortfolioAsync({
-            id: editingPortfolio,
-            data: editingPortfolios,
-          })
-        );
-        setEditingPortfolios({
-          title: '',
-          description: '',
-          website: '',
-          pageCode: '',
-          image: '',
-        });
+      files.forEach((file) => {
+        formData.append('files', file);
+      });
 
-        dispatch(clearPortfolioState());
+      try {
+        if (!isFormActive) {
+          setIsLoading(true);
+          const uploadResult = await uploadPhotoPortfolio(
+            formData,
+            editingPortfolios
+          );
+
+          if (uploadResult.msg) {
+            alert(`Success: ${uploadResult.msg}`);
+          } else {
+            alert(`Error: ${uploadResult.erMsg}`);
+          }
+
+          setFiles([]);
+          setSelectedImage(null);
+          setEditingPortfolios({
+            title: '',
+            description: '',
+            website: '',
+            pageCode: '',
+            image: '',
+          });
+        }
+
+        if (isFormActive) {
+          setIsLoadingUpdate(true);
+          const uploadResult = await uploadPhotoPortfolio(
+            formData,
+            editingPortfolios,
+            portfolioId
+          );
+
+          if (uploadResult.msg) {
+            alert(`Success: ${uploadResult.msg}`);
+          } else {
+            alert(`Error: ${uploadResult.erMsg}`);
+          }
+
+          setEditingPortfolios({
+            title: '',
+            description: '',
+            website: '',
+            pageCode: '',
+            image: '',
+          });
+
+          setFiles([]);
+          setSelectedImage(null);
+          dispatch(clearPortfolioState());
+        }
+      } catch (error) {
+        console.error('Произошла ошибка:', error);
+      } finally {
+        setIsLoading(false);
+        setIsLoadingUpdate(false);
       }
-    } catch (error) {
-      console.error('Произошла ошибка:', error);
-    } finally {
-      setIsLoading(false);
-      setIsLoadingUpdate(false);
     }
+  };
+
+  const handleInputImageChange = async (e) => {
+    const files = e.target.files;
+    const newFiles = [...files].filter((file) => {
+      if (file.size < 6024 * 6024 && file.type.startsWith('image/')) {
+        return file;
+      }
+    });
+    setFiles((prev) => [...newFiles, ...prev]);
+    setSelectedImage(newFiles[0]);
+  };
+
+  const handleRemoveImage = () => {
+    setFiles([]);
+    setSelectedImage(null);
   };
 
   const handleChange = (e) => {
@@ -128,16 +179,38 @@ function PortfolioForm() {
           />
         </div>
         <div className={styles.adminPortfolioFormGroup}>
-          <input
-            className={styles.adminPortfolioFormInput}
-            type="text"
-            name="image"
-            placeholder="Enter your image"
-            value={editingPortfolios.image}
-            onChange={handleChange}
-            aria-label="image"
-          />
+          <label
+            htmlFor="uploadPhotoAbout"
+            className={styles.uploadPortfolioLabel}
+          >
+            Upload Photo (push)
+            <input
+              className={styles.inputFile}
+              type="file"
+              accept="image/*"
+              onChange={handleInputImageChange}
+              id="uploadPhotoAbout"
+            />
+          </label>
         </div>
+        {selectedImage && (
+          <div className={styles.selectedImageContainer}>
+            <Image
+              src={URL.createObjectURL(selectedImage)}
+              alt="Selected Image"
+              width={50}
+              height={50}
+              className={styles.selectedImage}
+              blurDataURL={URL.createObjectURL(selectedImage)}
+            />
+            <button
+              className={styles.removeImageButton}
+              onClick={handleRemoveImage}
+            >
+              Remove
+            </button>
+          </div>
+        )}
         <div className={styles.createFormButtonWrapper}>
           <button
             className={styles.createFormButton}
