@@ -17,8 +17,8 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <h1 /*className="hiddenTitle"*/>Home Page</h1>
       <PageTransition>
+        <h1 /*className="hiddenTitle"*/>Home Page</h1>
         <HomeContent />
       </PageTransition>
     </>
