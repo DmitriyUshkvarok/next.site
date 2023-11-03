@@ -63,20 +63,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <div className="hiddenTitle">
-          <Link href="/">Home</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/gallery">Gallery</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-        <div className="fixedBlockForIos"></div>
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
               <Container>
                 <Header />
-                <h1 /*className="hiddenTitle"*/>Home Page</h1>
+                <div className="fixedBlockForIos"></div>
+                <h1 className="hiddenTitle">Home Page</h1>
                 <UnderConstructionModal />
                 <main> {children}</main>
                 <Copyright />

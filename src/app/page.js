@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       {/* <PageTransition> */}
-      <h1 /*className="hiddenTitle"*/>Home Page</h1>
+      <h1 className="hiddenTitle">Home Page</h1>
       <HomeContent />
       {/* </PageTransition> */}
     </>

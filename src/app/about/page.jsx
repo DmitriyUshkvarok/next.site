@@ -21,13 +21,13 @@ const About = async () => {
   const { works } = await getAllWorks();
   return (
     <>
-      <PageTransition>
-        <h1 className="hiddenTitle">About Page</h1>
-        <section className={styles.aboutSection}>
-          <Works works={works} />
-          <Educations />
-        </section>
-      </PageTransition>
+      {/* <PageTransition> */}
+      <h1 className="hiddenTitle">About Page</h1>
+      <section className={styles.aboutSection}>
+        <Works works={works} />
+        <Educations />
+      </section>
+      {/* </PageTransition> */}
     </>
   );
 };
