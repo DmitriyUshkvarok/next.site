@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import NextAuthProvider from '../context/provider';
 import Container from '../components/Container/Container';
 import Copyright from '../components/Copyright/Copyright';
-import UnderConstructionModal from '../components/Gallery/UnderConstructionModal/UnderConstructionModal';
+import UnderConstructionModal from '../components/Home/UnderConstructionModal/UnderConstructionModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -67,6 +67,7 @@ export default function RootLayout({ children }) {
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
+              <h1 className="hiddenTitle">Home Page</h1>
               <Container>
                 <Header />
                 <div className="fixedBlockForIos"></div>

@@ -19,9 +19,9 @@ const UnderConstructionModal = () => {
         <span className={styles.close} onClick={closeModal}>
           &times;
         </span>
-        <h1 className={styles.modalContentTitle}>
+        <h2 className={styles.modalContentTitle}>
           Сайт находится в разработке
-        </h1>
+        </h2>
         <p className={styles.modalContentDesc}>
           Я работаю над улучшением сайта. Спасибо за ваше понимание.
         </p>
