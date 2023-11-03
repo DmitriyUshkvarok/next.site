@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseURL = 'https://my-site-portfolio-three.vercel.app/';
+  const baseURL = 'https://www.dmitriy-ushkvarok.website/';
 
   return [
     {

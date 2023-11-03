@@ -7,11 +7,12 @@ import NextAuthProvider from '../context/provider';
 import Container from '../components/Container/Container';
 import Copyright from '../components/Copyright/Copyright';
 import UnderConstructionModal from '../components/Gallery/UnderConstructionModal/UnderConstructionModal';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  metadataBase: new URL('https://my-site-portfolio-three.vercel.app/'),
+  metadataBase: new URL('https://www.dmitriy-ushkvarok.website/'),
   title: 'My Site Portfolio | Dmitriy Ushkvarok',
   description:
     'site about web developer Dmitriy Ushkvarok,portfolio,about,gallery,contacts',
@@ -29,7 +30,10 @@ export const metadata = {
     'server action',
   ],
   authors: [
-    { name: 'Dmitriy Ushkvarok', url: 'my-site-portfolio-three.vercel.app/' },
+    {
+      name: 'Dmitriy Ushkvarok',
+      url: 'https://www.dmitriy-ushkvarok.website/',
+    },
   ],
   creator: 'Dmitriy Ushkvarok',
   publisher: 'Dmitriy Ushkvarok',
@@ -59,6 +63,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
+        <div className="hiddenTitle">
+          <Link href="/">Home</Link>
+          <Link href="/portfolio">Portfolio</Link>
+          <Link href="/gallery">Gallery</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
         <div className="fixedBlockForIos"></div>
         <NextAuthProvider>
           <LocalesProvider>
@@ -67,8 +78,8 @@ export default function RootLayout({ children }) {
                 <Header />
                 <UnderConstructionModal />
                 <main> {children}</main>
+                <Copyright />
               </Container>
-              <Copyright />
             </ReduxProvider>
           </LocalesProvider>
         </NextAuthProvider>
