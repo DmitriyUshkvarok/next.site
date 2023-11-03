@@ -49,12 +49,12 @@ const Navigation = () => {
   return (
     <div className={(styles.container, fredericka.className)}>
       <nav className={styles.navigation}>
-        <div className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <p className={fredericka.className}>Dmitriy Ushkvarok</p>
           <p className={(styles.subTitleLogo, permanentMarker.className)}>
             WebDeveloper
           </p>
-        </div>
+        </Link>
         {ismediaQuery && (
           <div className={styles.authNavWrapper}>
             <AuthNav />

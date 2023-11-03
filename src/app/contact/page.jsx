@@ -18,10 +18,10 @@ export const metadata = {
 const Contacts = () => {
   return (
     <>
-      {/* <PageTransition> */}
-      <h1 className="hiddenTitle">Contact Page</h1>
-      <ContactsContent />
-      {/* </PageTransition> */}
+      <PageTransition>
+        <h1 className="hiddenTitle">Contact Page</h1>
+        <ContactsContent />
+      </PageTransition>
     </>
   );
 };

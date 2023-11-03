@@ -7,7 +7,6 @@ import NextAuthProvider from '../context/provider';
 import Container from '../components/Container/Container';
 import Copyright from '../components/Copyright/Copyright';
 import UnderConstructionModal from '../components/Gallery/UnderConstructionModal/UnderConstructionModal';
-import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -69,7 +68,6 @@ export default function RootLayout({ children }) {
               <Container>
                 <Header />
                 <div className="fixedBlockForIos"></div>
-                <h1 className="hiddenTitle">Home Page</h1>
                 <UnderConstructionModal />
                 <main> {children}</main>
                 <Copyright />

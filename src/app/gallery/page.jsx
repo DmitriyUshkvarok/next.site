@@ -20,12 +20,12 @@ const GalleryPage = async () => {
   const photos = await getAllPhotos();
   return (
     <>
-      {/* <PageTransition> */}
-      <h1 className="hiddenTitle">Gallery Page</h1>
-      <div style={{ marginTop: '130px' }}></div>
-      <ButtonBack />
-      <BasicGalleryList photos={photos} />
-      {/* </PageTransition> */}
+      <PageTransition>
+        <h1 className="hiddenTitle">Gallery Page</h1>
+        <div style={{ marginTop: '130px' }}></div>
+        <ButtonBack />
+        <BasicGalleryList photos={photos} />
+      </PageTransition>
     </>
   );
 };

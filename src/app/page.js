@@ -17,10 +17,10 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      {/* <PageTransition> */}
-      <h1 className="hiddenTitle">Home Page</h1>
-      <HomeContent />
-      {/* </PageTransition> */}
+      <PageTransition>
+        <h1 className="hiddenTitle">Home Page</h1>
+        <HomeContent />
+      </PageTransition>
     </>
   );
 }
