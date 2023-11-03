@@ -76,6 +76,7 @@ export default function RootLayout({ children }) {
             <ReduxProvider>
               <Container>
                 <Header />
+                <h1 /*className="hiddenTitle"*/>Home Page</h1>
                 <UnderConstructionModal />
                 <main> {children}</main>
                 <Copyright />
