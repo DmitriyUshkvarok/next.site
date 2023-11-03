@@ -5,9 +5,9 @@ import PageTransition from '@/src/components/PageTransition/PageTransition';
 const CollectionSite = ({ params: { id } }) => {
   return (
     <>
-      <h1 className="hiddenTitle">Dynamic Portfolio Page</h1>
       <div className={fredericka.className}>
         <PageTransition>
+          <h1 className="hiddenTitle">Dynamic Portfolio Page</h1>
           <DynamicPagePortfolioContent id={id} />
         </PageTransition>
       </div>

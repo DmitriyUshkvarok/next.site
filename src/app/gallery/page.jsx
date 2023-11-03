@@ -20,8 +20,8 @@ const GalleryPage = async () => {
   const photos = await getAllPhotos();
   return (
     <>
-      <h1 className="hiddenTitle">Gallery Page</h1>
       <PageTransition>
+        <h1 className="hiddenTitle">Gallery Page</h1>
         <div style={{ marginTop: '130px' }}></div>
         <ButtonBack />
         <BasicGalleryList photos={photos} />

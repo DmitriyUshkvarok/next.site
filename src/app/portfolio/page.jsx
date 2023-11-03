@@ -28,9 +28,9 @@ const Portfolio = async () => {
 
   return (
     <>
-      <h1 className="hiddenTitle">Portfolio Page</h1>
       <div className={fredericka.className}>
         <PageTransition>
+          <h1 className="hiddenTitle">Portfolio Page</h1>
           <Container>
             <h2 className={styles.selectTitle}>Choose a gallery</h2>
             <PortfolioList portfolios={portfolios} totalPages={totalPages} />

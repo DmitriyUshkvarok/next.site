@@ -13,9 +13,9 @@ const UserProfile = () => {
 
   return (
     <>
-      <h1 className="hiddenTitle">Profile Page</h1>
       <div className={fredericka.className}>
         <PageTransition>
+          <h1 className="hiddenTitle">Profile Page</h1>
           <Container>
             <div className={styles.componentProfileWrapper}>
               <div>
