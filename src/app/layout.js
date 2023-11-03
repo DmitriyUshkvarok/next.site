@@ -12,7 +12,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   metadataBase: new URL('https://www.dmitriy-ushkvarok.website/'),
-  title: 'My Site Portfolio | Dmitriy Ushkvarok',
+  title: {
+    default: 'My Site Portfolio | Dmitriy Ushkvarok',
+    template: `%s | My Site Portfolio | Dmitriy Ushkvarok`,
+  },
   description:
     'site about web developer Dmitriy Ushkvarok,portfolio,about,gallery,contacts',
   generator: 'Next.js',
@@ -47,7 +50,7 @@ export const metadata = {
       'Welcome to my site portfolio, where you can explore my work as a web developer, learn about my skills and experience, browse through my portfolio showcasing various projects, read about my background and interests, view my gallery of creative work, and easily get in touch with me to discuss potential collaborations or projects. This site is built with Next.js and features server-side rendering for a seamless user experience.',
     images: [
       {
-        url: '/opengraph.png',
+        url: '/opengraph.webp',
         width: 400,
         height: 300,
       },
@@ -56,7 +59,8 @@ export const metadata = {
     siteName: 'Dmitriy Ushkvarok My Site Portfolio',
   },
   verification: {
-    google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44',
+    google: 'ABY-iahRpfkCxKAzHjkpouKvyLPe62hUVGiMIzyLfro',
+    // google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44' vercel my site,
   },
 };
 
@@ -64,7 +68,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <h1 className="hiddenTitle">Home Page</h1>
+        <h1 className="hiddenTitle">My Site Portfolio Dmitriy Ushkvarok</h1>
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
