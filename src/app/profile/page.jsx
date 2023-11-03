@@ -8,6 +8,19 @@ import { fredericka } from '../fonts';
 import styles from './profile.module.css';
 import Container from '@/src/components/Container/Container';
 
+export const metadata = {
+  title: 'Profile Page | My Site Portfolio Profile',
+  description:
+    'Welcome to my site portfolio, where you can explore my work as a web developer, learn about my skills and experience, browse through my portfolio showcasing various projects, read about my background and interests, view my gallery of creative work, and easily get in touch with me to discuss potential collaborations or projects. This site is built with Next.js and features server-side rendering for a seamless user experience.',
+  alternates: {
+    canonical: '/portfolio',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+    },
+  },
+};
+
 const UserProfile = () => {
   const { data: session, update } = useSession();
 
