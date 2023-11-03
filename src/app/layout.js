@@ -52,6 +52,8 @@ export const metadata = {
         height: 300,
       },
     ],
+    type: 'website',
+    siteName: 'Dmitriy Ushkvarok My Site Portfolio',
   },
   verification: {
     google: 'AOjUnX-0ZVriCXmOY7_0Qkj2Me_F9HO3-IoLSjmde44',
