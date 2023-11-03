@@ -1,4 +1,3 @@
-'use client';
 import PageTransition from '../components/PageTransition/PageTransition.jsx';
 import HomeContent from '../components/Home/HomeContent/HomeContent.jsx';
 

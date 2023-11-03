@@ -64,10 +64,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
+        <h1 className="hiddenTitle">Home Page</h1>
         <NextAuthProvider>
           <LocalesProvider>
             <ReduxProvider>
-              <h1 className="hiddenTitle">Home Page</h1>
               <Container>
                 <Header />
                 <div className="fixedBlockForIos"></div>
