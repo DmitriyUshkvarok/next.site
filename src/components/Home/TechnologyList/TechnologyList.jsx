@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './TechnologyList.module.css';
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
+import { fredericka } from '@/src/app/fonts';
 
 const TechnologyList = () => {
   return (
@@ -25,10 +26,11 @@ const TechnologyList = () => {
                       height={30}
                       sizes="100vw"
                       className={styles.techImage}
-                      // layout="fixed"
                     />
                   </div>
-                  <h2 className={styles.techTitle}>{item.title}</h2>
+                  <h2 className={`${styles.techTitle} ${fredericka.className}`}>
+                    {item.title}
+                  </h2>
                 </Link>
               </li>
             ))}

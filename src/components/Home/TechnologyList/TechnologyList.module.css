@@ -33,21 +33,16 @@
     flex-direction: column;
     gap: 5px;
     padding: 10px;
-    filter: var(--filter);
-    -webkit-filter: var(--filter);
 }
-
-/* .techImageWrapper {
-    filter: var(--filter);
-    -webkit-filter: var(--filter); 
-}
-*/
 
 .techImage {
+    filter: var(--filter);
+    -webkit-filter: var(--filter);
     object-fit: contain;
 }
 
 .techTitle {
+    font-weight: bold;
     color: gold;
     background: var(--colorText);
     -webkit-background-clip: text;

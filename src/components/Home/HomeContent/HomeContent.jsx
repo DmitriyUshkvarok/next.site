@@ -36,7 +36,7 @@ const HomeContent = () => {
   }, []);
 
   useEffect(() => {
-    const animationStartPoint = viewportHeight / 2;
+    const animationStartPoint = viewportHeight / 4;
     if (scrollY > animationStartPoint) {
       controls.start({ opacity: 1, x: '0%' });
     } else {
@@ -45,17 +45,23 @@ const HomeContent = () => {
   }, [scrollY, viewportHeight, controls]);
 
   return (
-    <section className={fredericka.className}>
+    <section>
       <Container>
         <div className={style.promoWrapper}>
           <div className={style.promoWrapperBlockInfo}>
-            <h2 className={style.promoWrapperBlockTitle}>{t('home.title')}</h2>
-            <p className={style.promoWrapperBlockSubTitle}>
+            <h2
+              className={`${fredericka.className} ${style.promoWrapperBlockTitle}`}
+            >
+              {t('home.title')}
+            </h2>
+            <p
+              className={`${fredericka.className} ${style.promoWrapperBlockSubTitle}`}
+            >
               {t('home.subTitle')}
             </p>
             <div className={style.buttonWrapper}>
               <a
-                className={style.downloadLink}
+                className={`${style.downloadLink} ${fredericka.className}`}
                 href="/CV_Dmitriy Ushkvarok_Frontend_Developer.pdf"
                 target="_blank"
                 download
@@ -63,7 +69,7 @@ const HomeContent = () => {
                 {t('home.download_cv')}
               </a>
               <a
-                className={style.downloadLink}
+                className={`${style.downloadLink} ${fredericka.className}`}
                 href="/Dmytro_Ushkvarok.pdf"
                 target="_blank"
                 download
@@ -106,7 +112,7 @@ const HomeContent = () => {
         </div>
         <TechnologyList />
         <motion.div
-          className={(montserrat.className, style.shadow)}
+          className={style.shadow}
           initial={{ opacity: 1, x: '100%' }}
           transition={{ opacity: { duration: 0.5 }, x: { duration: 0.5 } }}
           animate={controls}

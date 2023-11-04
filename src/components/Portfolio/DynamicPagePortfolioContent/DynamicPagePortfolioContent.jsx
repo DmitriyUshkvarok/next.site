@@ -5,6 +5,7 @@ import styles from './DynamicPagePortfolioContent.module.css';
 import { getAllPortfolioForDinamycPage } from '@/src/actions/portfolioActions';
 import CommentsPortfolio from '../CommentsPortfolio/CommentsPortfolio';
 import Container from '../../Container/Container';
+import { fredericka } from '@/src/app/fonts';
 
 const DynamicPagePortfolioContent = async ({ id }) => {
   const { portfolios } = await getAllPortfolioForDinamycPage();
@@ -20,7 +21,9 @@ const DynamicPagePortfolioContent = async ({ id }) => {
         <div className={styles.btnBackWrapper}>
           <ButtonBack />
         </div>
-        <h2 className={styles.dynamicPageTitle}>{item.title}</h2>
+        <h2 className={`${fredericka.className} ${styles.dynamicPageTitle}`}>
+          {item.title}
+        </h2>
         <div className={styles.dynamicPageImgWrapper}>
           <Image
             src={item.image}
