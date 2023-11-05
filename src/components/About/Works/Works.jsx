@@ -37,10 +37,8 @@ const Works = ({ works }) => {
   }, []);
 
   return (
-    <div>
-      <h2 className={`${fredericka.className} ${styles.aboutTitle}`}>
-        Work Experience
-      </h2>
+    <div className={fredericka.className}>
+      <h2 className={styles.aboutTitle}>Work Experience</h2>
       <div className={styles.aboutHeroImg}>
         <Image
           className={styles.aboutWorkImg}
@@ -64,7 +62,9 @@ const Works = ({ works }) => {
                 className={styles.workListImage}
               />
               <div className={styles.workListInfoWrapper}>
-                <h3>{work.enterprise}</h3>
+                <h3 className={styles.workListInfoWrapperTitle}>
+                  {work.enterprise}
+                </h3>
                 <p className={styles.workListInfoWrapperData}>{work.data}</p>
                 <h3 className={styles.workListInfoWrapperRegion}>
                   {work.region}
