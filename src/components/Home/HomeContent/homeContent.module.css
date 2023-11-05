@@ -37,6 +37,7 @@ body[data-theme='light'] .promoWrapper {
 
 .promoWrapperBlockTitle {
     font-size: 67px;
+    font-weight: bold;
     margin-bottom: 15px;
     text-align: start;
     color: #222;
@@ -182,8 +183,7 @@ body[data-theme='light'] .promoWrapper {
 
 @media screen and (max-width:665px) {
     .promoWrapperImage {
-        width: 330px;
-        height: auto;
+        width: 120px;
     }
 }
 
@@ -201,22 +201,25 @@ body[data-theme='light'] .promoWrapper {
 
 @media screen and (max-width:665px) {
     .promoWrapperImageWhiteTheme {
+        width: 250px;
         position: absolute;
         bottom: 0;
         right: 0;
-        top: 150px;
+        top: 120px;
     }
 }
 
 @media screen and (max-width:482px) {
     .promoWrapperImageWhiteTheme {
-        top: 120px;
+        width: 200px;
+        top: 140px;
     }
 }
 
+
 @media screen and (max-width:471px) {
     .promoWrapperImageWhiteTheme {
-        top: 150px;
+        top: 110px;
         width: 200px;
     }
 }
@@ -235,13 +238,13 @@ body[data-theme='light'] .promoWrapper {
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-    margin-bottom: 30px;
 }
 
 @media screen and (max-width:570px) {
     .buttonWrapper {
         position: relative;
         z-index: 10;
+        margin-bottom: 20px;
     }
 }
 

@@ -70,7 +70,7 @@
 
 .languageButton {
     padding: 5px;
-    margin-left: 5px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +94,7 @@
     -ms-transition: transform .4s;
     -o-transition: transform .4s;
 }
+
 
 .languageButton:hover {
     transform: scale(1.02);

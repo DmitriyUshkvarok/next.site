@@ -3,6 +3,7 @@
 }
 
 .educationTitle {
+    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     display: flex;
@@ -15,7 +16,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-size: 50px;
-    font-weight: 500;
     line-height: 50px;
     letter-spacing: -3px;
     text-align: center;

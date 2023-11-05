@@ -75,8 +75,10 @@ const Educations = () => {
   }, []);
 
   return (
-    <div className={(styled.educationBlock, fredericka.className)}>
-      <h3 className={styled.educationTitle}>{t('education.title')}</h3>
+    <div className={styled.educationBlock}>
+      <h3 className={`${styled.educationTitle} ${fredericka.className}`}>
+        {t('education.title')}
+      </h3>
       <ul className={styled.educationList}>
         {education.map((educ) => (
           <li className={styled.educationListItem} key={educ.id}>

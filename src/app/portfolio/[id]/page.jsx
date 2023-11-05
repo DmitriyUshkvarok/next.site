@@ -1,5 +1,4 @@
 import DynamicPagePortfolioContent from '@/src/components/Portfolio/DynamicPagePortfolioContent/DynamicPagePortfolioContent';
-import { fredericka } from '@/src/app/fonts';
 import PageTransition from '@/src/components/PageTransition/PageTransition';
 import { getAllPortfolioForDinamycPage } from '@/src/actions/portfolioActions';
 
@@ -40,7 +39,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 const CollectionSite = ({ params: { id } }) => {
   return (
     <>
-      <div className={fredericka.className}>
+      <div>
         <PageTransition>
           <h1 className="hiddenTitle">Dynamic Portfolio Page</h1>
           <DynamicPagePortfolioContent id={id} />

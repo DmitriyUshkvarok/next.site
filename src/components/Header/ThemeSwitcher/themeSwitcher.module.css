@@ -2,6 +2,12 @@
     margin-right: 20px;
 }
 
+@media (max-width: 480px) {
+    .themeSwitcherBox {
+        margin-right: 0;
+    }
+}
+
 .themeSwitcherBtn {
     background-color: transparent;
     border: none;
