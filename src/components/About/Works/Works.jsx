@@ -62,9 +62,7 @@ const Works = ({ works }) => {
                 className={styles.workListImage}
               />
               <div className={styles.workListInfoWrapper}>
-                <h3 className={styles.workListInfoWrapperTitle}>
-                  {work.enterprise}
-                </h3>
+                <h3>{work.enterprise}</h3>
                 <p className={styles.workListInfoWrapperData}>{work.data}</p>
                 <h3 className={styles.workListInfoWrapperRegion}>
                   {work.region}

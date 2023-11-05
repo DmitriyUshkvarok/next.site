@@ -44,7 +44,15 @@ function LanguageSelector() {
     <div className={style.languageSelector}>
       <button onClick={toggleDropdown} className={style.languageButton}>
         <FiGlobe />
-        {selectedLanguage === 'en' ? 'English' : 'Русский'}
+        {
+          selectedLanguage === 'en'
+            ? 'English'
+            : selectedLanguage === 'ru'
+            ? 'Русский'
+            : selectedLanguage === 'uk' // Додано перевірку для української мови
+            ? 'Українська'
+            : 'English' // За замовчуванням використовуємо англійську мову
+        }
       </button>
       {isOpen && <div className={style.backdrop} onClick={closeBackdrop}></div>}
       {isOpen && (
@@ -60,6 +68,12 @@ function LanguageSelector() {
             className={style.languageDropdownBtn}
           >
             Русский
+          </button>
+          <button
+            onClick={() => changeLanguage('uk')}
+            className={style.languageDropdownBtn}
+          >
+            Українська
           </button>
         </div>
       )}
