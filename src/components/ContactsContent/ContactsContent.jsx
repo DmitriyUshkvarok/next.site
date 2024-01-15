@@ -17,17 +17,6 @@ const ContactsContent = () => {
     <section className={fredericka.className}>
       <div className={styles.contactsWrapper}>
         <h2 className={styles.contactsTitle}>My Contacts</h2>
-        <div className={styles.contactImgWrapper}>
-          <Image
-            src="https://res.cloudinary.com/dlllyuipi/image/upload/v1697891201/testfon1_iitvzu.webp"
-            alt="photo user"
-            width={550}
-            height={590}
-            sizes="(max-width: 768px) 50vw ,100vw"
-            className={styles.contactImg}
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
         <ul className={styles.contactsList}>
           <li>
             <Link
