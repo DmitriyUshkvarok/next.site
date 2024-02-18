@@ -62,7 +62,7 @@ const HomeContent = () => {
             <div className={style.buttonWrapper}>
               <a
                 className={`${style.downloadLink} ${fredericka.className}`}
-                href="/CV_Dmitriy_Ushkvarok(Frontend_Developer).pdf"
+                href="/CV_Dmitriy Ushkvarok(Frontend_Developer).pdf"
                 target="_blank"
                 download
               >
